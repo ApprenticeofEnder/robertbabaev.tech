@@ -12,22 +12,17 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+	<div class="flex flex-col justify-center py-48">
+		<div class="grid grid-cols-2 divide-x divide-white">
+			<div class="flex flex-col justify-center">
+				<h1>ROBERT BABAEV</h1>
+				<h2>Cyber Security / Development</h2>
+			</div>
+			<div class="p-14">
+				<img src="logo.png" alt="Robert Babaev's Logo"/>	
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
@@ -37,10 +32,16 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
+		background-color: rgba(0,0,0,0.7);
 	}
 
 	h1 {
 		width: 100%;
+	}
+
+	h2 {
+		width: 100%;
+		text-align: center;
 	}
 
 	.welcome {
