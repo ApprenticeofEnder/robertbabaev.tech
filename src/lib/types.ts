@@ -22,3 +22,9 @@ export type Article = {
     title: string;
     link: string;
 };
+
+export type Contact = {
+    icon: string;
+    data: string; 
+    link: string;
+}
