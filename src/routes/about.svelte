@@ -19,7 +19,7 @@
 	<meta name="description" content="About Me" />
 </svelte:head>
 
-<div class="content">
+<div class="content translucent-black">
 	<h1>About Me</h1>
 	<img src="aboutme.jpeg" alt="Robert standing in front of the NorthSec 2022 sign">
 	<p>
@@ -54,7 +54,6 @@
 		width: 100%;
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
-		background-color: rgba(0,0,0,0.7);
 	}
 
 	p {

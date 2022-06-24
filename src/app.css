@@ -51,7 +51,7 @@ body::before {
 
 h1,
 h2,
-p {
+p, li {
 	font-weight: 400;
 	color: var(--heading-color);
 }
@@ -97,6 +97,10 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
+}
+
+.translucent-black {
+	background-color: rgba(0,0,0,0.7);
 }
 
 @media (min-width: 720px) {

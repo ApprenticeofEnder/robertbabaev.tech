@@ -11,7 +11,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
+<section class="translucent-black">
 	<div class="flex flex-col justify-center py-48">
 		<div class="grid grid-cols-2 divide-x divide-white">
 			<div class="flex flex-col justify-center">
@@ -32,7 +32,6 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-		background-color: rgba(0,0,0,0.7);
 	}
 
 	h1 {
