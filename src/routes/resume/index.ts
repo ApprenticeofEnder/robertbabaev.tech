@@ -3,7 +3,6 @@ import type { RequestHandler } from './__types';
 import type { Experience, ExperienceSAR } from '$lib/types';
 
 export const get: RequestHandler = async () => {
-	// locals.userid comes from src/hooks.js
 	const response = await api('get', `experience/`);
 
 	if (response.status === 200) {
