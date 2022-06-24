@@ -11,3 +11,14 @@ export type Experience = {
     designation: string;
     experience_sars: ExperienceSAR[];
 };
+
+export type Project = {
+    title: string;
+    link: string;
+    description: string;
+};
+
+export type Article = {
+    title: string;
+    link: string;
+};
