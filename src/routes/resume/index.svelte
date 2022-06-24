@@ -28,9 +28,24 @@
 </div>
 
 <style>
+    h2{
+        width: 100%;
+        border-bottom: 1px solid white;
+        padding: 0.25rem;
+    }
+
     h6{
         font-size: 0.75rem;
         color: white;
+        margin-bottom: 0.75rem;
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+    }
+
+    li::before {
+        content: '+ ';
     }
 
 	.resume {
@@ -38,5 +53,6 @@
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
 		line-height: 1;
+        padding: 1rem;
 	}
 </style>
