@@ -1,4 +1,4 @@
-import { api } from './_api';
+import { api } from '$lib/_api';
 import type { RequestHandler } from './__types';
 import type { Experience, ExperienceSAR } from '$lib/types';
 
