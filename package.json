@@ -36,6 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
+		"@mapbox/node-pre-gyp": "^1.0.9",
 		"cookie": "^0.4.1"
 	}
 }
