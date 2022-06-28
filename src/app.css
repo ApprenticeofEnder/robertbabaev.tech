@@ -23,11 +23,11 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--primary-color);
-	background: var(--primary-color) url("background.png") no-repeat fixed center;
+	background: var(--primary-color) url("/background.png") no-repeat fixed center;
 	background-size: 100vw 100vh;
 }
 
-body::before {
+/* body::before {
 	content: '';
 	width: 80vw;
 	height: 100vh;
@@ -41,7 +41,7 @@ body::before {
 		rgba(255, 255, 255, 0) 100%
 	);
 	opacity: 0.05;
-}
+} */
 
 #svelte {
 	min-height: 100vh;
