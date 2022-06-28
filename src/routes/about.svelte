@@ -27,7 +27,8 @@
 		at Carleton University. Currently, my focus is in cyber security, which I've been involved in
 		for a few years. I like to think of myself as striking a balance between security and
 		development, where I build tooling and practice secure development in the web apps I build to
-		the best of my ability. In other words, I like being on the purple team.
+		the best of my ability. In other words, I like being either on the purple team or just doing 
+		security development work.
 	</p>
 	<p>
 		I started my cybersecurity journey in 2019 with, of all things, a business pitch. The idea? 
