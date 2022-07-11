@@ -19,7 +19,8 @@
 				<h2>Cyber Security / Development</h2>
 			</div>
 			<div class="p-14">
-				<img src="logo.png" alt="Robert Babaev's Logo"/>	
+				<h1>UNDER CONSTRUCTION</h1>
+				<h2>Please check back later!</h2>	
 			</div>
 		</div>
 	</div>
