@@ -22,7 +22,7 @@ services:
     volumes:
       - static_volume:/app/static:z
   db:
-    image: postgres:12.0-alpine
+    image: postgres:14-alpine
     restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data/:z
