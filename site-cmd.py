@@ -21,5 +21,9 @@ def stop():
 def build():
     os.system("docker-compose build")
 
+@app.command()
+def logs():
+    os.system("docker-compose logs --tail 50")
+
 if __name__ == "__main__":
     app()
