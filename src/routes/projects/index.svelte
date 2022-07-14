@@ -17,7 +17,7 @@
 	<h1>Projects</h1>
 
 	{#each projects as project}
-        <h2><a href={project.link}>{project.title}</a></h2>
+        <h2 class="w-full my-3"><a href={project.link}>{project.title}</a></h2>
 		<p>{project.description}</p>
     {/each}
 </div>

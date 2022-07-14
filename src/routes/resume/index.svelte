@@ -17,33 +17,17 @@
 	<h1>Resume</h1>
 
 	{#each experience as exp}
-        <h2>{exp.title} - {exp.company}</h2>
-        <h6>{exp.start_date} - {exp.end_date}</h6>
+        <h2 class="w-full border-b border-white p-1">{exp.title} - {exp.company}</h2>
+        <h6 class="my-3 text-white text-xs">{exp.start_date} - {exp.end_date}</h6>
         <ul>
             {#each exp.experience_sars as sar}
-                <li>{sar.statement}</li>
+                <li class="my-2 text-s text-justify leading-relaxed">{sar.statement}</li>
             {/each}
         </ul>   
     {/each}
 </div>
 
 <style>
-    h2{
-        width: 100%;
-        border-bottom: 1px solid white;
-        padding: 0.25rem;
-    }
-
-    h6{
-        font-size: 0.75rem;
-        color: white;
-        margin-bottom: 0.75rem;
-    }
-
-    li {
-        margin-bottom: 0.25rem;
-    }
-
     li::before {
         content: '+ ';
     }
