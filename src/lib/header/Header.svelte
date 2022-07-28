@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
 
 	let menuVisible: boolean = false;
 
@@ -13,21 +12,21 @@
 	<nav class="w-full">
 		{#if menuVisible}
 			<ul id="menu-links" class="w-full">
-				<li><a use:scrollTo={'home'} on:click={menuToggle} href={"#"}>Home</a></li>
+				<li><a sveltekit:prefetch on:click={menuToggle} href={"/"}>Home</a></li>
 				<li>
-					<a use:scrollTo={'about'} on:click={menuToggle} href={"#about"}>About</a>
+					<a sveltekit:prefetch on:click={menuToggle} href={"/about"}>About</a>
 				</li>
 				<li>
-					<a use:scrollTo={'resume'} on:click={menuToggle} href={"#resume"}>Resume</a>
+					<a sveltekit:prefetch on:click={menuToggle} href={"/resume"}>Resume</a>
 				</li>
 				<li>
-					<a use:scrollTo={'articles'} on:click={menuToggle} href={"#articles"}>Articles</a>
+					<a sveltekit:prefetch on:click={menuToggle} href={"/articles"}>Articles</a>
 				</li>
 				<li>
-					<a use:scrollTo={'projects'} on:click={menuToggle} href={"#projects"}>Projects</a>
+					<a sveltekit:prefetch on:click={menuToggle} href={"/projects"}>Projects</a>
 				</li>
 				<li>
-					<a use:scrollTo={'contact'} on:click={menuToggle} href={"#contact"}>Contact</a>
+					<a sveltekit:prefetch on:click={menuToggle} href={"/contact"}>Contact</a>
 				</li>
 			</ul>
 		{/if}

@@ -1,8 +1,8 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
+	import Resume from '$lib/sections/resume.svelte';
+	import type { Experience } from '$lib/types';
+
+	export let experience: Experience[];
 </script>
 
 <svelte:head>
@@ -18,10 +18,14 @@
 				<h2 class="">Cyber Security / Development</h2>
 			</div>
 			<div class="p-14">
-				<img src="logo.png" alt="Robert Babaev's Logo"/>	
+				<img src="logo.png" alt="Robert Babaev's Logo" />
 			</div>
 		</div>
 	</div>
+</section>
+
+<section>
+	<Resume {experience} />
 </section>
 
 <style>
