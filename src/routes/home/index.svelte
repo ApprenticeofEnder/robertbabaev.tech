@@ -1,8 +1,18 @@
 <script lang="ts">
-	import Resume from '$lib/sections/resume.svelte';
-	import type { Experience } from '$lib/types';
+	import Section from '$lib/Section.svelte';
+	import AboutSection from '$lib/sections/about.svelte';
+	import ArticleSection from '$lib/sections/articles.svelte';
+	import ContactSection from '$lib/sections/contacts.svelte';
+	import ProjectSection from '$lib/sections/projects.svelte';
+	import ResumeSection from '$lib/sections/resume.svelte';
+	import type { Experience, Project, Article, Contact } from '$lib/types';
+
+	import { scrollRef, scrollTop } from 'svelte-scrolling';
 
 	export let experience: Experience[];
+	export let articles: Article[];
+	export let projects: Project[];
+	export let contacts: Contact[];
 </script>
 
 <svelte:head>
@@ -10,7 +20,7 @@
 	<meta name="description" content="Robert Babaev's Personal Website" />
 </svelte:head>
 
-<section class="translucent-black">
+<section use:scrollRef={'home'} class="translucent-black">
 	<div class="flex flex-col justify-center py-48">
 		<div class="grid md:grid-cols-2 md:divide-x divide-white">
 			<div class="flex flex-col justify-center">
@@ -24,9 +34,27 @@
 	</div>
 </section>
 
-<section>
-	<Resume {experience} />
-</section>
+<Section scrollRefString={'about'}>
+	<AboutSection />
+</Section>
+
+<Section scrollRefString={'resume'}>
+	<ResumeSection {experience} />
+</Section>
+
+<Section scrollRefString={'articles'}>
+	<ArticleSection {articles} />
+</Section>
+
+<Section scrollRefString={'projects'}>
+	<ProjectSection {projects} />
+</Section>
+
+<Section scrollRefString={'contact'}>
+	<ContactSection {contacts} />
+</Section>
+
+<section />
 
 <style>
 	section {

@@ -1,14 +1,10 @@
 <script lang="ts">
-	// import { enhance } from '$lib/form';
-	// import { scale } from 'svelte/transition';
-	// import { flip } from 'svelte/animate';
-
     import type { Experience } from '$lib/types';
 
 	export let experience: Experience[];
 </script>
 
-<section class="content translucent-black">
+<div>
     <h1>Resume</h1>
 
 	{#each experience as exp}
@@ -20,13 +16,4 @@
             {/each}
         </ul>   
     {/each}
-</section>
-
-<style>
-    .content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-		padding: 1rem;
-	}
-</style>
+</div>
