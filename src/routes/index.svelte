@@ -1,5 +1,15 @@
+<!-- Reason for this redirect is because Sveltekit APIs were acting weird and I couldn't resolve the error without the home routes -->
+
 <script context="module" lang="ts">
 	export const prerender = true;
+
+	export async function load() {
+
+    return {
+      status: 302,
+      redirect: "/home"
+    };
+  }
 </script>
 
 <script lang="ts">
