@@ -1,39 +1,52 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import { fade } from 'svelte/transition';
+
+	import {clickOutside} from '$lib/clickOutside';
+
+	import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
+
+	let menuVisible: boolean = false;
+
+	function menuOn(){
+		menuVisible = true;
+	}
+
+	function menuOff(){
+		menuVisible = false;
+	}
 </script>
 
 <header>
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a sveltekit:prefetch href="/about">About</a>
-			</li>
-			<li class:active={$page.url.pathname === '/resume'}>
-				<a sveltekit:prefetch href="/resume">Resume</a>
-			</li>
-			<li class:active={$page.url.pathname === '/articles'}>
-				<a sveltekit:prefetch href="/articles">Articles</a>
-			</li>
-			<li class:active={$page.url.pathname === '/projects'}>
-				<a sveltekit:prefetch href="/projects">Projects</a>
-			</li>
-			<li class:active={$page.url.pathname === '/contact'}>
-				<a sveltekit:prefetch href="/contact">Contact</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+	<nav class="w-full">
+		{#if menuVisible}
+			<ul use:clickOutside id="menu-links" class="w-full" transition:fade on:click_outside={menuOff}>
+				<li><a use:scrollTo={'home'} on:click={menuOff} href={"#"}>Home</a></li>
+				<li>
+					<a use:scrollTo={'about'} on:click={menuOff} href={"#about"}>About</a>
+				</li>
+				<li>
+					<a use:scrollTo={'resume'} on:click={menuOff} href={"#resume"}>Resume</a>
+				</li>
+				<li>
+					<a use:scrollTo={'articles'} on:click={menuOff} href={"#articles"}>Articles</a>
+				</li>
+				<li>
+					<a use:scrollTo={'projects'} on:click={menuOff} href={"#projects"}>Projects</a>
+				</li>
+				<li>
+					<a use:scrollTo={'contact'} on:click={menuOff} href={"#contact"}>Contact</a>
+				</li>
+			</ul>
+		{/if}
+		<a href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuOn}>
+			<i class="fa fa-bars text-lg"></i>
+		</a>
 	</nav>
 </header>
 
 <style>
 	header {
+		position: fixed;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -44,22 +57,12 @@
 		--background: rgba(0, 0, 0, 1);
 	}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
 	ul {
 		position: relative;
 		padding: 0;
 		margin: 0;
-		height: 3em;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		list-style: none;
@@ -70,25 +73,16 @@
 	li {
 		position: relative;
 		height: 100%;
-	}
-
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
+		width: 100%;
 	}
 
 	nav a {
 		display: flex;
 		height: 100%;
+		width: 100%;
 		align-items: center;
-		padding: 0 1em;
+		text-align: center;
+		padding: 0.5em 1em;
 		color: var(--heading-color);
 		font-weight: 700;
 		font-size: 0.8rem;
@@ -100,5 +94,14 @@
 
 	a:hover {
 		color: var(--accent-color);
+	}
+
+	nav a.icon {
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		display: block;
 	}
 </style>

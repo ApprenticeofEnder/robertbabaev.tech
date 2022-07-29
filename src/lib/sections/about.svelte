@@ -1,26 +1,5 @@
-<script context="module">
-	import { browser, dev } from '$app/env';
-
-	// we don't need any JS on this page, though we'll load
-	// it in dev so that we get hot module replacement...
-	export const hydrate = dev;
-
-	// ...but if the client-side router is already loaded
-	// (i.e. we came here from elsewhere in the app), use it
-	export const router = browser;
-
-	// since there's no dynamic data here, we can prerender
-	// it so that it gets served as a static asset in prod
-	export const prerender = true;
-</script>
-
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About Me" />
-</svelte:head>
-
-<div class="content translucent-black">
-	<h1>About Me</h1>
+<div>
+    <h1>About Me</h1>
 	<img src="aboutme.jpeg" alt="Robert standing in front of the NorthSec 2022 sign">
 	<p>
 		Hi, my name is Robert, and I'm a third year standing student in a Bachelor of Computer Science
@@ -51,14 +30,7 @@
 </div>
 
 <style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-		padding: 1rem;
-	}
-
-	p {
+    p {
 		padding-top: 15px;
 	}
 </style>

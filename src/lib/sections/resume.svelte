@@ -1,20 +1,11 @@
 <script lang="ts">
-	// import { enhance } from '$lib/form';
-	// import { scale } from 'svelte/transition';
-	// import { flip } from 'svelte/animate';
-
     import type { Experience } from '$lib/types';
 
 	export let experience: Experience[];
 </script>
 
-<svelte:head>
-	<title>Resume</title>
-	<meta name="description" content="Robert's Resume" />
-</svelte:head>
-
-<div class="resume translucent-black">
-	<h1>Resume</h1>
+<div>
+    <h1>Resume</h1>
 
 	{#each experience as exp}
         <h2 class="w-full border-b border-white p-1">{exp.title} - {exp.company}</h2>
@@ -31,12 +22,4 @@
     li::before {
         content: '+ ';
     }
-
-	.resume {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-		line-height: 1;
-        padding: 1rem;
-	}
 </style>
