@@ -17,3 +17,9 @@
         </ul>   
     {/each}
 </div>
+
+<style>
+    li::before {
+        content: '+ ';
+    }
+</style>
