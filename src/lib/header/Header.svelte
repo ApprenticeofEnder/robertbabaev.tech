@@ -1,38 +1,44 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 
+	import {clickOutside} from '$lib/clickOutside';
+
 	import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
 
 	let menuVisible: boolean = false;
 
-	function menuToggle(){
-		menuVisible = !menuVisible;
+	function menuOn(){
+		menuVisible = true;
+	}
+
+	function menuOff(){
+		menuVisible = false;
 	}
 </script>
 
 <header>
 	<nav class="w-full">
 		{#if menuVisible}
-			<ul id="menu-links" class="w-full" transition:fade>
-				<li><a use:scrollTo={'home'} on:click={menuToggle} href={"#"}>Home</a></li>
+			<ul use:clickOutside id="menu-links" class="w-full" transition:fade on:click_outside={menuOff}>
+				<li><a use:scrollTo={'home'} on:click={menuOff} href={"#"}>Home</a></li>
 				<li>
-					<a use:scrollTo={'about'} on:click={menuToggle} href={"#about"}>About</a>
+					<a use:scrollTo={'about'} on:click={menuOff} href={"#about"}>About</a>
 				</li>
 				<li>
-					<a use:scrollTo={'resume'} on:click={menuToggle} href={"#resume"}>Resume</a>
+					<a use:scrollTo={'resume'} on:click={menuOff} href={"#resume"}>Resume</a>
 				</li>
 				<li>
-					<a use:scrollTo={'articles'} on:click={menuToggle} href={"#articles"}>Articles</a>
+					<a use:scrollTo={'articles'} on:click={menuOff} href={"#articles"}>Articles</a>
 				</li>
 				<li>
-					<a use:scrollTo={'projects'} on:click={menuToggle} href={"#projects"}>Projects</a>
+					<a use:scrollTo={'projects'} on:click={menuOff} href={"#projects"}>Projects</a>
 				</li>
 				<li>
-					<a use:scrollTo={'contact'} on:click={menuToggle} href={"#contact"}>Contact</a>
+					<a use:scrollTo={'contact'} on:click={menuOff} href={"#contact"}>Contact</a>
 				</li>
 			</ul>
 		{/if}
-		<a href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuToggle}>
+		<a href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuOn}>
 			<i class="fa fa-bars text-lg"></i>
 		</a>
 	</nav>
@@ -68,18 +74,6 @@
 		position: relative;
 		height: 100%;
 		width: 100%;
-	}
-
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: calc(50% - var(--size));
-		left: 0;
-		border: var(--size) solid transparent;
-		border-left: var(--size) solid var(--accent-color);
 	}
 
 	nav a {
