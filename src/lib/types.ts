@@ -28,3 +28,7 @@ export type Contact = {
     data: string; 
     link: string;
 }
+
+export interface IHash {
+    [details: string] : string;
+} 
