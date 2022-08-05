@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Section from '$lib/Section.svelte';
-	import AboutSection from '$lib/sections/about.svelte';
-	import ArticleSection from '$lib/sections/articles.svelte';
-	import ContactSection from '$lib/sections/contacts.svelte';
-	import ProjectSection from '$lib/sections/projects.svelte';
-	import ResumeSection from '$lib/sections/resume.svelte';
+	import Section from '$lib/components/Section.svelte';
+	import AboutSection from '$lib/components/sections/about.svelte';
+	import ArticleSection from '$lib/components/sections/articles.svelte';
+	import ContactSection from '$lib/components/sections/contacts.svelte';
+	import ProjectSection from '$lib/components/sections/projects.svelte';
+	import ResumeSection from '$lib/components/sections/resume.svelte';
 	import type { Experience, Project, Article, Contact } from '$lib/types';
 
 	import { scrollRef, scrollTop } from 'svelte-scrolling';
@@ -24,8 +24,8 @@
 	<div class="flex flex-col justify-center py-48">
 		<div class="grid md:grid-cols-2 md:divide-x divide-white">
 			<div class="flex flex-col justify-center">
-				<h1>ROBERT BABAEV</h1>
-				<h2 class="">Cyber Security / Development</h2>
+				<h1 class="w-full">ROBERT BABAEV</h1>
+				<h2 class="w-full text-center">Cyber Security / Development</h2>
 			</div>
 			<div class="p-14">
 				<img src="logo.png" alt="Robert Babaev's Logo" />
@@ -63,14 +63,5 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	h2 {
-		width: 100%;
-		text-align: center;
 	}
 </style>

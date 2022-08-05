@@ -3,23 +3,23 @@
 
 	import {clickOutside} from '$lib/clickOutside';
 
-	import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
+	import { scrollTo } from 'svelte-scrolling'
 
 	let menuVisible: boolean = false;
 
-	function menuOn(){
-		menuVisible = true;
-	}
-
 	function menuOff(){
 		menuVisible = false;
+	}
+
+	function menuToggle(){
+		menuVisible = !menuVisible;
 	}
 </script>
 
 <header>
 	<nav class="w-full">
 		{#if menuVisible}
-			<ul use:clickOutside id="menu-links" class="w-full" transition:fade on:click_outside={menuOff}>
+			<ul id="menu-links" class="w-full" transition:fade>
 				<li><a use:scrollTo={'home'} on:click={menuOff} href={"#"}>Home</a></li>
 				<li>
 					<a use:scrollTo={'about'} on:click={menuOff} href={"#about"}>About</a>
@@ -38,7 +38,7 @@
 				</li>
 			</ul>
 		{/if}
-		<a href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuOn}>
+		<a use:clickOutside href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuToggle} on:click_outside={menuOff}>
 			<i class="fa fa-bars text-lg"></i>
 		</a>
 	</nav>

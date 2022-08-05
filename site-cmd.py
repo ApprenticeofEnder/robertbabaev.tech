@@ -25,5 +25,9 @@ def build():
 def logs():
     os.system("docker-compose logs --tail 50")
 
+@app.command()
+def restart():
+    os.system("docker-compose down; docker-compose build; docker-compose up -d")
+
 if __name__ == "__main__":
     app()
