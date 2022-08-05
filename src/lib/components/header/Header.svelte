@@ -3,16 +3,16 @@
 
 	import {clickOutside} from '$lib/clickOutside';
 
-	import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
+	import { scrollTo } from 'svelte-scrolling'
 
 	let menuVisible: boolean = false;
 
-	function menuOn(){
-		menuVisible = true;
-	}
-
 	function menuOff(){
 		menuVisible = false;
+	}
+
+	function menuToggle(){
+		menuVisible = !menuVisible;
 	}
 </script>
 
@@ -38,7 +38,7 @@
 				</li>
 			</ul>
 		{/if}
-		<a href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuOn}>
+		<a href={"javascript:void(0);"} class="icon mx-5 my-2" on:click={menuToggle}>
 			<i class="fa fa-bars text-lg"></i>
 		</a>
 	</nav>
