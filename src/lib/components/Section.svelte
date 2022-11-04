@@ -60,29 +60,20 @@
 	});
 </script>
 
+<div use:scrollRef={scrollRefString}></div>
 <IntersectionObserver once element={section} bind:intersecting>
 	{#if intersecting}
 		{#if isContent}
-			<section
-				transition:blurSlide={{ duration: 800 }}
-				use:scrollRef={scrollRefString}
-				bind:this={section}
-				class={classString}
-			>
+			<section transition:blurSlide={{ duration: 800 }} bind:this={section} class={classString}>
 				<slot />
 			</section>
 		{:else}
-			<section
-				transition:fade={{ duration: 800 }}
-				use:scrollRef={scrollRefString}
-				bind:this={section}
-				class={classString}
-			>
+			<section transition:fade={{ duration: 800 }} bind:this={section} class={classString}>
 				<slot />
 			</section>
 		{/if}
 	{:else}
-		<section use:scrollRef={scrollRefString} bind:this={section} class="hide {classString}">
+		<section bind:this={section} class="hide {classString}">
 			<slot />
 		</section>
 	{/if}
