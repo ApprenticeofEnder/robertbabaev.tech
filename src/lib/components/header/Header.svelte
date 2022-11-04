@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 
 	import {clickOutside} from '$lib/clickOutside';
 
@@ -19,7 +19,7 @@
 <header>
 	<nav class="w-full">
 		{#if menuVisible}
-			<ul id="menu-links" class="w-full" transition:fade>
+			<ul id="menu-links" class="w-full" transition:fly="{{x:-200}}">
 				<li><a use:scrollTo={'home'} on:click={menuOff} href={"#"}>Home</a></li>
 				<li>
 					<a use:scrollTo={'about'} on:click={menuOff} href={"#about"}>About</a>
@@ -54,7 +54,8 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(0, 0, 0, 1);
+		--background: rgba(0, 0, 0, 0.7);
+		box-shadow:0 0 15px 8px rgba(0,0,0,0.7);
 	}
 
 	ul {
