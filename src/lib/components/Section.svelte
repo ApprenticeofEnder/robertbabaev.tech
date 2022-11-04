@@ -1,29 +1,25 @@
 <script lang="ts">
     import { scrollRef, scrollTop } from 'svelte-scrolling';
-	import { onMount } from 'svelte';
+	import IntersectionObserver from "svelte-intersection-observer";
+	import { fade } from 'svelte/transition';
 
 	export let scrollRefString: string;
 
 	let section: HTMLElement;
-	onMount(() => {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				console.log(entry);
-				if (entry.isIntersecting) {
-					entry.target.classList.add('shown');
-				}
-				else {
-					entry.target.classList.remove('shown');
-				}
-			})
-		})
-		observer.observe(section);
-	});
+	let intersecting: boolean;
 </script>
 
-<section use:scrollRef={scrollRefString} bind:this="{section}" class="hide content translucent-black">
-	<slot />
-</section>
+<IntersectionObserver element={section} bind:intersecting>
+	{#if intersecting}
+		<section transition:fade use:scrollRef={scrollRefString} bind:this="{section}" class="content translucent-black">
+			<slot />
+		</section>
+	{:else}
+		<section use:scrollRef={scrollRefString} bind:this="{section}" class="hide content translucent-black">
+			<slot />
+		</section>
+	{/if}
+</IntersectionObserver>
 
 <style>
 	.content {
@@ -34,11 +30,6 @@
 	}
 
 	.hide {
-		opacity:0;
-		transition: all 1s;
-	}
-
-	.shown {
-		opacity:1;
+		opacity: 0;
 	}
 </style>
