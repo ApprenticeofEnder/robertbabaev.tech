@@ -20,7 +20,7 @@
 	<meta name="description" content="Robert Babaev's Personal Website" />
 </svelte:head>
 
-<section use:scrollRef={'home'} class="translucent-black">
+<Section scrollRefString={'home'} isContent={false}>
 	<div class="flex flex-col justify-center py-48">
 		<div class="grid md:grid-cols-2 md:divide-x divide-white">
 			<div class="flex flex-col justify-center">
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</Section>
 
 <Section scrollRefString={'about'}>
 	<AboutSection />
