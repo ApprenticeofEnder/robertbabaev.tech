@@ -13,10 +13,10 @@ services:
              python manage.py migrate &&
              python manage.py collectstatic -c --no-input &&
              python manage.py runserver 0.0.0.0:8000"
-    # expose:
-    #   - "8000"
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
+    # ports:
+    #   - "8000:8000"
     env_file:
       - ./.env
     depends_on:
@@ -41,11 +41,13 @@ services:
       - ./certbot/www:/var/www/certbot/:ro,z
       - ./certbot/conf/:/etc/nginx/ssl/:ro,z
       - static_volume:/home/app/resumedataapi/static:z
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw,z
       - ./certbot/conf/:/etc/letsencrypt/:rw,z
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 volumes:
   postgres_data:
   static_volume:

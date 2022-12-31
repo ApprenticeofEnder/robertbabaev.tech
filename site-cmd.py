@@ -6,7 +6,7 @@ import os
 app = typer.Typer()
 
 @app.command()
-def createsuperuser():
+def create_superuser():
     os.system("docker-compose run --rm api python manage.py createsuperuser")
 
 @app.command()
@@ -28,6 +28,10 @@ def logs():
 @app.command()
 def restart():
     os.system("docker-compose down; docker-compose build; docker-compose up -d")
+
+@app.command()
+def renew_https():
+    os.system("docker-compose run --rm certbot renew")
 
 if __name__ == "__main__":
     app()
