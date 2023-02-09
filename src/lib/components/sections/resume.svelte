@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Experience } from '$lib/types';
+    import Typewriter from 'svelte-typewriter'
 
 	export let experience: Experience[];
 </script>
@@ -8,7 +9,8 @@
     <h1>Resume</h1>
 
 	{#each experience as exp}
-        <h2 class="w-full border-b border-white p-1">{exp.title} - {exp.company}</h2>
+    <h2 class="w-full mt-6 p-1 text-xl"><Typewriter mode="scramble" scrambleDuration={2000}>{exp.title}</Typewriter></h2>
+    <h2 class="w-full border-b border-white/25 -mt-4 p-1 text-l"><Typewriter mode="scramble" scrambleDuration={2000}>{exp.company}</Typewriter></h2>
         <h6 class="my-3 text-white text-xs">{exp.start_date} - {exp.end_date}</h6>
         <ul>
             {#each exp.experience_sars as sar}

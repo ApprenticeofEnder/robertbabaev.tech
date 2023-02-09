@@ -39,6 +39,7 @@
 		"@fontsource/fira-mono": "^4.5.0",
 		"@mapbox/node-pre-gyp": "^1.0.9",
 		"cookie": "^0.4.1",
-		"svelte-scrolling": "^1.2.1"
+		"svelte-scrolling": "^1.2.1",
+		"svelte-typewriter": "^3.1.4"
 	}
 }
