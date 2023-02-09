@@ -8,6 +8,7 @@
 	import type { Experience, Project, Article, Contact } from '$lib/types';
 
 	import { scrollRef, scrollTop } from 'svelte-scrolling';
+    import Typewriter from 'svelte-typewriter'
 
 	export let experience: Experience[];
 	export let articles: Article[];
@@ -24,8 +25,10 @@
 	<div class="flex flex-col justify-center py-48">
 		<div class="grid md:grid-cols-2 md:divide-x divide-white">
 			<div class="flex flex-col justify-center">
-				<h1 class="w-full">ROBERT BABAEV</h1>
-				<h2 class="w-full text-center">Cyber Security / Development</h2>
+				<Typewriter mode="scramble" scrambleDuration={1000}>
+					<h1 class="w-full">ROBERT BABAEV</h1>
+					<h2 class="w-full text-center">Cyber Security / Development</h2>
+				</Typewriter>
 			</div>
 			<div class="p-14">
 				<img src="logo.png" alt="Robert Babaev's Logo" />
