@@ -25,6 +25,12 @@
 		people.
 	</p>
 	<p>
+		I also had the opportunity to act as the president of the Carleton Cyber Security Club for a
+		while, leading workshops and sparking interest in the field. I love making an impact in
+		cybersecurity, whether it's getting someone to join their first CTF, or convincing them to
+		switch to using a password manager. Also, you should really use a password manager these days.
+	</p>
+	<p>
 		Outside of work, I enjoy doing Muay Thai, playing tabletop RPGs such as Lancer, writing third
 		party RPG supplements and open source software, and spending time with my girlfriend (often on
 		the Minecraft server I host).
