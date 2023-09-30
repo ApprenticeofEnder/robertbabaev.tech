@@ -31,9 +31,10 @@
 		switch to using a password manager. Also, you should really use a password manager these days.
 	</p>
 	<p>
-		Outside of work, I enjoy doing Muay Thai, playing tabletop RPGs such as Lancer, writing third
-		party RPG supplements and open source software, and spending time with my girlfriend (often on
-		the Minecraft server I host).
+		Outside of work, I enjoy doing Muay Thai, and playing tabletop RPGs such as Lancer. I make
+		adventure modules as well as tools for new and veteran Game Masters looking to run Lancer.
+		Project NOAH, a Notion campaign planner template, is perhaps my most notable contribution to the
+		space.
 	</p>
 </div>
 
