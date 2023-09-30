@@ -23,11 +23,11 @@
 
 <Section scrollRefString={'home'} isContent={false}>
 	<div class="flex flex-col justify-center py-48">
-		<div class="grid md:grid-cols-2 md:divide-x divide-white">
+		<div class="grid md:grid-cols-2 md:divide-x divide-text">
 			<div class="flex flex-col justify-center">
 				<Typewriter mode="scramble" scrambleDuration={1000}>
 					<h1 class="w-full">ROBERT BABAEV</h1>
-					<h2 class="w-full text-center">Cyber Security / Development</h2>
+					<h2 class="w-full text-center text-text font-heading">Cyber Security / Development</h2>
 				</Typewriter>
 			</div>
 			<div class="p-14">
@@ -36,7 +36,6 @@
 		</div>
 	</div>
 </Section>
-
 <Section scrollRefString={'about'}>
 	<AboutSection />
 </Section>

@@ -5,11 +5,11 @@
 </script>
 
 <div>
-    <h1>Projects</h1>
+    <h1>// PROJECTS //</h1>
 
 	{#each projects as project}
         <h2 class="w-full my-3"><a href={project.link}>{project.title}</a></h2>
-		<p>{project.description}</p>
+		<p class="text-justify">{project.description}</p>
     {/each}
 </div>
 

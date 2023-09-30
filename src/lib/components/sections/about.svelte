@@ -1,41 +1,32 @@
+<script lang="ts">
+	import Link from '$lib/components/Link.svelte';
+</script>
+
 <div>
-	<h1>About Me</h1>
+	<h1>// ABOUT ME //</h1>
 	<img src="aboutme.jpeg" alt="Robert standing in front of the NorthSec 2022 sign" />
 	<p>
-		Hi, my name is Robert, and I'm a fourth year standing student in a Bachelor of Computer Science
-		at Carleton University. Currently, my focus is in cyber security, which I've been involved in
-		for a few years. I like to think of myself as striking a balance between security and
-		development, where I build tooling and practice secure development in the web apps I build to
-		the best of my ability. In other words, I like being either on the purple team or just doing
-		security development work.
+		Hey, I'm Robert! Thanks for stopping by. <strong
+			>If you're here, you probably want devs who can shift security left, and advocate for security
+			in people and technology alike</strong
+		>.
 	</p>
 	<p>
-		I started my cybersecurity journey in 2019 with, of all things, a business pitch. The idea? Hack
-		hackers back. Automatically. An idea riddled with flaws, but I was able to convince the judges
-		of the idea enough that they accepted me into the Hatch 2019 Cohort. It was there that I
-		actually began to study the field in more depth, and realized that in no way was this idea
-		getting off the ground. But that led me to attending a cybersecurity workshop, which got me into
-		Capture the Flag games, and that encouraged me to practice further.
+		I'm your guy. Since 2019 I've been involved with cybersecurity, and I like breaking websites
+		wide open, but I <strong>love</strong> locking them down from attack. Even this portfolio website
+		has a few nifty security tricks up its sleeve despite the small attack surface. (Try bypassing Cloudflare,
+		and if you laugh feel free to buy me a coffee.)
 	</p>
 	<p>
-		Between June 2021 and June 2022, I tried my hand at competitive Capture the Flag events, with
-		CyberSci Team Canada. I got the opportunity to travel to both Prague, Czechia and Athens, Greece
-		to compete in international CTFs. They were excellent opportunities, which I'm really thankful
-		to CyberSci for, and I was able to see some of Europe for the first time and meet awesome
-		people.
+		I've done everything from pitch a cybersecurity business while having no idea what I was doing
+		and still getting into an accelerator, to flying to Europe and <Link href="https://ecsc.eu/icc/"
+			>fighting side by side with and going toe to toe against some of the best university-level
+			hackers on the planet</Link
+		>. Am I the best penetration tester or security developer on Earth? Not by a long shot. But I
+		love educating folks looking to get into the field through presentations at my university, and
+		advocating for better security in both conversation and research.
 	</p>
-	<p>
-		I also had the opportunity to act as the president of the Carleton Cyber Security Club for a
-		while, leading workshops and sparking interest in the field. I love making an impact in
-		cybersecurity, whether it's getting someone to join their first CTF, or convincing them to
-		switch to using a password manager. Also, you should really use a password manager these days.
-	</p>
-	<p>
-		Outside of work, I enjoy doing Muay Thai, and playing tabletop RPGs such as Lancer. I make
-		adventure modules as well as tools for new and veteran Game Masters looking to run Lancer.
-		Project NOAH, a Notion campaign planner template, is perhaps my most notable contribution to the
-		space.
-	</p>
+	<p>Contact info's down below. Let's chat!</p>
 </div>
 
 <style>
