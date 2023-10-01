@@ -25,7 +25,7 @@
 		love educating folks looking to get into the field through presentations at my university, and
 		advocating for better security in both conversation and research.
 	</p>
-	<p>Contact info's down below. Let's chat!</p>
+	<p>You can find my contact information at the bottom of this page, below my resume, projects, and articles. Let's chat!</p>
 </div>
 
 <style>
