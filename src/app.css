@@ -49,13 +49,7 @@ p {
 }
 
 a {
-	@apply italic text-accent-400;
-	/* color: var(--accent-color); */
 	text-decoration: none;
-}
-
-a:hover {
-	@apply animate-pulse;
 }
 
 h1 {

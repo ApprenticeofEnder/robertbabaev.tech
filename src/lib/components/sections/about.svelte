@@ -14,11 +14,11 @@
 		That's my mission. Since 2019 I've been involved with cybersecurity, and while I like breaking websites
 		wide open, I love locking them down from attacks. Even this portfolio website has a few nifty
 		security tricks up its sleeve despite the small attack surface. (Try bypassing Cloudflare, and
-		if you laugh feel free to buy me a coffee.)
+		if you laugh I'd love to grab a coffee.)
 	</p>
 	<p>
 		I've done everything from pitch a cybersecurity business while having just started in the field
-		and still getting into an accelerator, to flying to Europe and <Link href="https://ecsc.eu/icc/"
+		and still getting into an accelerator, to flying to Europe and <Link standOut={false} href="https://ecsc.eu/icc/"
 			>collaborating with and competing against some of the best university-level
 			hackers on the planet</Link
 		>. Am I the best penetration tester or security developer on Earth? Not by a long shot. But I
