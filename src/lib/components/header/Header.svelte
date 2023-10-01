@@ -21,7 +21,7 @@
 <header>
 	<nav class="w-full">
 		{#if menuVisible}
-			<ul id="menu-links" class="right-0 top-10" transition:fly={{ x: 200 }} on:click_outside={menuOff}>
+			<ul id="menu-links" class="right-8 md:right-0 top-10" transition:fly={{ x: 200 }} on:click_outside={menuOff}>
 				{#each menuOptions as option}
 					<li>
 						<a
@@ -37,7 +37,7 @@
 		<a
 			use:clickOutside
 			href={'javascript:void(0);'}
-			class="icon mx-5 my-2 text-text hover:text-accent-400 right-0"
+			class="icon md:mx-5 md:my-2 text-text hover:text-accent-400 right-4 md:right-0"
 			on:click={menuToggle}
 			on:click_outside={menuOff}
 		>

@@ -34,6 +34,7 @@
 				<img src="logo.png" alt="Robert Babaev's Logo" />
 			</div>
 		</div>
+		<h2 class="animate-pulse my-4 md:text-lg">SCROLL DOWN</h2>
 	</div>
 </Section>
 <Section scrollRefString={'about'}>
