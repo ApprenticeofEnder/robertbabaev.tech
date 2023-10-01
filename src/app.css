@@ -1,4 +1,5 @@
 @import '@fontsource/fira-mono';
+@import url('https://fonts.googleapis.com/css?family=Victor Mono:700|Victor Mono:400');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,11 +20,13 @@
 	--column-margin-top: 4rem;
 }
 
+html,body{
+    overflow-x: hidden;
+}
+
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
-	background: var(--primary-color) url("/background.png") no-repeat fixed center;
 	background-size: cover;
 }
 
@@ -37,36 +40,35 @@ h1,
 h2,
 p, li {
 	font-weight: 400;
-	color: var(--heading-color);
+	@apply text-text;
 }
 
 p {
+	@apply text-justify text-text font-body;
 	line-height: 1.5;
 }
 
 a {
-	color: var(--accent-color);
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
-}
-
 h1 {
-	font-size: 2rem;
-	text-align: center;
+	@apply font-heading font-bold text-center text-2xl md:text-4xl text-text drop-shadow-[0_4px_3px_rgba(0,255,0,0.5)];
 	margin-bottom: 0.5rem;
 }
 
 h2 {
-	font-size: 1rem;
+	@apply font-heading text-center text-lg text-text drop-shadow-[0_4px_3px_rgba(0,255,0,0.5)];
 	margin-bottom: 0.5rem;
 }
 
+strong {
+	@apply text-accent-400;
+}
+
 pre {
+	@apply font-body;
 	font-size: 16px;
-	font-family: var(--font-mono);
 	background-color: rgba(255, 255, 255, 0.45);
 	border-radius: 3px;
 	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);

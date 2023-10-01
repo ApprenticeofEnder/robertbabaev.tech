@@ -11,7 +11,7 @@
 	let section: HTMLElement;
 	let intersecting: boolean;
 
-	let classString = 'translucent-black';
+	let classString = 'bg-background/25';
 
 	function blurSlide(
 		node: Element,

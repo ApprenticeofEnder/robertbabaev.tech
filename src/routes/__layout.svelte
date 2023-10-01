@@ -5,7 +5,7 @@
 
 <Header />
 
-<main>
+<main class="w-full md:max-w-7xl m-0 md:m-auto">
 	<slot />
 </main>
 
@@ -17,10 +17,10 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1440px;
-		margin: 0 auto;
+		/* padding: 1rem; */
+		/* width: 100%; */
+		/* max-width: 1440px; */
+		/* margin: 0 auto; */
 		box-sizing: border-box;
 	}
 
