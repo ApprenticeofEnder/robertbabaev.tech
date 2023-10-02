@@ -32,3 +32,8 @@ export type Contact = {
 export interface IHash {
     [details: string] : string;
 } 
+
+export type TailwindData = {
+    colors?: string;
+    border?: string;
+}
