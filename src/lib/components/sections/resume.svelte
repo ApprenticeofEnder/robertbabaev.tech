@@ -14,7 +14,7 @@
         <h6 class="my-3 text-white text-xs font-body">{exp.start_date} - {exp.end_date}</h6>
         <ul>
             {#each exp.experience_sars as sar}
-            <p><li class="my-2 text-s text-justify leading-relaxed">{sar.statement}</li></p>
+            <li class="my-2 text-s text-justify leading-relaxed align-top"><p class="inline-block align-top">{sar.statement}</p></li>
             {/each}
         </ul>   
     {/each}
@@ -23,5 +23,9 @@
 <style>
     li::before {
         content: '> ';
+    }
+
+    p{
+        width:97%;
     }
 </style>
