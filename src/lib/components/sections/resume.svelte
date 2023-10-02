@@ -6,7 +6,7 @@
 
     let resumeLink: string = "#resume";
     let downloadButtonClasses: TailwindData = {
-        colors: "text-text border-text hover:bg-accent-400 hover:border-background hover:text-background",
+        colors: "text-text border-text hover:bg-accent-400 hover:border-background hover:text-background hover:animate-pulse duration-300 transition-colors",
         border: "border-solid border-4 rounded"
     };
 </script>
