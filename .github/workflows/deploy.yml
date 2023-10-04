@@ -11,7 +11,7 @@ jobs:
         with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
-          user: ${{secrets.SSH_USER}}
+          username: ${{secrets.SSH_USER}}
 
           script: |
             if [ ! -d "robertbabaev.tech" ]; then
