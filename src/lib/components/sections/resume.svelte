@@ -4,6 +4,7 @@
 
 	export let experience: Experience[];
 
+	let resumeLinkEnabled: boolean = false;
 	let resumeLink: string = '#resume';
 	let downloadButtonClasses: TailwindData = {
 		colors:
@@ -15,13 +16,15 @@
 <div>
 	<h1>// RESUME //</h1>
 
-	<a
-		href={resumeLink}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="text-base drop-shadow-glow block w-fit m-auto p-4 {downloadButtonClasses.colors} {downloadButtonClasses.border}"
-		>DOWNLOAD <i class="fa-solid fa-file-arrow-down" /></a
-	>
+	{#if resumeLinkEnabled}
+		<a
+			href={resumeLink}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-base drop-shadow-glow block w-fit m-auto p-4 {downloadButtonClasses.colors} {downloadButtonClasses.border}"
+			>DOWNLOAD <i class="fa-solid fa-file-arrow-down" /></a
+		>
+	{/if}
 
 	{#each experience as exp}
 		<h2 class="w-full mt-6 p-1 text-xl">
