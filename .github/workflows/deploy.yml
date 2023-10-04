@@ -19,10 +19,10 @@ jobs:
             else
               git pull --recurse-submodules
             fi
+            cd robertbabaev.tech
             if [ ! -f ".env" ]; then
               echo "${{secrets.ENV_FILE}}" > .env
             fi
-            cd robertbabaev.tech
             ./site-cmd.py stop
             ./site-cmd.py build
             ./site-cmd.py start
