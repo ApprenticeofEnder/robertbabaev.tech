@@ -20,7 +20,7 @@ jobs:
               git pull --recurse-submodules
             fi
             if [ ! -f ".env" ]; then
-              echo "${{ENV_FILE}}" > .env
+              echo "${{secrets.ENV_FILE}}" > .env
             fi
             cd robertbabaev.tech
             ./site-cmd.py stop
