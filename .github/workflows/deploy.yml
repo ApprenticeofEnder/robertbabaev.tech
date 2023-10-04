@@ -1,0 +1,28 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          username: ${{secrets.SSH_USER}}
+
+          script: |
+            if [ ! -d "robertbabaev.tech" ]; then
+              git clone --recurse-submodules git@github.com:ApprenticeofEnder/robertbabaev.tech.git
+            else
+              git pull --recurse-submodules
+            fi
+            cd robertbabaev.tech
+            ./site-cmd.py stop
+            ./site-cmd.py build
+            ./site-cmd.py start
+            echo "// DEPLOYMENT COMPLETE //"
+            
+            
