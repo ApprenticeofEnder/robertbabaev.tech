@@ -46,6 +46,9 @@ module.exports = {
           950: '#071604',
         },
       },
+      dropShadow: {
+        'glow': '0 4px 3px rgba(0,255,0,0.5)'
+      },
       fontSize: {
         sm: '0.750rem',
         base: '1rem',
