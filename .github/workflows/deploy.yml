@@ -14,14 +14,18 @@ jobs:
           username: ${{secrets.SSH_USER}}
 
           script: |
+            # Using Deploy Keys to avoid Github overwrite shenanigans
             if [ ! -d "robertbabaev.tech" ]; then
               git clone --recurse-submodules git@github.com:ApprenticeofEnder/robertbabaev.tech.git
             else
               git pull --recurse-submodules
             fi
             cd robertbabaev.tech
+
+            # Need to do a first time install if there's no .env
             if [ ! -f ".env" ]; then
               echo "${{secrets.ENV_FILE}}" > .env
+              echo "${{secrets.HOST_PASSWORD}}" | sudo -S ./init-letsencrypt.sh ${{secrets.DOMAINS}} ${{secrets.EMAIL}}
             fi
             ./site-cmd.py stop
             ./site-cmd.py build
