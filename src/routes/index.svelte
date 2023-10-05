@@ -17,7 +17,7 @@
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Robert Babaev's Personal Website" />
+	<meta name="description" content="Robert Babaev's (Possibly Overengineered) Personal Website" />
 </svelte:head>
 
 <section class="translucent-black">
