@@ -15,5 +15,4 @@ jobs:
           git clone --recurse-submodules https://github.com/ApprenticeofEnder/robertbabaev.tech.git
           cd robertbabaev.tech
           echo "${{secrets.ENV_FILE}}" > .env
-          echo "${{secrets.HOST_PASSWORD}}" | sudo -S ./init-letsencrypt.sh ${{secrets.DOMAINS}} ${{secrets.EMAIL}}
           echo "// PLEASE COMPLETE REMAINING INSTALLATION MANUALLY //"
