@@ -1,0 +1,19 @@
+name: First Time Setup
+on: repository_dispatch
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{secrets.SSH_HOST}}
+        key: ${{secrets.SSH_PRIVATE_KEY}}
+        username: ${{secrets.SSH_USER}}
+
+        script: |
+          git clone --recurse-submodules https://github.com/ApprenticeofEnder/robertbabaev.tech.git
+          cd robertbabaev.tech
+          echo "${{secrets.ENV_FILE}}" > .env
+          echo "${{secrets.HOST_PASSWORD}}" | sudo -S ./init-letsencrypt.sh ${{secrets.DOMAINS}} ${{secrets.EMAIL}}
+          echo "// PLEASE COMPLETE REMAINING INSTALLATION MANUALLY //"
