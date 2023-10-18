@@ -7,5 +7,5 @@
 	{href}
 	target="_blank"
 	rel="noopener noreferrer"
-	class="{standOut ? 'text-accent-400' : 'text-text'} hover:animate-pulse italic"><slot /></a
+	class="{standOut ? 'text-accent-200' : 'text-text'} hover:animate-pulse italic"><slot /></a
 >
