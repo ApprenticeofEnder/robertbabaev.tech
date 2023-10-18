@@ -15,7 +15,7 @@
 	export let projects: Project[];
 	export let contacts: Contact[];
 
-	let logoPhoto: string = "logo_v2.png";
+	let logoPhoto: string = "logo.png";
 </script>
 
 <svelte:head>
