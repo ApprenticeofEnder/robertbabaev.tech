@@ -14,6 +14,8 @@
 	export let articles: Article[];
 	export let projects: Project[];
 	export let contacts: Contact[];
+
+	let logoPhoto: string = "logo_v2.png";
 </script>
 
 <svelte:head>
@@ -31,7 +33,7 @@
 				</Typewriter>
 			</div>
 			<div class="p-14">
-				<img src="logo.png" alt="Robert Babaev's Logo" />
+				<img src="{logoPhoto}" alt="Robert Babaev's Logo" />
 			</div>
 		</div>
 		<h2 class="animate-pulse my-4 md:text-lg">SCROLL DOWN</h2>
