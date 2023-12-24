@@ -5,7 +5,7 @@
 <div>
 	<h1>// ABOUT ME //</h1>
 	<img
-		src="aboutme.jpeg"
+		src="PFP_V1.jpg"
 		alt="Robert standing in front of the NorthSec 2022 sign"
 		class="w-60 h-52 md:w-96 md:h-80 -scale-x-100 m-auto object-cover object-right rounded-md"
 	/>
