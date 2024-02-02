@@ -5,9 +5,9 @@
 <div>
 	<h1>// ABOUT ME //</h1>
 	<img
-		src="PFP_V1.jpg"
-		alt="Robert standing in front of the NorthSec 2022 sign"
-		class="m-auto rounded-md"
+		src="PFP_V2.jpg"
+		alt="A caucasian man in a black collared shirt turned at a 45 degree angle and smiling"
+		class="m-auto rounded-md w-1/2 h-auto"
 	/>
 	<p>
 		Hey, I'm Robert! Thanks for stopping by. In the modern world, having not only security be an
@@ -27,8 +27,8 @@
 			href="https://ecsc.eu/icc/"
 			>collaborating with and competing against some of the best university-level hackers on the
 			planet</Link
-		>. Am I the best penetration tester or security developer on Earth? Not by a long shot. But I
-		love educating folks looking to get into the field through presentations at my university, and
+		>. Am I the best penetration tester or security developer on Earth? Who knows? But I love
+		educating folks looking to get into the field through presentations at my university, and
 		advocating for better security in both conversation and research.
 	</p>
 	<p>

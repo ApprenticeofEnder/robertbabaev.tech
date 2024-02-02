@@ -31,13 +31,15 @@
 			<Typewriter mode="scramble" scrambleDuration={2000}><span>{exp.title}</span></Typewriter>
 		</h2>
 		<h2 class="w-full border-b border-white/25 -mt-4 p-1 text-l">
-			<Typewriter mode="scramble" scrambleDuration={2000}><span>{exp.company}</span></Typewriter>
+			<Typewriter mode="scramble" scrambleDuration={2000}
+				><span>{`${exp.company} - ${exp.location}`}</span></Typewriter
+			>
 		</h2>
-		<h6 class="my-3 text-white text-xs font-body">{exp.start_date} - {exp.end_date}</h6>
+		<h6 class="my-3 text-white text-xs font-body">{exp.start} - {exp.end}</h6>
 		<ul>
-			{#each exp.experience_sars as sar}
+			{#each exp.sar as sar}
 				<li class="my-2 text-s text-justify leading-relaxed align-top">
-					<p class="inline-block align-top">{sar.statement}</p>
+					<p class="inline-block align-top">{sar}</p>
 				</li>
 			{/each}
 		</ul>
@@ -47,9 +49,18 @@
 <style>
 	li::before {
 		content: '> ';
+		display: inline-block;
+		margin-top: 2px;
+		margin-right: 10px;
 	}
 
 	p {
-		width: 97%;
+		width: 90%;
+	}
+
+	@media screen and (min-width: 480px) {
+		p {
+			width: 96%;
+		}
 	}
 </style>
