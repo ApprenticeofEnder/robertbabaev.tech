@@ -1,15 +1,22 @@
 <script lang="ts">
-	import type { Contact } from '$lib/types';
+	import type { Href } from '$lib/types';
 	import Link from '$lib/components/Link.svelte';
 
-	export let contacts: Contact[];
+	// export let contacts: Contact[];
+	export let email: Href;
+	export let github: Href;
+	export let linkedin: Href;
+
+	let contacts: Href[] = [email, github, linkedin];
 </script>
 
 <div class="max-w-full">
 	<h1>// CONTACT //</h1>
 	<div class="grid grid-cols-3 gap-4">
 		{#each contacts as contact}
-			<div class="text-3xl text-center"><Link href={contact.link}><i class={contact.icon} /></Link></div>
+			<div class="text-3xl text-center">
+				<Link href={contact.link}><i class={contact.icon} /></Link>
+			</div>
 		{/each}
 	</div>
 	<!-- <ul>

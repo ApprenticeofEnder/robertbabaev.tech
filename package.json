@@ -40,6 +40,7 @@
 		"@mapbox/node-pre-gyp": "^1.0.9",
 		"cookie": "^0.4.1",
 		"svelte-scrolling": "^1.2.1",
-		"svelte-typewriter": "^3.1.4"
+		"svelte-typewriter": "^3.1.4",
+		"yaml": "^2.3.4"
 	}
 }

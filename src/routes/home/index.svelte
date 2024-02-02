@@ -1,26 +1,25 @@
 <script lang="ts">
 	import Section from '$lib/components/Section.svelte';
 	import AboutSection from '$lib/components/sections/about.svelte';
-	import ArticleSection from '$lib/components/sections/articles.svelte';
 	import ContactSection from '$lib/components/sections/contacts.svelte';
 	import ProjectSection from '$lib/components/sections/projects.svelte';
 	import ResumeSection from '$lib/components/sections/resume.svelte';
-	import type { Experience, Project, Article, Contact } from '$lib/types';
+	import type { Experience, Project, BasicData } from '$lib/types';
 
 	import { scrollRef, scrollTop } from 'svelte-scrolling';
-    import Typewriter from 'svelte-typewriter'
+	import Typewriter from 'svelte-typewriter';
 
 	export let experience: Experience[];
-	export let articles: Article[];
+	export let basic: BasicData;
+	// export let articles: Article[];
 	export let projects: Project[];
-	export let contacts: Contact[];
 
-	let logoPhoto: string = "logo.png";
+	let logoPhoto: string = 'logo.png';
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Robert Babaev's (Possibly Overengineered) Personal Website" />
+	<meta name="description" content="Robert Babaev's Personal Website" />
 </svelte:head>
 
 <Section scrollRefString={'home'} isContent={false}>
@@ -33,12 +32,13 @@
 				</Typewriter>
 			</div>
 			<div class="p-14">
-				<img src="{logoPhoto}" alt="Robert Babaev's Logo" />
+				<img src={logoPhoto} alt="Robert Babaev's Logo" />
 			</div>
 		</div>
 		<h2 class="animate-pulse my-4 md:text-lg">SCROLL DOWN</h2>
 	</div>
 </Section>
+
 <Section scrollRefString={'about'}>
 	<AboutSection />
 </Section>
@@ -47,16 +47,12 @@
 	<ResumeSection {experience} />
 </Section>
 
-<Section scrollRefString={'articles'}>
-	<ArticleSection {articles} />
-</Section>
-
 <Section scrollRefString={'projects'}>
 	<ProjectSection {projects} />
 </Section>
 
 <Section scrollRefString={'contact'}>
-	<ContactSection {contacts} />
+	<ContactSection github={basic.github} email={basic.email} linkedin={basic.linkedin} />
 </Section>
 
 <section />

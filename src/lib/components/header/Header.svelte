@@ -7,7 +7,7 @@
 
 	let menuVisible: boolean = false;
 
-	let menuOptions: string[] = ['home', 'about', 'resume', 'articles', 'projects', 'contact'];
+	let menuOptions: string[] = ['home', 'about', 'resume', 'projects', 'contact'];
 
 	function menuOff() {
 		menuVisible = false;
@@ -21,7 +21,12 @@
 <header>
 	<nav class="w-full">
 		{#if menuVisible}
-			<ul id="menu-links" class="right-8 md:right-0 top-10" transition:fly={{ x: 200 }} on:click_outside={menuOff}>
+			<ul
+				id="menu-links"
+				class="right-8 md:right-0 top-10"
+				transition:fly={{ x: 200 }}
+				on:click_outside={menuOff}
+			>
 				{#each menuOptions as option}
 					<li>
 						<a
