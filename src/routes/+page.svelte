@@ -6,10 +6,10 @@
 <div class="text-center">
 	<div class="flex justify-center">
 		<div>
-			<div class="grid grid-flow-col grid-cols-2">
+			<div class="grid md:grid-cols-2 md:divide-x divide-text gap-4 mb-4">
 				<div class="flex flex-col justify-center">
-					<Heading tag="h2" color="text-text"
-						><Typewriter mode="scramble" scrambleDuration={1000}>ROBERT BABAEV</Typewriter></Heading
+					<Typewriter mode="scramble" scrambleDuration={1000}>
+						<Heading tag="h2" color="text-text">ROBERT BABAEV</Heading></Typewriter
 					>
 				</div>
 				<Img src="/images/enderlogo_v2.png" size="max-w-md" alt="sample 1" />
