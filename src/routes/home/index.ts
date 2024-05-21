@@ -3,7 +3,7 @@ import type { RequestHandler } from './__types';
 import type { ResumeData } from '$lib/types';
 
 async function getResumeData(): Promise<Response> {
-	return fetch(`http://localhost:3000/data/resume_data.yaml`, {
+	return fetch(`/data/resume_data.yaml`, {
 		method: 'get'
 	});
 }
