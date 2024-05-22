@@ -5,7 +5,7 @@
 
 @layer base {
 	:root {
-		@apply bg-background text-text font-body;
+		@apply bg-background font-body text-text;
 	}
 
 	h1,
@@ -15,14 +15,14 @@
 	}
 
 	h1 {
-		@apply text-primary-500 text-2xl font-bold md:text-4xl;
+		@apply text-2xl font-bold text-primary-500 md:text-4xl;
 	}
 
 	h2 {
-		@apply text-text text-xl md:text-2xl;
+		@apply text-xl text-text md:text-2xl;
 	}
 
 	h3 {
-		@apply text-text text-lg md:text-xl;
+		@apply text-lg text-text md:text-xl;
 	}
 }
