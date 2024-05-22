@@ -6,3 +6,10 @@ test('index page has expected h1', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.getByRole('heading', { name: FULL_NAME })).toBeVisible();
 });
+
+test('index page has expected description', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('paragraph')).toHaveText(
+		'A security-minded tech professional at the intersection of security, development, and people.'
+	);
+});
