@@ -11,11 +11,11 @@
 	h1,
 	h2,
 	h3 {
-		@apply font-heading drop-shadow-glow;
+		@apply font-heading;
 	}
 
 	h1 {
-		@apply text-2xl font-bold text-primary-500 md:text-4xl;
+		@apply text-2xl font-bold text-primary-500 drop-shadow-glow md:text-4xl;
 	}
 
 	h2 {
@@ -24,5 +24,9 @@
 
 	h3 {
 		@apply text-lg text-text md:text-xl;
+	}
+
+	p {
+		@apply py-4;
 	}
 }
