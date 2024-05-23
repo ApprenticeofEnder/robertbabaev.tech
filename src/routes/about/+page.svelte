@@ -1,23 +1,7 @@
 <script lang="ts">
-	import { Blockquote, Heading, Hr, Img, Li, List } from 'flowbite-svelte';
-	import { AccordionItem, Accordion } from 'flowbite-svelte';
-	import {
-		CheckCircleSolid,
-		CloseCircleSolid,
-		GlobeSolid,
-		LightbulbSolid,
-		QuoteSolid,
-		UserSolid
-	} from 'flowbite-svelte-icons';
+	import { Heading, Img } from 'flowbite-svelte';
 	import Typewriter from 'svelte-typewriter';
-	import {
-		Table,
-		TableBody,
-		TableBodyCell,
-		TableBodyRow,
-		TableHead,
-		TableHeadCell
-	} from 'flowbite-svelte';
+	import { Table, TableBody, TableBodyCell, TableBodyRow } from 'flowbite-svelte';
 
 	type TableData = {
 		key: string;
