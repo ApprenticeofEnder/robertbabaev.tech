@@ -23,7 +23,7 @@
 		<NavLi href="/contact">Contact</NavLi> -->
 		</NavUl>
 	</Navbar>
-	<div class="mt-16">
+	<div class="mt-16 md:mt-20">
 		<slot></slot>
 	</div>
 </div>

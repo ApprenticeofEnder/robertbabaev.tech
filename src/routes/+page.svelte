@@ -1,6 +1,25 @@
 <script>
 	import { Heading, Img, Button, ButtonGroup } from 'flowbite-svelte';
 	import Typewriter from 'svelte-typewriter';
+
+	const buttonLinks = [
+		{
+			href: '/about',
+			text: 'About'
+		},
+		{
+			href: '/experience',
+			text: 'Experience'
+		},
+		{
+			href: '/projects',
+			text: 'Projects'
+		},
+		{
+			href: '/contact',
+			text: 'Contact'
+		}
+	];
 </script>
 
 <div class="flex justify-center">
@@ -25,23 +44,13 @@
 		</p>
 		<div class="flex justify-center mt-4 animate-fade">
 			<ButtonGroup>
-				<Button
-					class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition"
-					outline
-					href="/about">About</Button
-				>
-				<Button
-					class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition"
-					outline>Experience</Button
-				>
-				<Button
-					class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition"
-					outline>Projects</Button
-				>
-				<Button
-					class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition"
-					outline>Contact</Button
-				>
+				{#each buttonLinks as buttonLink}
+					<Button
+						class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition"
+						outline
+						href={buttonLink.href}>{buttonLink.text}</Button
+					>
+				{/each}
 			</ButtonGroup>
 		</div>
 	</div>
