@@ -24,7 +24,7 @@
 	});
 </script>
 
-<div class="flex flex-initial justify-center">
+<main class="flex flex-initial justify-center">
 	<div class="lg:w-3/4">
 		<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center"
 			>About Me</Heading
@@ -78,4 +78,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</main>
