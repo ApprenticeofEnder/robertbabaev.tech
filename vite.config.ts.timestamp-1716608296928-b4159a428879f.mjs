@@ -1,0 +1,13 @@
+// vite.config.ts
+import { sveltekit } from "file:///home/ender/Documents/Projects/robertbabaev.tech/node_modules/@sveltejs/kit/src/exports/vite/index.js";
+import { defineConfig } from "file:///home/ender/Documents/Projects/robertbabaev.tech/node_modules/vitest/dist/config.js";
+var vite_config_default = defineConfig({
+  plugins: [sveltekit()],
+  test: {
+    include: ["src/**/*.{test,spec}.{js,ts}"]
+  }
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvaG9tZS9lbmRlci9Eb2N1bWVudHMvUHJvamVjdHMvcm9iZXJ0YmFiYWV2LnRlY2hcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIi9ob21lL2VuZGVyL0RvY3VtZW50cy9Qcm9qZWN0cy9yb2JlcnRiYWJhZXYudGVjaC92aXRlLmNvbmZpZy50c1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vaG9tZS9lbmRlci9Eb2N1bWVudHMvUHJvamVjdHMvcm9iZXJ0YmFiYWV2LnRlY2gvdml0ZS5jb25maWcudHNcIjtpbXBvcnQgeyBzdmVsdGVraXQgfSBmcm9tICdAc3ZlbHRlanMva2l0L3ZpdGUnO1xuaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAndml0ZXN0L2NvbmZpZyc7XG5cbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XG5cdHBsdWdpbnM6IFtzdmVsdGVraXQoKV0sXG5cdHRlc3Q6IHtcblx0XHRpbmNsdWRlOiBbJ3NyYy8qKi8qLnt0ZXN0LHNwZWN9Lntqcyx0c30nXVxuXHR9XG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7QUFBa1UsU0FBUyxpQkFBaUI7QUFDNVYsU0FBUyxvQkFBb0I7QUFFN0IsSUFBTyxzQkFBUSxhQUFhO0FBQUEsRUFDM0IsU0FBUyxDQUFDLFVBQVUsQ0FBQztBQUFBLEVBQ3JCLE1BQU07QUFBQSxJQUNMLFNBQVMsQ0FBQyw4QkFBOEI7QUFBQSxFQUN6QztBQUNELENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
