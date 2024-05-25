@@ -12,7 +12,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"data": "node scripts/convertData.js"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -48,6 +49,7 @@
 	"type": "module",
 	"dependencies": {
 		"flowbite-svelte-icons": "^1.6.1",
+		"svelte-awesome-icons": "^1.2.1",
 		"svelte-scrolling": "^1.4.0",
 		"svelte-typewriter": "^3.2.3",
 		"yaml": "^2.4.2"

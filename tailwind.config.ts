@@ -8,12 +8,33 @@ export default {
 	theme: {
 		extend: {
 			animation: {
-				fade: 'fadeIn 1s ease-in-out'
+				fade: 'fadeIn 1s ease-in-out',
+				'fade-fast': 'fadeIn 0.5s ease-in-out',
+				'glow-in': 'glowIn 0.2s ease-in-out',
+				'glow-out': 'glowOut 0.2s ease-in-out',
+				'glow-in-lg': 'glowInLg 0.2s ease-in-out',
+				'glow-out-lg': 'glowOutLg 0.2s ease-in-out'
 			},
 			keyframes: {
 				fadeIn: {
 					'0%': { opacity: '0' },
 					'100%': { opacity: '100%' }
+				},
+				glowIn: {
+					'0%': { filter: 'drop-shadow(0 0 #0000)' },
+					'100%': { filter: 'drop-shadow(0 4px 3px rgba(0,255,0,0.5))' }
+				},
+				glowOut: {
+					'0%': { filter: 'drop-shadow(0 4px 3px rgba(0,255,0,0.5))' },
+					'100%': { filter: 'drop-shadow(0 0 #0000)' }
+				},
+				glowInLg: {
+					'0%': { filter: 'drop-shadow(0 0 #0000)' },
+					'100%': { filter: 'drop-shadow(0 8px 6px rgba(0,255,0,0.5))' }
+				},
+				glowOutLg: {
+					'0%': { filter: 'drop-shadow(0 8px 6px rgba(0,255,0,0.5))' },
+					'100%': { filter: 'drop-shadow(0 0 #0000)' }
 				}
 			},
 			colors: {
@@ -60,7 +81,8 @@ export default {
 				}
 			},
 			dropShadow: {
-				glow: '0 4px 3px rgba(0,255,0,0.5)'
+				glow: '0 4px 3px rgba(0,255,0,0.5)',
+				'glow-lg': '0 8px 6px rgba(0,255,0,0.5)'
 			},
 			fontSize: {
 				sm: '0.750rem',

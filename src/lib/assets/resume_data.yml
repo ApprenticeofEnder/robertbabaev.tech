@@ -110,9 +110,9 @@ experience:
     src: '/images/innovapost.png'
     alt: 'Innovapost'
     tech:
-      -
+      - 'Example'
     sar:
-      -
+      - 'Example'
   - title: 'Co-op Software Engineer'
     company: 'Barracuda Networks'
     start: 'Jan. 2023'
@@ -121,36 +121,42 @@ experience:
     src: '/images/barracuda.png'
     alt: 'Barracuda'
     tech:
-      -
+      - 'Example'
     sar:
-      -
-  # - title: 'Co-op Penetration Tester'
-  #   company: 'SoftwareSecured'
-  #   start: 'May. 2022'
-  #   end: 'Aug. 2022'
-  #   location: 'Ottawa, ON'
-  #   tech:
-  #     -
-  #   sar:
-  #     -
-  # - title: 'Part-Time Software Developer Developer'
-  #   company: 'SoftwareSecured'
-  #   start: 'Jan. 2022'
-  #   end: 'Apr. 2022'
-  #   location: 'Ottawa, ON'
-  #   tech:
-  #     -
-  #   sar:
-  #     -
-  # - title: 'Co-op Software Developer'
-  #   company: 'Reshift Security'
-  #   start: 'May. 2021'
-  #   end: 'Dec. 2021'
-  #   location: 'Ottawa, ON'
-  #   tech:
-  #     -
-  #   sar:
-  #     -
+      - 'Example'
+  - title: 'Co-op Penetration Tester'
+    company: 'SoftwareSecured'
+    start: 'May. 2022'
+    end: 'Aug. 2022'
+    location: 'Ottawa, ON'
+    src: '/images/softwaresecured.png'
+    alt: 'SoftwareSecured'
+    tech:
+      - 'Example'
+    sar:
+      - 'Example'
+  - title: 'Co-op Software Developer'
+    company: 'Reshift Security'
+    start: 'May. 2021'
+    end: 'Dec. 2021'
+    location: 'Ottawa, ON'
+    src: '/images/reshiftsecurity.png'
+    alt: 'Reshift Security'
+    tech:
+      - 'Example'
+    sar:
+      - 'Example'
+projects:
+  - title: 'Example'
+    start: '2023'
+    end: 'Present (WIP)'
+    featured: true
+    alt: 'Example Project'
+    description: 'Blah blah blah'
+    tech:
+      - 'Example'
+    sar:
+      - 'Example'
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'

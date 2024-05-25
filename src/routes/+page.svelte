@@ -46,7 +46,7 @@
 			<ButtonGroup>
 				{#each buttonLinks as buttonLink}
 					<Button
-						class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition"
+						class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition focus:ring-0"
 						outline
 						href={buttonLink.href}>{buttonLink.text}</Button
 					>
