@@ -73,8 +73,8 @@
 					{/each}
 				</List>
 			{/if}
-			Highlights:
 			{#if currentExperience.sar}
+				Highlights:
 				<List tag="ul" list="none">
 					{#each currentExperience.sar as sar}
 						<Li icon>

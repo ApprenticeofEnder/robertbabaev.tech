@@ -89,19 +89,18 @@
 #   - 'Microservices'
 #   - 'Agile'
 experience:
-  # - title: 'Co-op, Cybersecurity'
-  #   company: 'BDO Canada'
-  #   start: 'May. 2024'
-  #   end: 'Present'
-  #   location: 'Ottawa, ON'
-  #   src: '/images/bdo.png'
-  #   alt: 'BDO Canada'
-  #   tech:
-  #     - 'Microsoft Azure'
-  #     - 'Powershell'
-  #     - 'Microsoft Sentinel'
-  #   sar:
-  #     - 'BLAH'
+  - title: 'Co-op, Cybersecurity'
+    company: 'BDO Canada'
+    start: 'May. 2024'
+    end: 'Present'
+    location: 'Ottawa, ON'
+    src: '/images/bdo.png'
+    alt: 'BDO Canada'
+    tech:
+      - 'Microsoft Azure'
+      - 'Powershell'
+      - 'Microsoft Sentinel'
+    sar:
   - title: 'Co-op Security Specialist'
     company: 'Innovapost'
     start: 'May. 2023'
@@ -200,17 +199,16 @@ projects:
       - 'PostgreSQL'
       - 'Supabase'
     sar:
-  - title: 'Example'
-    start: '2023'
-    end: 'Present (WIP)'
+  - title: 'Selenium Oxide'
+    start: 'Mar. 2022'
+    end: 'Aug. 2022'
     featured: true
-    src: '/images/reshiftsecurity.png'
-    alt: 'Example Project'
-    description: 'Blah blah blah'
+    alt: 'Selenium Oxide'
+    description: 'Created a Selenium wrapper designed to streamline browser-based web exploitation. Endorsed by ex-IBM penetration testers.'
     tech:
-      - 'Example'
+      - 'Python'
+      - 'Selenium'
     sar:
-      - 'Example'
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'
