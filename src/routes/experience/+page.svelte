@@ -43,7 +43,7 @@
 		<svelte:fragment slot="header">
 			<div class="inline-block">
 				<Typewriter mode="scramble" scrambleDuration={1000}
-					><h3 class="text-text hover:text-text hover:animate-pulse drop-shadow-glow">
+					><h3 class="text-accent-200 hover:text-accent-200 hover:animate-pulse drop-shadow-glow">
 						{currentExperience.company}
 					</h3>
 				</Typewriter>

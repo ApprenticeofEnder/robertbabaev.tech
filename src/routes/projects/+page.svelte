@@ -25,7 +25,7 @@
 	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
 		>Projects</Heading
 	>
-	<Gallery class="gap-4 grid-cols-2 md:grid-cols-3 md:w-3/4 mx-auto animate-fade">
+	<Gallery class="gap-4 grid-cols-2 lg:grid-cols-3 xl:w-3/4 mx-auto animate-fade">
 		{#each projects as projectItem}
 			{#if projectItem.src}
 				<Button
@@ -57,7 +57,7 @@
 						showProject(projectItem);
 					}}
 				>
-					<div class="h-[100px] w-[100px] md:h-[320px] md:w-[320px] flex flex-col justify-center">
+					<div class="h-[100px] w-[100px] lg:h-[320px] lg:w-[320px] flex flex-col justify-center">
 						<div class="text-xl md:text-2xl">{projectItem.title}</div>
 					</div>
 					{#if projectItem.featured}
@@ -110,8 +110,8 @@
 					{/each}
 				</List>
 			{/if}
-			Highlights:
 			{#if currentProject.sar}
+				Highlights:
 				<List tag="ul" list="none">
 					{#each currentProject.sar as sar}
 						<Li icon>

@@ -3,7 +3,7 @@ export type Experience = {
 	start: string;
 	end: string;
 	tech: string[] | null[];
-	sar: string[] | null[];
+	sar: string[] | null[] | null;
 };
 
 export type ProfessionalExperience = Experience & {
