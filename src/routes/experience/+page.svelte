@@ -1,9 +1,10 @@
 <script lang="ts">
 	import resumeData from '$lib/assets/resume_data.json';
 	import type { ProfessionalExperience } from '$lib/types';
-	import { Button, Gallery, Img, Li, List } from 'flowbite-svelte';
-	import { AngleRightSolid, GithubBrand, LinkedinBrand, EnvelopeSolid } from 'svelte-awesome-icons';
+	import { Heading, Button, Gallery, Img, Li, List, Indicator } from 'flowbite-svelte';
+	import { AngleRightSolid } from 'svelte-awesome-icons';
 	import Modal from '$lib/components/Modal/Modal.svelte';
+	import ContactModal from '$lib/components/Modal/ContactModal.svelte';
 	import Typewriter from 'svelte-typewriter';
 
 	const experience: ProfessionalExperience[] = resumeData.experience;
@@ -20,7 +21,9 @@
 </script>
 
 <main>
-	<h1 class="text-center my-4">Experience</h1>
+	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
+		>Experience</Heading
+	>
 	<Gallery class="gap-4 grid-cols-2 md:grid-cols-3 md:w-3/4 mx-auto animate-fade">
 		{#each experience as experienceItem}
 			<Button
@@ -101,72 +104,5 @@
 			</Button>
 		</svelte:fragment>
 	</Modal>
-	<Modal bind:open={contactModal} animate="animate-fade-fast">
-		<svelte:fragment slot="header">
-			<h3 class="text-text hover:text-text">Let's get in touch!</h3>
-		</svelte:fragment>
-		<div class="grid md:grid-cols-[1fr_3fr]">
-			<Img
-				src="/images/enderlogo_v2.png"
-				size="max-w-40"
-				class="my-auto mx-auto md:mx-0"
-				alt="sample 1"
-			/>
-			<div class="px-4">
-				<p class="text-base leading-relaxed text-text">
-					Awesome! Glad my experience and achievements stood out to you. If you'd like, we can talk
-					about how I can make things like those happen for you!
-				</p>
-
-				<List tag="ul" list="none" class="flex flex-wrap justify-center items-center gap-4 mb-6">
-					<Li>
-						<Button
-							class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white focus:ring-0 transition me-4 md:me-6"
-							outline
-							href="https://github.com/ApprenticeofEnder"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<GithubBrand size="16" class="me-2" />
-							Github
-						</Button>
-					</Li>
-					<Li>
-						<Button
-							class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white focus:ring-0 transition me-4 md:me-6"
-							outline
-							href="https://www.linkedin.com/in/robertbabaev2001/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<LinkedinBrand size="16" class="me-2" />
-							LinkedIn
-						</Button>
-					</Li>
-					<Li>
-						<Button
-							class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white focus:ring-0 transition me-4 md:me-6"
-							outline
-							href="mailto:robert@robertbabaev.tech"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<EnvelopeSolid size="16" class="me-2" />
-							Email
-						</Button>
-					</Li>
-				</List>
-			</div>
-		</div>
-
-		<svelte:fragment slot="footer">
-			<Button
-				color="alternative"
-				class="text-white border-white hover:bg-white focus:bg-transparent hover:text-black focus:text-primary-500 transition focus:ring-0"
-				outline
-			>
-				Close
-			</Button>
-		</svelte:fragment>
-	</Modal>
+	<ContactModal bind:open={contactModal} />
 </main>

@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { Button, Gallery, Img, Modal } from 'flowbite-svelte';
 	export let open = false;
+	export let autoclose = true;
 	export let animate = 'animate-none';
 </script>
 
 <Modal
 	bind:open
-	autoclose
+	bind:autoclose
 	outsideclose
 	class={'bg-background divide-text/15 ' + animate}
 	classHeader="bg-background text-text"

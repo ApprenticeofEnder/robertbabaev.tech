@@ -157,6 +157,17 @@ projects:
       - 'Example'
     sar:
       - 'Example'
+  - title: 'Example'
+    start: '2023'
+    end: 'Present (WIP)'
+    featured: true
+    src: '/images/reshiftsecurity.png'
+    alt: 'Example Project'
+    description: 'Blah blah blah'
+    tech:
+      - 'Example'
+    sar:
+      - 'Example'
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'
