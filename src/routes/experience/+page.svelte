@@ -1,33 +1,33 @@
 <script lang="ts">
-	import resumeData from '$lib/assets/resume_data.json';
-	import type { ProfessionalExperience } from '$lib/types';
-	import { Heading, Button, Gallery, Img, Li, List, Indicator } from 'flowbite-svelte';
-	import { AngleRightSolid } from 'svelte-awesome-icons';
-	import Modal from '$lib/components/Modal/Modal.svelte';
-	import ContactModal from '$lib/components/Modal/ContactModal.svelte';
-	import Typewriter from 'svelte-typewriter';
+import resumeData from '$lib/assets/resume_data.json';
+import type { ProfessionalExperience } from '$lib/types';
+import { Heading, Button, Gallery, Img, Li, List, Indicator } from 'flowbite-svelte';
+import { AngleRightSolid } from 'svelte-awesome-icons';
+import Modal from '$lib/components/Modal/Modal.svelte';
+import ContactModal from '$lib/components/Modal/ContactModal.svelte';
+import Typewriter from 'svelte-typewriter';
 
-	const experience: ProfessionalExperience[] = resumeData.experience;
-	let currentExperience = experience[0];
-	let experienceModal = false;
-	let contactModal = false;
-	const showExperience = (experienceItem: ProfessionalExperience) => {
-		currentExperience = experienceItem;
-		experienceModal = true;
-	};
-	const showContact = () => {
-		contactModal = true;
-	};
+const experience: ProfessionalExperience[] = resumeData.experience;
+let currentExperience = experience[0];
+let experienceModal = false;
+let contactModal = false;
+const showExperience = (experienceItem: ProfessionalExperience) => {
+	currentExperience = experienceItem;
+	experienceModal = true;
+};
+const showContact = () => {
+	contactModal = true;
+};
 </script>
 
 <main>
 	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
 		>Experience</Heading
 	>
-	<Gallery class="gap-4 grid-cols-2 md:grid-cols-3 md:w-3/4 mx-auto animate-fade">
+	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 xl:w-3/4">
 		{#each experience as experienceItem}
 			<Button
-				class="bg-white hover:bg-white animate-glow-out-lg hover:animate-glow-in-lg hover:drop-shadow-glow-lg focus:ring-0 transition duration-200"
+				class="animate-glow-out-lg bg-white transition duration-200 hover:animate-glow-in-lg hover:bg-white hover:drop-shadow-glow-lg focus:ring-0"
 				on:click={() => {
 					showExperience(experienceItem);
 				}}
@@ -35,7 +35,7 @@
 				<Img
 					src={experienceItem.src}
 					alt={experienceItem.alt}
-					class="mx-auto transition-all duration-300 rounded-lg"
+					class="mx-auto rounded-lg transition-all duration-300"
 				/>
 			</Button>{/each}
 	</Gallery>
@@ -43,15 +43,15 @@
 		<svelte:fragment slot="header">
 			<div class="inline-block">
 				<Typewriter mode="scramble" scrambleDuration={1000}
-					><h3 class="text-accent-200 hover:text-accent-200 hover:animate-pulse drop-shadow-glow">
+					><h3 class="text-accent-200 drop-shadow-glow hover:animate-pulse hover:text-accent-200">
 						{currentExperience.company}
 					</h3>
 				</Typewriter>
 
-				<h4 class="text-text hover:text-text hover:animate-pulse">
+				<h4 class="text-text hover:animate-pulse hover:text-text">
 					{currentExperience.title} ({currentExperience.start} - {currentExperience.end})
 				</h4>
-				<h4 class="text-text hover:text-text hover:animate-pulse">{currentExperience.location}</h4>
+				<h4 class="text-text hover:animate-pulse hover:text-text">{currentExperience.location}</h4>
 			</div>
 		</svelte:fragment>
 		<p class="text-base leading-relaxed text-text">
@@ -60,12 +60,12 @@
 				<List
 					tag="ul"
 					list="none"
-					class="flex flex-wrap justify-center items-center gap-4 mb-6 pt-1"
+					class="mb-6 flex flex-wrap items-center justify-center gap-4 pt-1"
 				>
 					{#each currentExperience.tech as technology}
 						<Li class="divide-text">
 							<p
-								class="text-accent-200 ms-2 md:ms-3 me-2 md:me-3 py-0 transition hover:animate-pulse"
+								class="me-2 ms-2 py-0 text-accent-200 transition hover:animate-pulse md:me-3 md:ms-3"
 							>
 								{technology}
 							</p>
@@ -90,14 +90,14 @@
 		<svelte:fragment slot="footer">
 			<Button
 				on:click={showContact}
-				class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white focus:ring-0 transition"
+				class="border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0"
 				outline
 			>
 				I Like This!
 			</Button>
 			<Button
 				color="alternative"
-				class="text-white border-white hover:bg-white focus:bg-transparent hover:text-black focus:text-primary-500 focus:ring-0 transition"
+				class="border-white text-white transition hover:bg-white hover:text-black focus:bg-transparent focus:text-primary-500 focus:ring-0"
 				outline
 			>
 				Close

@@ -17,5 +17,6 @@ export type Project = Experience & {
 	featured: boolean;
 	description: string;
 	src?: string;
+	link?: string;
 	alt: string;
 };

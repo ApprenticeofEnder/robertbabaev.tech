@@ -186,12 +186,26 @@ experience:
       - 'Devised Python script to curate GitHub repositories for CENGN event using appropriate REST API. Enabled list-based elimination vs original lengthy active search.'
       - "Programmed custom PostgreSQL queries when Django's ORM failed. Optimized heatmap and other data visualization of security findings using server-side processing vs client-side."
 projects:
+  - title: 'Personal Website'
+    start: 'May. 2024'
+    end: 'Present'
+    featured: true
+    alt: 'Personal Website'
+    link: 'https://robertbabaev.tech'
+    description: "The latest rendition since May of 2021, this website has switched from a NodeJS/Express web server on Heroku, to using SvelteKit and Django to create a pseudo-CMS on a self-managed DigitalOcean Droplet, to finally using a static SvelteKit website hosted on DigitalOcean's App Platform."
+    tech:
+      - 'SvelteKit'
+      - 'DigitalOcean'
+      - 'Tailwind'
+      - 'Flowbite'
+    sar:
+      - ''
   - title: 'CourseFull'
-    start: '2024'
+    start: 'Apr. 2024'
     end: 'Present (WIP)'
     featured: true
     alt: 'CourseFull'
-    description: 'A Ruby on Rails and NextJS web application that enables students to establish dynamic, data-driven academic goals. Described as a tool pre-med students would "...[foam] at the mouth over..."'
+    description: 'A Ruby on Rails and NextJS web application that enables students to establish dynamic, data-driven academic goals. Described as a tool pre-med students would "...[foam] at the mouth over..." Previously prototyped using PHP at CuHacking 2021, winning first in the Education category.'
     tech:
       - 'Ruby on Rails'
       - 'React'
@@ -199,16 +213,47 @@ projects:
       - 'PostgreSQL'
       - 'Supabase'
     sar:
+      - ''
+  - title: 'UpShare (Proof of Concept)'
+    start: 'Jan. 2024'
+    end: 'Apr. 2024'
+    featured: true
+    alt: 'UpShare (Proof of Concept)'
+    description: 'UpShare was my Honours Thesis proposal for the problem of password sharing.'
+    tech:
+      - 'React'
+      - 'Redux'
+      - 'MongoDB'
+      - 'Docker'
+      - 'Express'
+    sar:
+      - ''
+  - title: 'Ripasso'
+    start: 'Jan. 2024'
+    end: 'Feb. 2024'
+    featured: true
+    alt: 'Ripasso'
+    description: 'Ripasso is a Rust-based, simplified, and fully local password manager. A short-lived participation in a major open-source Rust project, though a fascinating look into developing real software with the language.'
+    tech:
+      - 'Rust'
+      - 'GTK'
+    sar:
+      - 'Solved memory erase issue in open source Rust password manager using dedicated libraries and unit testing. Improved confidence in secrets being unrecoverable from memory.'
   - title: 'Selenium Oxide'
     start: 'Mar. 2022'
     end: 'Aug. 2022'
     featured: true
     alt: 'Selenium Oxide'
-    description: 'Created a Selenium wrapper designed to streamline browser-based web exploitation. Endorsed by ex-IBM penetration testers.'
+    description: 'Created a Selenium wrapper and framework designed to streamline browser-based web exploitation. Endorsed by ex-IBM penetration testers.'
     tech:
       - 'Python'
+      - 'Pytest'
+      - 'FastAPI'
       - 'Selenium'
+      - 'Docker'
     sar:
+      - 'Created Docker-based testing environment for live network requests, facilitating dependable functional/integration testing.'
+      - 'Developed system that allows for rapid prototyping of exploits and the shared usage of browser and API interfaces during automation, including "stealth" functionality.'
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'

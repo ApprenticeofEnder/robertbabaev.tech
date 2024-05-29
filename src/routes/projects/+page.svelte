@@ -1,35 +1,35 @@
 <script lang="ts">
-	import resumeData from '$lib/assets/resume_data.json';
-	import type { Project } from '$lib/types';
-	import { Heading, Button, Gallery, Img, Li, List, Indicator } from 'flowbite-svelte';
-	import { AngleRightSolid } from 'svelte-awesome-icons';
-	import Modal from '$lib/components/Modal/Modal.svelte';
-	import ContactModal from '$lib/components/Modal/ContactModal.svelte';
-	import Typewriter from 'svelte-typewriter';
+import resumeData from '$lib/assets/resume_data.json';
+import type { Project } from '$lib/types';
+import { Heading, Button, Gallery, Img, Li, List, Indicator, A } from 'flowbite-svelte';
+import { AngleRightSolid } from 'svelte-awesome-icons';
+import Modal from '$lib/components/Modal/Modal.svelte';
+import ContactModal from '$lib/components/Modal/ContactModal.svelte';
+import Typewriter from 'svelte-typewriter';
 
-	const projects: Project[] = resumeData.projects;
-	let currentProject = projects[0];
-	const featuredProjects: Project[] = projects.filter((project) => project.featured);
-	let projectModal = false;
-	let contactModal = false;
-	const showProject = (projectItem: Project) => {
-		currentProject = projectItem;
-		projectModal = true;
-	};
-	const showContact = () => {
-		contactModal = true;
-	};
+const projects: Project[] = resumeData.projects;
+let currentProject = projects[0];
+const featuredProjects: Project[] = projects.filter((project) => project.featured);
+let projectModal = false;
+let contactModal = false;
+const showProject = (projectItem: Project) => {
+	currentProject = projectItem;
+	projectModal = true;
+};
+const showContact = () => {
+	contactModal = true;
+};
 </script>
 
 <main>
 	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
 		>Projects</Heading
 	>
-	<Gallery class="gap-4 grid-cols-2 lg:grid-cols-3 xl:w-3/4 mx-auto animate-fade">
+	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 xl:w-3/4">
 		{#each projects as projectItem}
 			{#if projectItem.src}
 				<Button
-					class="bg-white hover:bg-white animate-glow-out-lg hover:animate-glow-in-lg hover:drop-shadow-glow-lg focus:ring-0 transition duration-200  relative"
+					class="relative animate-glow-out-lg bg-white transition duration-200 hover:animate-glow-in-lg hover:bg-white hover:drop-shadow-glow-lg  focus:ring-0"
 					on:click={() => {
 						showProject(projectItem);
 					}}
@@ -37,12 +37,12 @@
 					<Img
 						src={projectItem.src}
 						alt={projectItem.alt}
-						class="mx-auto transition-all duration-300 rounded-lg"
+						class="mx-auto rounded-lg transition-all duration-300"
 					/>
 					{#if projectItem.featured}
 						<Indicator
 							color="none"
-							class="bg-primary-500 text-xs text-black font-semibold absolute top-2 right-2"
+							class="absolute right-2 top-2 bg-primary-500 text-xs font-semibold text-black"
 							size="xl"
 						>
 							!
@@ -51,19 +51,19 @@
 				</Button>
 			{:else}
 				<Button
-					class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white focus:ring-0 transition duration-200 relative"
+					class="relative border-primary-500 text-primary-500 transition duration-200 hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0"
 					outline
 					on:click={() => {
 						showProject(projectItem);
 					}}
 				>
-					<div class="h-[100px] w-[100px] lg:h-[320px] lg:w-[320px] flex flex-col justify-center">
+					<div class="flex h-[100px] w-[100px] flex-col justify-center lg:h-[320px] lg:w-[320px]">
 						<div class="text-xl md:text-2xl">{projectItem.title}</div>
 					</div>
 					{#if projectItem.featured}
 						<Indicator
 							color="none"
-							class="bg-primary-500 text-xs text-black font-semibold absolute top-2 right-2"
+							class="absolute right-2 top-2 bg-primary-500 text-xs font-semibold text-black"
 							size="xl"
 						>
 							!
@@ -77,13 +77,18 @@
 		<svelte:fragment slot="header">
 			<div class="inline-block">
 				<Typewriter mode="scramble" scrambleDuration={1000}>
-					<h2 class="text-text hover:text-text hover:animate-pulse drop-shadow-glow">
+					<h2 class="text-text drop-shadow-glow hover:animate-pulse hover:text-text">
 						{currentProject.title}
 					</h2>
 				</Typewriter>
-				<h3 class="text-text hover:text-text hover:animate-pulse">
+				<h3 class="text-text hover:animate-pulse hover:text-text">
 					{currentProject.start} - {currentProject.end}
 				</h3>
+				{#if currentProject.link}
+					<h3>
+						<A href={currentProject.link}>Project Link</A>
+					</h3>
+				{/if}
 			</div>
 		</svelte:fragment>
 
@@ -97,12 +102,12 @@
 				<List
 					tag="ul"
 					list="none"
-					class="flex flex-wrap justify-center items-center gap-4 mb-6 pt-1"
+					class="mb-6 flex flex-wrap items-center justify-center gap-4 pt-1"
 				>
 					{#each currentProject.tech as technology}
 						<Li class="divide-text">
 							<p
-								class="text-accent-200 ms-2 md:ms-3 me-2 md:me-3 py-0 transition hover:animate-pulse"
+								class="me-2 ms-2 py-0 text-accent-200 transition hover:animate-pulse md:me-3 md:ms-3"
 							>
 								{technology}
 							</p>
@@ -127,14 +132,14 @@
 		<svelte:fragment slot="footer">
 			<Button
 				on:click={showContact}
-				class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white focus:ring-0 transition"
+				class="border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0"
 				outline
 			>
 				I Like This!
 			</Button>
 			<Button
 				color="alternative"
-				class="text-white border-white hover:bg-white focus:bg-transparent hover:text-black focus:text-primary-500 focus:ring-0 transition"
+				class="border-white text-white transition hover:bg-white hover:text-black focus:bg-transparent focus:text-primary-500 focus:ring-0"
 				outline
 			>
 				Close
