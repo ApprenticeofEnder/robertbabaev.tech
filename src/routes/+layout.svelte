@@ -16,7 +16,7 @@ import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 		<NavUl
 			nonActiveClass="text-accent-200 hover:text-text drop-shadow-glow transition duration-500 text-lg"
 			activeClass="text-text text-lg"
-			classUl="bg-background"
+			ulClass="bg-background"
 		>
 			<NavLi href="/">Home</NavLi>
 			<NavLi href="/about">About</NavLi>
