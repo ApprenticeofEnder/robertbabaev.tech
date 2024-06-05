@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      flowbite-svelte-icons:
-        specifier: ^1.6.1
-        version: 1.6.1(svelte@4.2.17)(tailwind-merge@2.3.0)(tailwindcss@3.4.3)
       svelte-awesome-icons:
         specifier: ^1.2.1
         version: 1.2.1(svelte@4.2.17)
@@ -1021,13 +1018,6 @@ packages:
 
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
-
-  flowbite-svelte-icons@1.6.1:
-    resolution: {integrity: sha512-Kw/7BzA6fqlFq7tBNudwX0KVU4cbyyXcMcgHTraMwGBtvBQan0RKMbvWwqm4JZNvLGAvRv1BM2EF7rzo/oam1Q==}
-    peerDependencies:
-      svelte: ^3.54.0 || ^4.0.0 || ^5.0.0
-      tailwind-merge: ^2.0.0
-      tailwindcss: ^3.3.2
 
   flowbite-svelte@0.46.1:
     resolution: {integrity: sha512-GMQP4Fxn4mYu12XTNRbOHMYMklbP29sKFZUZYekryxhWak2zbSlI1ozhBtnrD2WDbFBPqZ64IcyButOkYpz+WQ==}
@@ -3155,12 +3145,6 @@ snapshots:
       rimraf: 3.0.2
 
   flatted@3.3.1: {}
-
-  flowbite-svelte-icons@1.6.1(svelte@4.2.17)(tailwind-merge@2.3.0)(tailwindcss@3.4.3):
-    dependencies:
-      svelte: 4.2.17
-      tailwind-merge: 2.3.0
-      tailwindcss: 3.4.3
 
   flowbite-svelte@0.46.1(svelte@4.2.17):
     dependencies:

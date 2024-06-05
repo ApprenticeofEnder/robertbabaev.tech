@@ -198,28 +198,31 @@ projects:
       - 'DigitalOcean'
       - 'Tailwind'
       - 'Flowbite'
+      - 'Git'
     sar:
-      - ''
+      # - ''
   - title: 'CourseFull'
     start: 'Apr. 2024'
     end: 'Present (WIP)'
-    featured: true
+    featured: false
     alt: 'CourseFull'
     description: 'A Ruby on Rails and NextJS web application that enables students to establish dynamic, data-driven academic goals. Described as a tool pre-med students would "...[foam] at the mouth over..." Previously prototyped using PHP at CuHacking 2021, winning first in the Education category.'
     tech:
       - 'Ruby on Rails'
+      - 'RSpec'
       - 'React'
       - 'NextJS'
       - 'PostgreSQL'
       - 'Supabase'
     sar:
-      - ''
+      - 'Learned novel behaviour-driven testing framework using RSpec, improving unit test conciseness and providing clarity of test case purpose and direction.'
+      - 'Integrated Supabase authentication with NextJS front end and Rails API, using carefully designed data models to ensure proper data transfer and security.'
   - title: 'UpShare (Proof of Concept)'
     start: 'Jan. 2024'
     end: 'Apr. 2024'
     featured: true
     alt: 'UpShare (Proof of Concept)'
-    description: 'UpShare was my Honours Thesis proposal for the problem of password sharing.'
+    description: 'UpShare was my Honours Thesis proposal for the problem of password sharing. I researched various systems of access sharing and control, eventually devising a way of sharing an account without ever having to share a password, usable with consumer-level accounts not initially designed for item sharing.'
     tech:
       - 'React'
       - 'Redux'
@@ -227,11 +230,11 @@ projects:
       - 'Docker'
       - 'Express'
     sar:
-      - ''
+      - 'Designed novel authentication, access control, and access sharing scheme within 4 months, enabling passwordless access sharing to accounts (e.g. Instagram).'
   - title: 'Ripasso'
     start: 'Jan. 2024'
     end: 'Feb. 2024'
-    featured: true
+    featured: false
     alt: 'Ripasso'
     description: 'Ripasso is a Rust-based, simplified, and fully local password manager. A short-lived participation in a major open-source Rust project, though a fascinating look into developing real software with the language.'
     tech:
@@ -239,6 +242,33 @@ projects:
       - 'GTK'
     sar:
       - 'Solved memory erase issue in open source Rust password manager using dedicated libraries and unit testing. Improved confidence in secrets being unrecoverable from memory.'
+  - title: 'KaliDocker'
+    start: 'Oct. 2023'
+    end: 'Dec. 2023'
+    featured: false
+    alt: 'KaliDocker'
+    description: 'KaliDocker is a system to quickly deploy Kali Linux Docker containers from any UNIX operating system, enabling flexibility of host OS and freedom from installing and using virtual machines.'
+    tech:
+      - 'Linux'
+      - 'Docker'
+    sar:
+      - 'Enabled efficient file sharing between host and container using volumes and bind mounts, preventing issues of inefficient file transfer via network.'
+  - title: 'Project NOAH'
+    start: '2023'
+    end: 'Present (WIP)'
+    featured: true
+    alt: 'Project NOAH'
+    description: 'A campaign planner for the Lancer TTRPG, designed to simplify the process of organizing notes for running the game. The software addressed a significant barrier to entry in community.'
+    tech:
+      - 'Notion'
+      - 'Python'
+      - 'Pytest'
+      - 'FastAPI'
+      - 'Svelte'
+      - 'Docker'
+    sar:
+      - 'Prototyped a proof of concept Notion template using knowledge of relational databases and Markdown within 7 days. Sold in excess of 100 licenses to date through word of mouth alone.'
+      - 'Migrating to SaaS platform using FastAPI and Svelte to mitigate impacts of unsustainable update cycle -- Notion templates needed both updates to the template and guides for users to update to new versions.'
   - title: 'Selenium Oxide'
     start: 'Mar. 2022'
     end: 'Aug. 2022'

@@ -9,7 +9,6 @@ import Typewriter from 'svelte-typewriter';
 
 const projects: Project[] = resumeData.projects;
 let currentProject = projects[0];
-const featuredProjects: Project[] = projects.filter((project) => project.featured);
 let projectModal = false;
 let contactModal = false;
 const showProject = (projectItem: Project) => {
