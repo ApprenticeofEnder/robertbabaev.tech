@@ -1,10 +1,11 @@
 <script>
-	import '../app.css';
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+import '../app.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
 
 <div class="relative px-8">
-	<Navbar class="bg-background text-text px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 start-0">
+	<Navbar class="fixed start-0 top-0 z-20 w-full bg-background px-2 py-2.5 text-text sm:px-4">
 		<NavBrand href="/">
 			<img src="/images/enderlogo_v2.png" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
 			<span class="self-center whitespace-nowrap text-xl font-semibold drop-shadow-glow"

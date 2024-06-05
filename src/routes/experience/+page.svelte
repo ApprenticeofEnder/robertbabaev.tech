@@ -2,7 +2,6 @@
 import resumeData from '$lib/assets/resume_data.json';
 import type { ProfessionalExperience } from '$lib/types';
 import { Heading, Button, Gallery, Img, Li, List, Indicator } from 'flowbite-svelte';
-import { AngleRightSolid } from 'svelte-awesome-icons';
 import Modal from '$lib/components/Modal/Modal.svelte';
 import ContactModal from '$lib/components/Modal/ContactModal.svelte';
 import Typewriter from 'svelte-typewriter';
@@ -78,7 +77,7 @@ const showContact = () => {
 				<List tag="ul" list="none">
 					{#each currentExperience.sar as sar}
 						<Li icon>
-							<AngleRightSolid size="16" class="me-2" />
+							<i class="fa-solid fa-angle-right me-2 h-6 w-6"></i>
 							<p>
 								{sar}
 							</p>
