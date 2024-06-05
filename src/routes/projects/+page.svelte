@@ -56,7 +56,7 @@ const showContact = () => {
 					}}
 				>
 					<div class="flex h-[100px] w-[100px] flex-col justify-center lg:h-[320px] lg:w-[320px]">
-						<div class="text-xl md:text-2xl">{projectItem.title}</div>
+						<div class="text-lg sm:text-xl md:text-2xl">{projectItem.title}</div>
 					</div>
 					{#if projectItem.featured}
 						<Indicator
