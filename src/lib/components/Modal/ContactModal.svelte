@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Button, Alert, Img, Li, List } from 'flowbite-svelte';
+import { Button, Img } from 'flowbite-svelte';
 import Modal from '$lib/components/Modal/Modal.svelte';
 
 import { fade } from 'svelte/transition';

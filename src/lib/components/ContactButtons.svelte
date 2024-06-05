@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Button, Alert, Img, Li, List } from 'flowbite-svelte';
+import { Button, Alert, Li, List } from 'flowbite-svelte';
 
 import { fade } from 'svelte/transition';
 
