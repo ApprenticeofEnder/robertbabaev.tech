@@ -1,34 +1,37 @@
 <script>
-	import { Heading, Img, Button, ButtonGroup } from 'flowbite-svelte';
-	import Typewriter from 'svelte-typewriter';
+import { Heading, Img, Button, ButtonGroup } from 'flowbite-svelte';
+import Typewriter from 'svelte-typewriter';
 
-	const buttonLinks = [
-		{
-			href: '/about',
-			text: 'About'
-		},
-		{
-			href: '/experience',
-			text: 'Experience'
-		},
-		{
-			href: '/projects',
-			text: 'Projects'
-		},
-		{
-			href: '/contact',
-			text: 'Contact'
-		}
-	];
+const buttonLinks = [
+	{
+		href: '/about',
+		text: 'About'
+	},
+	{
+		href: '/experience',
+		text: 'Experience'
+	},
+	{
+		href: '/projects',
+		text: 'Projects'
+	},
+	{
+		href: '/contact',
+		text: 'Contact'
+	}
+];
 </script>
 
 <div class="flex justify-center">
-	<div class="flex flex-initial flex-col divide-none justify-center h-dvh">
-		<div class="grid md:grid-cols-2 md:divide-x divide-text gap-4 mb-4 justify-center">
+	<div class="flex h-dvh flex-initial flex-col justify-center divide-none">
+		<div class="mb-4 grid justify-center gap-4 divide-text md:grid-cols-2 md:divide-x">
 			<div class="flex flex-col justify-center">
 				<Typewriter mode="scramble" scrambleDuration={1000}>
-					<Heading tag="h2" color="text-text drop-shadow-glow" customSize="text-2xl sm:text-4xl"
-						>ROBERT BABAEV</Heading
+					<Heading
+						tag="h2"
+						color="text-text drop-shadow-glow"
+						customSize="text-2xl sm:text-4xl"
+						class="text-center">ROBERT BABAEV</Heading
 					></Typewriter
 				>
 			</div>
@@ -39,14 +42,14 @@
 				alt="sample 1"
 			/>
 		</div>
-		<p class="p-4 text-center animate-fade">
+		<p class="animate-fade p-4 text-center">
 			A security-minded tech professional at the intersection of security, development, and people.
 		</p>
-		<div class="flex justify-center mt-4 animate-fade">
+		<div class="mt-4 flex animate-fade justify-center">
 			<ButtonGroup>
 				{#each buttonLinks as buttonLink}
 					<Button
-						class="text-primary-500 border-primary-500 hover:bg-primary-500 focus:bg-transparent hover:text-black focus:text-white transition focus:ring-0"
+						class="border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0"
 						outline
 						href={buttonLink.href}>{buttonLink.text}</Button
 					>
