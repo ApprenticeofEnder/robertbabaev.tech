@@ -101,6 +101,9 @@ experience:
       - 'Powershell'
       - 'Microsoft Sentinel'
     sar:
+      - 'Introduced a Kusto Query Language analytics rule to determine whether a Wordpress site was being targeted by login cracking attacks with limited available data.'
+      - "Negotiated access to a vendor's REST API, allowing a cross-platform threat intelligence dashboard solution. According to a teammate, it was the most productive conversation they had." 
+      - "Located users with unauthorized software installed on their machines, along with IP addresses, using Powershell to circumvent lack of data correlation from Defender."
   - title: 'Co-op Security Specialist'
     company: 'Innovapost'
     start: 'May. 2023'
