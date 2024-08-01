@@ -23,7 +23,7 @@ const showContact = () => {
 	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
 		>Projects</Heading
 	>
-	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 xl:w-3/4">
+	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 lg:w-3/4">
 		{#each projects as projectItem}
 			{#if projectItem.src}
 				<Button
