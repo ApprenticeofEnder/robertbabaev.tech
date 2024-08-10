@@ -23,7 +23,7 @@ const showContact = () => {
 	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
 		>Experience</Heading
 	>
-	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 xl:w-3/4">
+	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 lg:w-3/4">
 		{#each experience as experienceItem}
 			<Button
 				class="animate-glow-out-lg bg-white transition duration-200 hover:animate-glow-in-lg hover:bg-white hover:drop-shadow-glow-lg focus:ring-0"

@@ -15,7 +15,7 @@
 		{ key: 'NATIONALITY', value: 'Canadian' },
 		{ key: 'ROLE', value: 'Security Engineer/Developer' },
 		{ key: 'SPECIALIZATION', value: 'Web Application Security' },
-		{ key: 'STRENGTHS', value: 'Creativity, Professionalism, Friendliness, Fearless Innovation' },
+		{ key: 'STRENGTHS', value: 'Creativity, Problem Solving, Friendliness, Fearless Innovation' },
 		{ key: 'FAVOURITE TECH', value: 'Python, Rust, Svelte, Docker, Linux' }
 	].map((entry: TableData) => {
 		entry.duration = 1000 + i * 250;
@@ -30,24 +30,24 @@
 			>About Me</Heading
 		>
 
-		<div class="grid md:grid-flow-row md:grid-cols-2">
-			<div>
+		<div class="grid lg:grid-flow-row lg:grid-cols-5 gap-x-16">
+			<div class="lg:col-span-2">
 				<Img
 					src="/images/PFP_V2.jpg"
-					size="max-w-xs md:max-w-md"
+					size="max-w-xs"
 					imgClass="mx-auto"
 					alt="sample 1"
 				/>
 			</div>
 
-			<div>
+			<div class="lg:col-span-3 lg:col-start-3">
 				<Table noborder={true} class="animate-fade">
 					<TableBody>
 						{#each tableData as entry}
 							<TableBodyRow class="bg-transparent border-b-2 border-solid border-text/25">
 								<TableBodyCell class="text-text md:text-base pl-0">{entry.key}</TableBodyCell>
 								<Typewriter mode="scramble" scrambleDuration={entry.duration}>
-									<TableBodyCell class="text-text md:text-base text-balance">
+									<TableBodyCell class="text-text lg:text-base text-balance">
 										{entry.value}</TableBodyCell
 									></Typewriter
 								>
@@ -57,7 +57,7 @@
 				</Table>
 			</div>
 
-			<div class="md:col-span-2">
+			<div class="lg:col-span-5">
 				<p class="text-justify">
 					Hey, I'm Robert! I'm a cybersecurity and software development aficionado that loves
 					building software, locking it down, and making friends along the way.

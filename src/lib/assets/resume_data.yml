@@ -89,7 +89,7 @@
 #   - 'Microservices'
 #   - 'Agile'
 experience:
-  - title: 'Co-op, Cybersecurity'
+  - title: 'Co-op Cybersecurity Analyst'
     company: 'BDO Canada'
     start: 'May. 2024'
     end: 'Jul. 2024'
@@ -100,6 +100,8 @@ experience:
       - 'Microsoft Azure'
       - 'Powershell'
       - 'Microsoft Sentinel'
+      - 'KQL'
+      - 'Power BI'
     sar:
       - 'Detected login cracking attacks against a Wordpress site with 80+ unique attempts within 2 days by implementing KQL analytics rules in Microsoft Sentinel. Accelerated implementation by using Perplexity AI.'
       - "Negotiated access to a threat intelligence vendor's REST API to resolve a 3 month long stalemate in creating a cross-platform threat intelligence dashboard by building rapport, expressing empathy, and using active listening."
@@ -212,11 +214,14 @@ projects:
     description: 'A Ruby on Rails and NextJS web application that enables students to establish dynamic, data-driven academic goals. Described as a tool pre-med students would "...[foam] at the mouth over..." Previously prototyped using PHP at CuHacking 2021, winning first in the Education category.'
     tech:
       - 'Ruby on Rails'
-      - 'RSpec'
       - 'React'
       - 'NextJS'
       - 'PostgreSQL'
       - 'Supabase'
+      - 'TailwindCSS'
+      - 'Vitest'
+      - 'Playwright'
+      - 'RSpec'
     sar:
       - 'Avoided 3 hours of manual regression testing for each change to a Ruby on Rails REST API by leveraging 190+ automated integration and unit tests with RSpec.'
       - 'Mitigated the risk of secret leaks, among the number 2 most common vulnerability category in the OWASP Top 10 2021, by using the 1Password Secrets manager, Docker, and environment variables.'
@@ -234,6 +239,7 @@ projects:
       - 'MongoDB'
       - 'Docker'
       - 'Express'
+      - 'NodeJS'
     sar:
       - 'Contributed to usable security research by implementing a passwordless access control and sharing scheme in a retrofitted MERN clone of Instagram.'
   - title: 'Ripasso'
@@ -241,6 +247,7 @@ projects:
     end: 'Feb. 2024'
     featured: false
     alt: 'Ripasso'
+    link: 'https://github.com/cortex/ripasso'
     description: 'Ripasso is a Rust-based, simplified, and fully local password manager. A short-lived participation in a major open-source Rust project, though a fascinating look into developing real software with the language.'
     tech:
       - 'Rust'
@@ -252,6 +259,7 @@ projects:
     end: 'Dec. 2023'
     featured: false
     alt: 'KaliDocker'
+    link: 'https://github.com/ApprenticeofEnder/KaliDocker'
     description: 'KaliDocker is a system to quickly deploy Kali Linux Docker containers from any UNIX operating system, enabling flexibility of host OS and freedom from installing and using virtual machines.'
     tech:
       - 'Linux'
@@ -289,6 +297,7 @@ projects:
       - 'Docker'
     sar:
       - 'Created a containerized testing environment that allowed end-to-end testing with 100% uptime using knowledge of Docker Compose, FastAPI, and Pytest.'
+
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'
