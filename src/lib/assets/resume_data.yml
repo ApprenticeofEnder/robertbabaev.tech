@@ -103,9 +103,8 @@ experience:
       - 'KQL'
       - 'Power BI'
     sar:
-      - 'Introduced a KQL (similar to SQL) analytics rule to detect 80+ brute force login attacks from Microsoft Sentinel with limited available data, speeding up the process of learning with Perplexity AI.'
-      - "Negotiated access to a vendor's REST API, allowing a cross-platform threat intelligence dashboard solution." 
-      - "Identified 50+ users with unauthorized software installed using Powershell to resolve disparate data from Microsoft Defender."
+      - 'Detected login cracking attacks against a Wordpress site with 80+ unique attempts within 2 days by implementing KQL analytics rules in Microsoft Sentinel. Accelerated implementation by using Perplexity AI.'
+      - "Negotiated access to a threat intelligence vendor's REST API to resolve a 3 month long stalemate in creating a cross-platform threat intelligence dashboard by building rapport, expressing empathy, and using active listening."
   - title: 'Co-op Security Specialist'
     company: 'Innovapost'
     start: 'May. 2023'
@@ -118,8 +117,8 @@ experience:
       - 'JavaScript'
       - 'VBA'
     sar:
-      - 'Independently devised automation suite for access control audits using HTML, JavaScript, and VBA -- decreased audit timeframes from weeks to minutes.'
-      - 'Evaluated security model of proprietary OS to determine feasibility and necessity of installing antivirus software by investigating CVEs against the OS.'
+      - 'Independently streamlined access control audit timeframes from 2 weeks to 10 minutes by implementing a custom automation suite with HTML, CSS, JavaScript, and VBA -- and no external libraries whatsoever.'
+      - 'Confirmed antivirus installation was unnecessary on a proprietary OS due to the inherent endpoint protection properties and narrow attack surface by researching CVEs, security features, and antivirus platform support.'
   - title: 'Co-op Software Engineer'
     company: 'Barracuda Networks'
     start: 'Jan. 2023'
@@ -136,8 +135,8 @@ experience:
       - 'Windows'
       - 'AWS'
     sar:
-      - 'Diagnosed RMM incompatibility issues in monitoring clients using Azure VMs, Docker, and Linux, clearing up 1 week of false positive alerts.'
-      - 'Examined and presented to regional leadership select AWS AI and Machine Learning technologies for integration with new product. Received unanimous positive feedback.'
+      - 'Resolved 1 week of false positive alerts due to a failing RMM health check on a client website using Azure Linux virtual machines and Docker-based health checkers to determine discrepancies between the RMM HTTP requests and standard HTTP requests.'
+      - 'Guided the integration of an on-site AWS security camera AI model into a new XDR platform by presenting collected specifications, use cases, and tradeoffs of different AI services to 5 members of regional leadership.'
       - 'Collaborated with colleagues to solve a C# API versioning discrepancy. Negotiated with QA and architecture teams to devise appropriate, considerate solution.'
   - title: 'Co-op Penetration Tester'
     company: 'SoftwareSecured'
@@ -158,10 +157,10 @@ experience:
       - 'Ruby on Rails'
     sar:
       - 'Detected hard-coded credentials in Ruby on Rails application. Reported potential secrets management issue and leakage risk to development team.'
-      - 'Identified critical denial-of-service condition in web application using regular expressions and Burp Suite. Averted 1+ hour long environment shutdown if exploited in the wild.'
-      - 'Optimized network reconnaissance 5-10x using Bash script to find subdomains of primary domain and launch network scans on each.'
-      - 'Implemented Python script to check for open-source vulnerabilities in TypeScript/JavaScript, Ruby, and Python projects using web scraping and concurrent programming techniques, saving 2 hours of work per project.'
-      - 'Tested for server-side request forgery vulnerabilities by deploying AWS virtual machine to catch requests. Hosted custom FastAPI (Python) server for in-depth testing.'
+      - 'Resolved a denial-of-service vulnerability that could have taken an application offline for 1+ hours using knowledge of regular expressions and Burp Suite to identify and report the issue when the site did not respond despite the attack finishing.'
+      - 'Optimized network reconnaissance to save 1-2 hours per test using a Bash script to find subdomains of a primary domain and launch network scans on each.'
+      - 'Saved 2 hours of work per test on open-source vulnerability analysis by implementing a Python script to check for vulnerable packages in TypeScript, JavaScript, Ruby, and Python projects using web scraping and concurrent programming techniques.'
+      - 'Verified the existence of a Medium-severity server-side request forgery vulnerability by deploying an AWS virtual machine loaded with a Python HTTP server and REST API that could listen for incoming requests.'
       - 'Educated clients on security findings using CVSS scoring and realistic attack scenarios to accurately portray business and technical risk.'
   - title: 'Co-op Software Developer'
     company: 'Reshift Security'
@@ -183,11 +182,11 @@ experience:
       - 'Docker'
       - 'Git'
     sar:
-      - 'Collaboratively engineered secure password reset feature in Angular and Django. Used JWTs and one time passwords to ensure non-repudiation and authenticity.'
-      - 'Overhauled backup workflow for user-facing penetration test management app using Django and SendSafely API. Solved inability to recover from data loss within 1 hour of incident.'
+      - 'Allowed users to securely reset passwords in a developer-focused web application based on Angular and Django by collaborating with other engineers and designing a workflow with JWTs and one-time passwords.'
+      - 'Overhauled backup workflow for tool using Django and SendSafely REST API. Solved inability to recover from data loss within 24 hours of incident.'
       - 'Repaired Java-based Intellij plugin suffering from broken breakpoint icons when scanning code. Utilized integrated debuggers and creative troubleshooting.'
-      - 'Installed secure authentication for client-facing application with SSO and JWT authentication in TypeScript and SvelteKit. Mitigated risk of credential compromise via database breach.'
-      - 'Independently maintained Docker-based deployments with virtual machines and Git, ensuring penetration test management app was up to date and new features integrated.'
+      - 'Eliminated the risk of credential breaches in a client-facing portal application based on TypeScript and SvelteKit by implementing secure authentication with SSO, OAuth2, and JWT technologies instead of using a username/password workflow.'
+      - 'Ensured new features bugfixes were integrated into an internal penetration testing management app within 4 hours of merging by independently managing deployments with Docker, Git, and Linux virtual machines.'
       - 'Devised Python script to curate GitHub repositories for CENGN event using appropriate REST API. Enabled list-based elimination vs original lengthy active search.'
       - "Programmed custom PostgreSQL queries when Django's ORM failed. Optimized heatmap and other data visualization of security findings using server-side processing vs client-side."
 projects:
@@ -208,11 +207,11 @@ projects:
       # - ''
   - title: 'CourseFull'
     start: 'Apr. 2024'
-    end: 'Present'
-    featured: false
+    end: 'Present (WIP)'
+    featured: true
     alt: 'CourseFull'
     link: 'https://github.com/ApprenticeofEnder/CourseFull'
-    description: "How students know where they're at with grades from the first minute, not the last."
+    description: 'A Ruby on Rails and NextJS web application that enables students to establish dynamic, data-driven academic goals. Described as a tool pre-med students would "...[foam] at the mouth over..." Previously prototyped using PHP at CuHacking 2021, winning first in the Education category.'
     tech:
       - 'Ruby on Rails'
       - 'React'
@@ -224,16 +223,16 @@ projects:
       - 'Playwright'
       - 'RSpec'
     sar:
-      - 'Engineered full stack web application using React, NextJS, and Ruby on Rails that allows students to know where they are with grades at all times.'
-      - 'Leveraged 200+ automated unit and end-to-end tests with Rspec, Vitest, and Playwright to ensure code robustness and security, avoiding hours of manual testing and debugging.'
-      - 'Installed Supabase authentication to ensure security guarantees and reduced effort in implementing password storage, etc.'
+      - 'Avoided 3 hours of manual regression testing for each change to a Ruby on Rails REST API by leveraging 190+ automated integration and unit tests with RSpec.'
+      - 'Mitigated the risk of secret leaks, among the number 2 most common vulnerability category in the OWASP Top 10 2021, by using the 1Password Secrets manager, Docker, and environment variables.'
+      - 'Reduced loading times by 50% on session-based components in a NextJS front end by implementing a Supabase session context.'
   - title: 'UpShare (Honours Thesis)'
     start: 'Jan. 2024'
     end: 'Apr. 2024'
     featured: true
     alt: 'UpShare (Honours Thesis)'
     link: 'https://service.scs.carleton.ca/content/honours-project-2024-winter-april-22-2024-933pm'
-    description: 'UpShare is a passwordless access sharing scheme, similar to RBAC. Roles determine what sort of permissions a user might have, and guests of an account have reduced capabilities, but a quicker, passwordless login.'
+    description: 'UpShare was my Honours Thesis proposal for the problem of password sharing. I researched various systems of access sharing and control, eventually devising a way of sharing an account without ever having to share a password, usable with consumer-level accounts not initially designed for item sharing.'
     tech:
       - 'React'
       - 'Redux'
@@ -242,7 +241,7 @@ projects:
       - 'Express'
       - 'NodeJS'
     sar:
-      - 'Implemented a framework for secure passwordless access sharing using a retrofitted open source MERN (MongoDB, Express, React, Node) application. Made significant contributions to usable security.'
+      - 'Contributed to usable security research by implementing a passwordless access control and sharing scheme in a retrofitted MERN clone of Instagram.'
   - title: 'Ripasso'
     start: 'Jan. 2024'
     end: 'Feb. 2024'
@@ -254,7 +253,7 @@ projects:
       - 'Rust'
       - 'GTK'
     sar:
-      - 'Solved memory erase issue in open source Rust password manager using dedicated libraries and unit testing. Improved confidence in secrets being unrecoverable from memory.'
+      - 'Mitigated the risk of potentially sensitive data remaining in the memory of a Rust password manager by resetting values to zero when processing was complete using the “zeroize” crate.'
   - title: 'KaliDocker'
     start: 'Oct. 2023'
     end: 'Dec. 2023'
@@ -267,29 +266,28 @@ projects:
       - 'Docker'
     sar:
       - 'Enabled efficient file sharing between host and container using volumes and bind mounts, preventing issues of inefficient file transfer via network.'
-  - title: 'Project NOAH'
-    start: '2023'
-    end: 'Present (WIP)'
-    featured: true
-    alt: 'Project NOAH'
-    link: 'https://owacs-ender.itch.io/projectnoah'
-    description: 'A campaign planner for the Lancer TTRPG, designed to simplify the process of organizing notes for running the game. The software addressed a significant barrier to entry in community.'
-    tech:
-      - 'Notion'
-      - 'Python'
-      - 'Pytest'
-      - 'FastAPI'
-      - 'Svelte'
-      - 'Docker'
-    sar:
-      - 'Designed campaign planner template for Lancer TTRPG, resulting in over 100 licenses sold. Addressed significant barrier to entry in community.'
-      - 'Engineering FastAPI, Svelte, and GraphQL application to facilitate improved Agile development. Improving upon current unmalleable Notion solution.'
+  # - title: 'Project NOAH'
+  #   start: '2023'
+  #   end: 'Present (WIP)'
+  #   featured: true
+  #   alt: 'Project NOAH'
+  #   description: 'A campaign planner for the Lancer TTRPG, designed to simplify the process of organizing notes for running the game. The software addressed a significant barrier to entry in community.'
+  #   tech:
+  #     - 'Notion'
+  #     - 'Python'
+  #     - 'Pytest'
+  #     - 'FastAPI'
+  #     - 'Svelte'
+  #     - 'Docker'
+  #   sar:
+  #     - 'Prototyped a proof of concept Notion template using knowledge of relational databases and Markdown within 7 days. Sold in excess of 100 licenses to date through word of mouth alone.'
+  #     - 'Migrating to SaaS platform using FastAPI and Svelte to mitigate impacts of unsustainable update cycle -- Notion templates needed both updates to the template and guides for users to update to new versions.'
   - title: 'Selenium Oxide'
     start: 'Mar. 2022'
     end: 'Present'
     featured: true
     alt: 'Selenium Oxide'
-    link: 'https://github.com/ApprenticeofEnder/Selenium-Oxide'
+    link: 'https://github.com/ApprenticeofEnder/Selenium-Oxide/tree/dev'
     description: 'Created a Selenium wrapper and framework designed to streamline browser-based web exploitation. Endorsed by ex-IBM penetration testers.'
     tech:
       - 'Python'
@@ -298,7 +296,8 @@ projects:
       - 'Selenium'
       - 'Docker'
     sar:
-      - 'Created Docker-based testing environment for live network requests, facilitating dependable functional/integration testing.'
+      - 'Created a containerized testing environment that allowed end-to-end testing with 100% uptime using knowledge of Docker Compose, FastAPI, and Pytest.'
+
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'

@@ -25,7 +25,8 @@ const buttonLinks = [
 <div class="flex justify-center">
 	<div class="flex h-dvh flex-initial flex-col justify-center divide-none">
 		<div class="mb-4 grid justify-center gap-4 divide-text md:grid-cols-2 md:divide-x">
-			<div class="flex flex-col justify-center">
+			<div class="flex flex-col justify-center gap-4">
+				<!-- <div class="text-center">Want your code locked down so tight Fort Knox gets jealous?</div> -->
 				<Typewriter mode="scramble" scrambleDuration={1000}>
 					<Heading
 						tag="h2"
@@ -33,6 +34,12 @@ const buttonLinks = [
 						customSize="text-2xl sm:text-4xl"
 						class="text-center">ROBERT BABAEV</Heading
 					></Typewriter
+				>
+				<Heading
+					tag="h2"
+					color="text-text drop-shadow-glow"
+					customSize="text-xl sm:text-2xl"
+					class="text-center">Security Software Engineer</Heading
 				>
 			</div>
 			<Img
