@@ -45,7 +45,7 @@ const tableData: App.TableData[] = [
 				</Table>
 			</div>
 
-			<div class="animate-fade lg:col-span-2">
+			<div class="animate-fade lg:col-span-5">
 				<p class="text-justify">
 					Hey, I'm Robert! I'm a cybersecurity and software development aficionado that loves
 					building software, locking it down, and making friends along the way.
