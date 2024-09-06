@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Button, Alert, Li, List } from 'flowbite-svelte';
+import { Alert, Button, Li, List } from 'flowbite-svelte';
 
 import { fade } from 'svelte/transition';
 
@@ -27,7 +27,7 @@ const copyEmail = () => {
 <List tag="ul" list="none" class="mb-6 flex flex-wrap items-center justify-center gap-4">
 	<Li>
 		<Button
-			class="me-2 ms-2 border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0 md:me-3 md:ms-3"
+			class="me-2 ms-2 border-primary-500 text-base text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0 md:me-3 md:ms-3"
 			outline
 			href="https://github.com/ApprenticeofEnder"
 			target="_blank"
@@ -39,7 +39,7 @@ const copyEmail = () => {
 	</Li>
 	<Li>
 		<Button
-			class="me-2 ms-2 border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0 md:me-3 md:ms-3"
+			class="me-2 ms-2 border-primary-500 text-base text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0 md:me-3 md:ms-3"
 			outline
 			href="https://www.linkedin.com/in/robertbabaev2001/"
 			target="_blank"
@@ -51,7 +51,7 @@ const copyEmail = () => {
 	</Li>
 	<Li>
 		<Button
-			class="me-2 ms-2 border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0 md:me-3 md:ms-3"
+			class="me-2 ms-2 border-primary-500 text-base text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0 md:me-3 md:ms-3"
 			outline
 			on:click={copyEmail}
 		>

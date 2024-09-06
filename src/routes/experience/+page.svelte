@@ -1,16 +1,15 @@
 <script lang="ts">
 import resumeData from '$lib/assets/resume_data.json';
-import type { ProfessionalExperience } from '$lib/types';
-import { Heading, Button, Gallery, Img, Li, List, Indicator } from 'flowbite-svelte';
-import Modal from '$lib/components/Modal/Modal.svelte';
 import ContactModal from '$lib/components/Modal/ContactModal.svelte';
+import Modal from '$lib/components/Modal/Modal.svelte';
+import { Button, Gallery, Heading, Img, Li, List } from 'flowbite-svelte';
 import Typewriter from 'svelte-typewriter';
 
-const experience: ProfessionalExperience[] = resumeData.experience;
+const experience: App.ProfessionalExperience[] = resumeData.experience;
 let currentExperience = experience[0];
 let experienceModal = false;
 let contactModal = false;
-const showExperience = (experienceItem: ProfessionalExperience) => {
+const showExperience = (experienceItem: App.ProfessionalExperience) => {
 	currentExperience = experienceItem;
 	experienceModal = true;
 };
@@ -20,10 +19,10 @@ const showContact = () => {
 </script>
 
 <main>
-	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
-		>Experience</Heading
-	>
-	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:grid-cols-3 lg:w-3/4">
+	<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4">
+		Experience
+	</Heading>
+	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:w-3/4 lg:grid-cols-3">
 		{#each experience as experienceItem}
 			<Button
 				class="animate-glow-out-lg bg-white transition duration-200 hover:animate-glow-in-lg hover:bg-white hover:drop-shadow-glow-lg focus:ring-0"
@@ -36,13 +35,14 @@ const showContact = () => {
 					alt={experienceItem.alt}
 					class="mx-auto rounded-lg transition-all duration-300"
 				/>
-			</Button>{/each}
+			</Button>
+		{/each}
 	</Gallery>
 	<Modal bind:open={experienceModal} animate="animate-fade-fast">
 		<svelte:fragment slot="header">
 			<div class="inline-block">
-				<Typewriter mode="scramble" scrambleDuration={1000}
-					><h3 class="text-accent-200 drop-shadow-glow hover:animate-pulse hover:text-accent-200">
+				<Typewriter mode="scramble" scrambleDuration={1000}>
+					<h3 class="text-accent-200 drop-shadow-glow hover:animate-pulse hover:text-accent-200">
 						{currentExperience.company}
 					</h3>
 				</Typewriter>
@@ -50,7 +50,9 @@ const showContact = () => {
 				<h4 class="text-text hover:animate-pulse hover:text-text">
 					{currentExperience.title} ({currentExperience.start} - {currentExperience.end})
 				</h4>
-				<h4 class="text-text hover:animate-pulse hover:text-text">{currentExperience.location}</h4>
+				<h4 class="text-text hover:animate-pulse hover:text-text">
+					{currentExperience.location}
+				</h4>
 			</div>
 		</svelte:fragment>
 		<p class="text-base leading-relaxed text-text">

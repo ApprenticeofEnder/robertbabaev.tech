@@ -1,93 +1,3 @@
-# basic:
-#   name: 'Robert Babaev'
-#   website:
-#     display: 'robertbabaev.tech'
-#     link: 'https://robertbabaev.tech'
-#   email:
-#     display: 'robert@robertbabaev.tech'
-#     link: 'mailto:robert@robertbabaev.tech'
-#     icon: 'fa-solid fa-envelope'
-#   github:
-#     display: 'ApprenticeofEnder'
-#     link: 'https://github.com/ApprenticeofEnder'
-#     icon: 'fa-brands fa-github'
-#   linkedin:
-#     display: 'robertbabaev2001'
-#     link: 'https://www.linkedin.com/in/robertbabaev2001/'
-#     icon: 'fa-brands fa-linkedin'
-# education:
-#   - institution: 'Carleton University'
-#     degree: 'Bachelor of Computer Science'
-#     location: 'Ottawa, ON'
-#     start: 'Sept. 2019'
-#     end: 'Dec. 2024'
-# skills:
-#   programming_languages:
-#     - 'Python'
-#     - 'Ruby'
-#     - 'Java'
-#     - 'JavaScript'
-#     - 'TypeScript'
-#     - 'HTML/CSS'
-#     - 'Rust'
-#     - 'C/C++'
-#     - "C\\#"
-#     - 'SQL'
-#     - 'BASH'
-#     - 'Powershell'
-#     - 'VBA'
-#   frameworks:
-#     - 'Django'
-#     - 'FastAPI'
-#     - 'Ruby on Rails'
-#     - 'Java Spring'
-#     - 'Svelte/SvelteKit'
-#     - 'NodeJS/Express'
-#     - 'ASP.NET'
-#     - 'Angular'
-#     - 'Vue'
-#     - 'Quasar'
-#     - 'GraphQL'
-#     - 'Flask'
-#     - 'React'
-#     - 'PyTest'
-#     - 'JUnit'
-#   technical:
-#     - 'Linux'
-#     - 'Windows'
-#     - 'Git'
-#     - 'BitBucket'
-#     - 'Github'
-#     - 'Github Actions'
-#     - 'Jenkins'
-#     - 'Travis CI'
-#     - 'Docker'
-#     - 'Kubernetes'
-#     - 'Helm'
-#     - 'Digital Ocean'
-#     - 'Azure'
-#     - 'AWS'
-#     - 'Selenium'
-#     - 'Burp Suite'
-#     - 'OWASP ZAP'
-#     - 'Wireshark'
-#     - 'Elastic Search'
-#     - 'MySQL'
-#     - 'Microsoft SQL'
-#     - 'PostgreSQL'
-#     - 'SQLite'
-# concepts:
-#   - 'Cybersecurity'
-#   - 'Application Security'
-#   - 'Cryptography'
-#   - 'Network Security'
-#   - 'Computer Networking'
-#   - 'Operating Systems'
-#   - 'Data Structures & Algorithms'
-#   - 'Design Patterns'
-#   - 'Software Testing'
-#   - 'Microservices'
-#   - 'Agile'
 experience:
   - title: 'Co-op Cybersecurity Analyst'
     company: 'BDO Canada'
@@ -105,6 +15,7 @@ experience:
     sar:
       - 'Detected login cracking attacks against a Wordpress site with 80+ unique attempts within 2 days by implementing KQL analytics rules in Microsoft Sentinel. Accelerated implementation by using Perplexity AI.'
       - "Negotiated access to a threat intelligence vendor's REST API to resolve a 3 month long stalemate in creating a cross-platform threat intelligence dashboard by building rapport, expressing empathy, and using active listening."
+      - 'Reduced the ticket resolution time for the SOC by up to 50% through the creation of a manual on the internal Microsoft Copilot promptbook to enable GenAI-assisted threat hunts, incident response, and triage while incorporating local environmental insights.'
   - title: 'Co-op Security Specialist'
     company: 'Innovapost'
     start: 'May. 2023'
@@ -117,7 +28,7 @@ experience:
       - 'JavaScript'
       - 'VBA'
     sar:
-      - 'Independently streamlined access control audit timeframes from 2 weeks to 10 minutes by implementing a custom automation suite with HTML, CSS, JavaScript, and VBA -- and no external libraries whatsoever.'
+      - 'Independently streamlined access control audit timeframes from 2 weeks to 10 minutes by implementing an automation suite with JavaScript and VBA that cross-referenced Excel sheets for discrepancies without the need for external dependencies.'
       - 'Confirmed antivirus installation was unnecessary on a proprietary OS due to the inherent endpoint protection properties and narrow attack surface by researching CVEs, security features, and antivirus platform support.'
   - title: 'Co-op Software Engineer'
     company: 'Barracuda Networks'
@@ -138,6 +49,7 @@ experience:
       - 'Resolved 1 week of false positive alerts due to a failing RMM health check on a client website using Azure Linux virtual machines and Docker-based health checkers to determine discrepancies between the RMM HTTP requests and standard HTTP requests.'
       - 'Guided the integration of an on-site AWS security camera AI model into a new XDR platform by presenting collected specifications, use cases, and tradeoffs of different AI services to 5 members of regional leadership.'
       - 'Collaborated with colleagues to solve a C# API versioning discrepancy. Negotiated with QA and architecture teams to devise appropriate, considerate solution.'
+      - 'Prevented internal source code from being leaked by remote management software by investigating the ASP.NET server code written in C# and identifying a rendering issue with Blazor.'
   - title: 'Co-op Penetration Tester'
     company: 'SoftwareSecured'
     start: 'May. 2022'
@@ -190,21 +102,31 @@ experience:
       - 'Devised Python script to curate GitHub repositories for CENGN event using appropriate REST API. Enabled list-based elimination vs original lengthy active search.'
       - "Programmed custom PostgreSQL queries when Django's ORM failed. Optimized heatmap and other data visualization of security findings using server-side processing vs client-side."
 projects:
-  - title: 'Personal Website'
-    start: 'May. 2024'
+  - title: 'FastAPI Automated Security Testing'
+    start: 'Jul. 2024'
     end: 'Present'
-    featured: true
-    alt: 'Personal Website'
-    link: 'https://robertbabaev.tech'
-    description: "The latest rendition since May of 2021, this website has switched from a NodeJS/Express web server on Heroku, to using SvelteKit and Django to create a pseudo-CMS on a self-managed DigitalOcean Droplet, to finally using a static SvelteKit website hosted on DigitalOcean's App Platform."
+    featured: false
+    alt: 'FastAPI Automated Security Testing'
+    link: 'https://github.com/ApprenticeofEnder/FastAPI-automated-security-testing'
+    description: 'An educational resource for developers to learn how to use automated test suites for security testing.'
     tech:
-      - 'SvelteKit'
-      - 'DigitalOcean'
-      - 'Tailwind'
-      - 'Flowbite'
-      - 'Git'
+      - 'FastAPI'
+      - 'Python'
     sar:
-      # - ''
+      - 'Leveraged realistic examples by implementing example endpoints in FastAPI, both with and without their respective vulnerabilities, along with integration tests for each.'
+  - title: 'Fief'
+    start: 'Aug. 2024'
+    end: 'Aug. 2024'
+    featured: false
+    alt: 'CourseFull'
+    link: 'https://github.com/fief-dev/fief/pull/408'
+    description: "A quick contribution to Fief's codebase by fixing a redirect issue that a customer had."
+    tech:
+      - 'FastAPI'
+      - 'Python'
+      - 'PostgreSQL'
+    sar:
+      #
   - title: 'CourseFull'
     start: 'Apr. 2024'
     end: 'Present (WIP)'
@@ -226,6 +148,21 @@ projects:
       - 'Avoided 3 hours of manual regression testing for each change to a Ruby on Rails REST API by leveraging 190+ automated integration and unit tests with RSpec.'
       - 'Mitigated the risk of secret leaks, among the number 2 most common vulnerability category in the OWASP Top 10 2021, by using the 1Password Secrets manager, Docker, and environment variables.'
       - 'Reduced loading times by 50% on session-based components in a NextJS front end by implementing a Supabase session context.'
+  - title: 'Personal Website'
+    start: 'May. 2024'
+    end: 'Present'
+    featured: true
+    alt: 'Personal Website'
+    link: 'https://robertbabaev.tech'
+    description: "The latest rendition since May of 2021, this website has switched from a NodeJS/Express web server on Heroku, to using SvelteKit and Django to create a pseudo-CMS on a self-managed DigitalOcean Droplet, to finally using a static SvelteKit website hosted on DigitalOcean's App Platform."
+    tech:
+      - 'SvelteKit'
+      - 'DigitalOcean'
+      - 'Tailwind'
+      - 'Flowbite'
+      - 'Git'
+    sar:
+      # - ''
   - title: 'UpShare (Honours Thesis)'
     start: 'Jan. 2024'
     end: 'Apr. 2024'
@@ -247,7 +184,7 @@ projects:
     end: 'Feb. 2024'
     featured: false
     alt: 'Ripasso'
-    link: 'https://github.com/cortex/ripasso'
+    link: 'https://github.com/cortex/ripasso/pull/334'
     description: 'Ripasso is a Rust-based, simplified, and fully local password manager. A short-lived participation in a major open-source Rust project, though a fascinating look into developing real software with the language.'
     tech:
       - 'Rust'
@@ -266,22 +203,6 @@ projects:
       - 'Docker'
     sar:
       - 'Enabled efficient file sharing between host and container using volumes and bind mounts, preventing issues of inefficient file transfer via network.'
-  # - title: 'Project NOAH'
-  #   start: '2023'
-  #   end: 'Present (WIP)'
-  #   featured: true
-  #   alt: 'Project NOAH'
-  #   description: 'A campaign planner for the Lancer TTRPG, designed to simplify the process of organizing notes for running the game. The software addressed a significant barrier to entry in community.'
-  #   tech:
-  #     - 'Notion'
-  #     - 'Python'
-  #     - 'Pytest'
-  #     - 'FastAPI'
-  #     - 'Svelte'
-  #     - 'Docker'
-  #   sar:
-  #     - 'Prototyped a proof of concept Notion template using knowledge of relational databases and Markdown within 7 days. Sold in excess of 100 licenses to date through word of mouth alone.'
-  #     - 'Migrating to SaaS platform using FastAPI and Svelte to mitigate impacts of unsustainable update cycle -- Notion templates needed both updates to the template and guides for users to update to new versions.'
   - title: 'Selenium Oxide'
     start: 'Mar. 2022'
     end: 'Present'
@@ -297,7 +218,6 @@ projects:
       - 'Docker'
     sar:
       - 'Created a containerized testing environment that allowed end-to-end testing with 100% uptime using knowledge of Docker Compose, FastAPI, and Pytest.'
-
 # projects:
 #   - title: 'Project NOAH'
 #     stack: 'Notion, Python, FastAPI, NextJS, React, GraphQL'

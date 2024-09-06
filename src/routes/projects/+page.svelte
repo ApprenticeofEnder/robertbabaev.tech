@@ -1,16 +1,15 @@
 <script lang="ts">
 import resumeData from '$lib/assets/resume_data.json';
-import type { Project } from '$lib/types';
-import { Heading, Button, Gallery, Img, Li, List, Indicator, A } from 'flowbite-svelte';
-import Modal from '$lib/components/Modal/Modal.svelte';
 import ContactModal from '$lib/components/Modal/ContactModal.svelte';
+import Modal from '$lib/components/Modal/Modal.svelte';
+import { A, Button, Gallery, Heading, Img, Indicator, Li, List } from 'flowbite-svelte';
 import Typewriter from 'svelte-typewriter';
 
-const projects: Project[] = resumeData.projects;
+const projects: App.Project[] = resumeData.projects;
 let currentProject = projects[0];
 let projectModal = false;
 let contactModal = false;
-const showProject = (projectItem: Project) => {
+const showProject = (projectItem: App.Project) => {
 	currentProject = projectItem;
 	projectModal = true;
 };

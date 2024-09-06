@@ -1,8 +1,8 @@
-<script>
-import { Heading, Img, Button, ButtonGroup } from 'flowbite-svelte';
+<script lang="ts">
+import { Button, ButtonGroup, Heading, Img } from 'flowbite-svelte';
 import Typewriter from 'svelte-typewriter';
 
-const buttonLinks = [
+const buttonLinks: App.Link[] = [
 	{
 		href: '/about',
 		text: 'About'
@@ -32,19 +32,23 @@ const buttonLinks = [
 						tag="h2"
 						color="text-text drop-shadow-glow"
 						customSize="text-2xl sm:text-4xl"
-						class="text-center">ROBERT BABAEV</Heading
-					></Typewriter
-				>
+						class="text-center"
+					>
+						ROBERT BABAEV
+					</Heading>
+				</Typewriter>
 				<Heading
 					tag="h2"
 					color="text-text drop-shadow-glow"
 					customSize="text-xl sm:text-2xl"
-					class="text-center">Security Software Engineer</Heading
+					class="animate-fade text-center"
 				>
+					Security Software Engineer
+				</Heading>
 			</div>
 			<Img
 				src="/images/enderlogo_v2.png"
-				size="max-w-xs sm:max-w-md"
+				size="max-w-xs sm:max-w-md animate-fade"
 				imgClass="mx-auto"
 				alt="sample 1"
 			/>
@@ -58,8 +62,10 @@ const buttonLinks = [
 					<Button
 						class="border-primary-500 text-primary-500 transition hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0"
 						outline
-						href={buttonLink.href}>{buttonLink.text}</Button
+						href={buttonLink.href}
 					>
+						{buttonLink.text}
+					</Button>
 				{/each}
 			</ButtonGroup>
 		</div>

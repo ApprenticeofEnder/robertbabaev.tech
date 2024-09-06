@@ -1,27 +1,20 @@
 <script lang="ts">
-	import { Heading, Img } from 'flowbite-svelte';
-	import Typewriter from 'svelte-typewriter';
-	import { Table, TableBody, TableBodyCell, TableBodyRow } from 'flowbite-svelte';
+import { Heading, Img, Table, TableBody, TableBodyCell, TableBodyRow } from 'flowbite-svelte';
+import Typewriter from 'svelte-typewriter';
 
-	type TableData = {
-		key: string;
-		value: string;
-		duration?: number;
-	};
-
-	let i = 0;
-	const tableData: TableData[] = [
-		{ key: 'NAME', value: 'Robert Babaev' },
-		{ key: 'NATIONALITY', value: 'Canadian' },
-		{ key: 'ROLE', value: 'Security Engineer/Developer' },
-		{ key: 'SPECIALIZATION', value: 'Web Application Security' },
-		{ key: 'STRENGTHS', value: 'Creativity, Problem Solving, Friendliness, Fearless Innovation' },
-		{ key: 'FAVOURITE TECH', value: 'Python, Rust, Svelte, Docker, Linux' }
-	].map((entry: TableData) => {
-		entry.duration = 1000 + i * 250;
-		i++;
-		return entry;
-	});
+let i = 0;
+const tableData: App.TableData[] = [
+	{ key: 'NAME', value: 'Robert Babaev' },
+	{ key: 'NATIONALITY', value: 'Canadian' },
+	{ key: 'ROLE', value: 'Security Engineer/Developer' },
+	{ key: 'SPECIALIZATION', value: 'Web Application Security' },
+	{ key: 'STRENGTHS', value: 'Creativity, Professionalism, Friendliness, Fearless Innovation' },
+	{ key: 'FAVOURITE TECH', value: 'Python, Rust, Svelte, Docker, Linux' }
+].map((entry: App.TableData) => {
+	entry.duration = 1000 + i * 250;
+	i++;
+	return entry;
+});
 </script>
 
 <main class="flex flex-initial justify-center">
@@ -30,26 +23,21 @@
 			>About Me</Heading
 		>
 
-		<div class="grid lg:grid-flow-row lg:grid-cols-5 gap-x-16">
-			<div class="lg:col-span-2">
-				<Img
-					src="/images/PFP_V2.jpg"
-					size="max-w-xs"
-					imgClass="mx-auto"
-					alt="sample 1"
-				/>
+		<div class="grid gap-x-16 lg:grid-flow-row lg:grid-cols-5">
+			<div class="animate-fade lg:col-span-2">
+				<Img src="/images/PFP_V2.jpg" size="max-w-xs" imgClass="mx-auto" alt="sample 1" />
 			</div>
 
 			<div class="lg:col-span-3 lg:col-start-3">
 				<Table noborder={true} class="animate-fade">
 					<TableBody>
 						{#each tableData as entry}
-							<TableBodyRow class="bg-transparent border-b-2 border-solid border-text/25">
-								<TableBodyCell class="text-text md:text-base pl-0">{entry.key}</TableBodyCell>
+							<TableBodyRow class="border-b-2 border-solid border-text/25 bg-transparent">
+								<TableBodyCell class="pl-0 text-text md:text-base">{entry.key}</TableBodyCell>
 								<Typewriter mode="scramble" scrambleDuration={entry.duration}>
-									<TableBodyCell class="text-text lg:text-base text-balance">
-										{entry.value}</TableBodyCell
-									></Typewriter
+									<TableBodyCell class="text-balance text-text lg:text-base">
+										{entry.value}
+									</TableBodyCell></Typewriter
 								>
 							</TableBodyRow>
 						{/each}
@@ -57,7 +45,7 @@
 				</Table>
 			</div>
 
-			<div class="lg:col-span-5">
+			<div class="animate-fade lg:col-span-2">
 				<p class="text-justify">
 					Hey, I'm Robert! I'm a cybersecurity and software development aficionado that loves
 					building software, locking it down, and making friends along the way.
