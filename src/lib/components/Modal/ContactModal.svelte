@@ -6,25 +6,6 @@ import { fade } from 'svelte/transition';
 import ContactButtons from '$lib/components/ContactButtons.svelte';
 
 export let open = false;
-export let emailCopied = false;
-
-const copyEmail = () => {
-	if (emailCopied) {
-		return;
-	}
-	console.log('Initialized Copy');
-	navigator.clipboard
-		.writeText('robert@robertbabaev.tech')
-		.then(() => {
-			emailCopied = true;
-			setTimeout(() => {
-				emailCopied = false;
-			}, 3000);
-		})
-		.catch((err) => {
-			alert(err.message);
-		});
-};
 
 const hide = (e: Event) => {
 	e.preventDefault();

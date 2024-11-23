@@ -81,6 +81,7 @@ export default {
 				}
 			},
 			dropShadow: {
+				'glow-sm': '0 2px 1px rgba(0,255,0,0.5)',
 				glow: '0 4px 3px rgba(0,255,0,0.5)',
 				'glow-lg': '0 8px 6px rgba(0,255,0,0.5)'
 			},

@@ -3,8 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "node scripts/convertData.js && vite dev",
-		"build": "node scripts/convertData.js && vite build",
+		"dev": "npm run data && vite dev",
+		"build": "npm run data && vite build",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
