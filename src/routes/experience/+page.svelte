@@ -24,18 +24,32 @@ const showContact = () => {
 	</Heading>
 	<Gallery class="mx-auto animate-fade grid-cols-2 gap-4 lg:w-3/4 lg:grid-cols-3">
 		{#each experience as experienceItem}
-			<Button
-				class="animate-glow-out-lg bg-white transition duration-200 hover:animate-glow-in-lg hover:bg-white hover:drop-shadow-glow-lg focus:ring-0"
-				on:click={() => {
+			{#if experienceItem.src}
+				<Button
+					class="animate-glow-out-lg bg-white transition duration-200 hover:animate-glow-in-lg hover:bg-white hover:drop-shadow-glow-lg focus:ring-0"
+					on:click={() => {
 					showExperience(experienceItem);
 				}}
-			>
-				<Img
-					src={experienceItem.src}
-					alt={experienceItem.alt}
-					class="mx-auto rounded-lg transition-all duration-300"
-				/>
-			</Button>
+				>
+					<Img
+						src={experienceItem.src}
+						alt={experienceItem.alt}
+						class="mx-auto rounded-lg transition-all duration-300"
+					/>
+				</Button>
+			{:else}
+				<Button
+					class="relative border-primary-500 text-primary-500 transition duration-200 hover:bg-primary-500 hover:text-black focus:bg-transparent focus:text-white focus:ring-0"
+					outline
+					on:click={() => {
+						showExperience(experienceItem);
+					}}
+				>
+					<div class="flex h-[100px] w-[100px] flex-col justify-center lg:h-[320px] lg:w-[320px]">
+						<div class="text-lg sm:text-xl md:text-2xl">{experienceItem.company}</div>
+					</div>
+				</Button>
+			{/if}
 		{/each}
 	</Gallery>
 	<Modal bind:open={experienceModal} animate="animate-fade-fast">
