@@ -5,7 +5,50 @@
 
 @layer base {
 	:root {
-		@apply bg-background font-body text-text;
+		--background: 0 0% 0%;
+		--foreground: 133.33333333333334 69.2307692307689% 94.9019607843137%;
+		--card: 120 86% 3%;
+		--card-foreground: 133.33333333333334 69.2307692307689% 94.9019607843137%;
+		--popover: 0 0% 7.599995930989578%;
+		--popover-foreground: 133.33333333333334 69.2307692307689% 94.9019607843137%;
+		--primary: 120 100% 50%;
+		--primary-foreground: 0 0% 0%;
+		--secondary: 200 100% 75%;
+		--secondary-foreground: 0 0% 0%;
+		--muted: 0 0% 15%;
+		--muted-foreground: 133.33333333333334 69.2307692307689% 94.9019607843137%;
+		--accent: 60 100% 50%;
+		--accent-foreground: 0 0% 0%;
+		--destructive: 0 100% 50%;
+		--destructive-foreground: 0 0% 100%;
+		--border: 0 0% 25%;
+		--input: 133.33333333333334 69.2307692307689% 75.9019607843137%;
+		--ring: 120 100% 75%;
+		--chart-1: 120 100% 40%;
+		--chart-2: 200 100% 60%;
+		--chart-3: 60 100% 40%;
+		--chart-4: 0 100% 60%;
+		--chart-5: 260 100% 40%;
+		--sidebar-background: var(--card);
+		--sidebar-foreground: var(--foreground);
+		--sidebar-primary: 224.3 76.3% 48%;
+		--sidebar-primary-foreground: 0 0% 100%;
+		--sidebar-accent: 240 3.7% 15.9%;
+		--sidebar-accent-foreground: 240 4.8% 95.9%;
+		--sidebar-border: var(--border);
+		--sidebar-ring: 217.2 91.2% 59.8%;
+
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background font-body text-foreground;
 	}
 
 	h1,
@@ -15,18 +58,18 @@
 	}
 
 	h1 {
-		@apply text-2xl font-bold text-primary-500 drop-shadow-glow md:text-4xl;
+		@apply text-xl font-bold text-primary drop-shadow-glow md:text-2xl;
 	}
 
 	h2 {
-		@apply text-xl text-text md:text-2xl;
+		@apply text-lg md:text-xl;
 	}
 
 	h3 {
-		@apply text-lg text-text md:text-xl;
+		@apply text-base md:text-lg;
 	}
 
-	p {
-		@apply py-4;
+	em {
+		@apply text-primary;
 	}
 }

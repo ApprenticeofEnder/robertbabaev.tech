@@ -1,13 +1,113 @@
+import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
-export default {
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
-	],
+const config: Config = {
+	darkMode: ['class'],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	safelist: ['dark'],
 	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				'2xl': '1400px'
+			}
+		},
 		extend: {
+			colors: {
+				border: 'hsl(var(--border) / <alpha-value>)',
+				input: 'hsl(var(--input) / <alpha-value>)',
+				ring: 'hsl(var(--ring) / <alpha-value>)',
+				background: 'hsl(var(--background) / <alpha-value>)',
+				foreground: 'hsl(var(--foreground) / <alpha-value>)',
+				primary: {
+					DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+					foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+					foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)'
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+					foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)'
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+					foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+					foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+					foreground: 'hsl(var(--popover-foreground) / <alpha-value>)'
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
+				},
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				}
+			},
+			borderRadius: {
+				xl: 'calc(var(--radius) + 4px)',
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				heading: 'Victor Mono',
+				body: 'Victor Mono'
+			},
+			keyframes: {
+				'accordion-down': {
+					from: { height: '0' },
+					to: { height: 'var(--bits-accordion-content-height)' }
+				},
+				'accordion-up': {
+					from: { height: 'var(--bits-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'caret-blink': {
+					'0%,70%,100%': { opacity: '1' },
+					'20%,50%': { opacity: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '100%' }
+				},
+				'glow-in': {
+					'0%': { filter: 'drop-shadow(0 0 #0000)' },
+					'100%': { filter: 'drop-shadow(0 4px 3px rgba(0,255,0,0.5))' }
+				},
+				'glow-out': {
+					'0%': { filter: 'drop-shadow(0 4px 3px rgba(0,255,0,0.5))' },
+					'100%': { filter: 'drop-shadow(0 0 #0000)' }
+				},
+				'glow-in-lg': {
+					'0%': { filter: 'drop-shadow(0 0 #0000)' },
+					'100%': { filter: 'drop-shadow(0 8px 6px rgba(0,255,0,0.5))' }
+				},
+				'glow-out-lg': {
+					'0%': { filter: 'drop-shadow(0 8px 6px rgba(0,255,0,0.5))' },
+					'100%': { filter: 'drop-shadow(0 0 #0000)' }
+				}
+			},
 			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'caret-blink': 'caret-blink 1.25s ease-out infinite',
 				fade: 'fadeIn 1s ease-in-out',
 				'fade-fast': 'fadeIn 0.5s ease-in-out',
 				'glow-in': 'glowIn 0.2s ease-in-out',
@@ -15,94 +115,14 @@ export default {
 				'glow-in-lg': 'glowInLg 0.2s ease-in-out',
 				'glow-out-lg': 'glowOutLg 0.2s ease-in-out'
 			},
-			keyframes: {
-				fadeIn: {
-					'0%': { opacity: '0' },
-					'100%': { opacity: '100%' }
-				},
-				glowIn: {
-					'0%': { filter: 'drop-shadow(0 0 #0000)' },
-					'100%': { filter: 'drop-shadow(0 4px 3px rgba(0,255,0,0.5))' }
-				},
-				glowOut: {
-					'0%': { filter: 'drop-shadow(0 4px 3px rgba(0,255,0,0.5))' },
-					'100%': { filter: 'drop-shadow(0 0 #0000)' }
-				},
-				glowInLg: {
-					'0%': { filter: 'drop-shadow(0 0 #0000)' },
-					'100%': { filter: 'drop-shadow(0 8px 6px rgba(0,255,0,0.5))' }
-				},
-				glowOutLg: {
-					'0%': { filter: 'drop-shadow(0 8px 6px rgba(0,255,0,0.5))' },
-					'100%': { filter: 'drop-shadow(0 0 #0000)' }
-				}
-			},
-			colors: {
-				text: '#e9fbed',
-				background: '#000000',
-				primary: {
-					50: '#e5ffeb',
-					100: '#ccffd8',
-					200: '#99ffb1',
-					300: '#66ff8a',
-					400: '#33ff63',
-					500: '#00ff3c',
-					600: '#00cc30',
-					700: '#009924',
-					800: '#006618',
-					900: '#00330c',
-					950: '#001a06'
-				},
-				secondary: {
-					50: '#e9fbed',
-					100: '#d4f7db',
-					200: '#a8f0b8',
-					300: '#7de894',
-					400: '#52e071',
-					500: '#26d94d',
-					600: '#1fad3e',
-					700: '#17822e',
-					800: '#0f571f',
-					900: '#082b0f',
-					950: '#041608'
-				},
-				accent: {
-					50: '#e8fced',
-					100: '#d2f9db',
-					200: '#a5f3b7',
-					300: '#78ed93',
-					400: '#4ae86f',
-					500: '#1de24b',
-					600: '#17b53c',
-					700: '#12872d',
-					800: '#0c5a1e',
-					900: '#062d0f',
-					950: '#031708'
-				}
-			},
 			dropShadow: {
+				'glow-sm': '0 2px 1px rgba(0,255,0,0.5)',
 				glow: '0 4px 3px rgba(0,255,0,0.5)',
 				'glow-lg': '0 8px 6px rgba(0,255,0,0.5)'
-			},
-			fontSize: {
-				sm: '0.750rem',
-				base: '1rem',
-				xl: '1.333rem',
-				'2xl': '1.777rem',
-				'3xl': '2.369rem',
-				'4xl': '3.158rem',
-				'5xl': '4.210rem'
-			},
-			fontFamily: {
-				heading: 'Victor Mono',
-				body: 'Victor Mono'
-			},
-			fontWeight: {
-				normal: '400',
-				bold: '700'
 			}
 		}
 	},
+	plugins: [tailwindcssAnimate]
+};
 
-	plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')]
-} as Config;
+export default config;

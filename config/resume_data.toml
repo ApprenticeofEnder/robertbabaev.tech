@@ -1,0 +1,86 @@
+[education]
+title = "Carleton University"
+subtitle = "Bachelor of Computer Science, Honours (4.0 GPA)"
+location = "Ottawa, ON"
+start = "09/2019"
+end = "01/2025"
+
+[experience.deepcode-sec-swe]
+title = "Security Software Engineer"
+subtitle = "DeepCode"
+location = "Ottawa, ON"
+start = "02/2025"
+end = "Present"
+tech = ["Azure", "Python", "Flask", "MySQL", "Terraform", "Rust"]
+bulletPoints = [
+  "Designed and refactored a *Python* monorepo using uv to organize 7 related sub-projects, minimizing overhead between repositories.",
+  "Implemented a Telegram message interceptor using *Azure* event brokers, allowing real time data ingestion for credential breaches.",
+]
+
+[experience.bdo-sec-eng]
+title = "Co-op Security Engineer"
+subtitle = "BDO Canada"
+location = "Ottawa, ON"
+start = "05/2024"
+end = "07/2024"
+tech = [
+  "Crowdstrike Falcon",
+  "Microsoft Azure",
+  "Microsoft Sentinel",
+  "PowerShell",
+  "KQL",
+]
+bulletPoints = [
+  "Designed *Azure* KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website.",
+  "Wrote a Powershell script to find 50 users with unauthorized software installed, consolidating IP and user data from Microsoft Defender.",
+  "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot* decreasing SOC resolution time by 31% across 189 tickets.",
+]
+
+[experience.barracuda-swe]
+title = "Co-op Software Engineer"
+subtitle = "Barracuda Networks"
+location = "Ottawa, ON"
+start = "01/2023"
+end = "04/2023"
+tech = ["AWS", "Azure", "Docker", "Linux", "C#", "ASP.NET"]
+bulletPoints = [
+  "Designed and implemented a CSV log export system using *C#*, Blazor, and ASP.NET, saving the IT team up to 30 minutes per incident.",
+  "Identified and mitigated a source code leak in a .NET and Blazor application, preventing potential sensitive information disclosure.",
+  "Diagnosed the cause of a failing health check using *Azure Linux* virtual machines and *Docker* tooling, resolving 168 false positive alerts.",
+  "Presented selected *AWS* AI services to 5 members of regional leadership, leading to the integration of a new security camera model.",
+]
+
+[experience.software-secured-appsec-eng]
+title = "Co-op Application Security Engineer"
+subtitle = "SoftwareSecured"
+location = "Ottawa, ON"
+start = "05/2022"
+end = "08/2022"
+tech = ["Python"]
+bulletPoints = [
+  "Identified a hard-coded e-commerce API key in 7 *Ruby on Rails* APIs using Semgrep and Postman, preventing over $1K in API charges.",
+  "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
+  "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
+]
+
+[projects.coursefull]
+title = "Full Stack Software Engineer"
+subtitle = "CourseFull"
+location = "coursefull.app"
+start = "01/2023"
+end = "04/2023"
+link = "https://coursefull.app"
+tech = [
+  "Microsoft Azure",
+  "PowerShell",
+  "Microsoft Sentinel",
+  "KQL",
+  "Crowdstrike Falcon",
+]
+bulletPoints = [
+  "Identified a hard-coded e-commerce API key in 7 *Ruby on Rails* APIs using Semgrep and Postman, preventing over $1K in API charges.",
+  "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
+  "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
+]
+
+[extra]
