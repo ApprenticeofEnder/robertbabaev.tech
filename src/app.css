@@ -58,7 +58,7 @@
 	}
 
 	h1 {
-		@apply text-xl font-bold text-primary drop-shadow-glow md:text-2xl;
+		@apply text-xl font-bold text-primary drop-shadow-glow-sm md:text-2xl md:drop-shadow-glow;
 	}
 
 	h2 {

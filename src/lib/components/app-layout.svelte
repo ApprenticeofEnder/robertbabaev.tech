@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import Scramble from '$lib/components/scramble.svelte';
+	import { Separator } from '$lib/components/ui/separator';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 
 	let { children, pageTitle } = $props();
@@ -13,7 +14,7 @@
 			<Sidebar.Trigger />
 			<h1 class="align-middle"><Scramble text={pageTitle}></Scramble></h1>
 		</div>
-		<hr class="my-2" />
+		<Separator class="my-2"></Separator>
 		<main class="container w-full flex-grow ps-9">
 			{@render children?.()}
 		</main>
