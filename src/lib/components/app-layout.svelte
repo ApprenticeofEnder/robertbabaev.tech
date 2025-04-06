@@ -9,13 +9,15 @@
 
 <Sidebar.Provider>
 	<AppSidebar />
-	<div class="m-2 flex w-full flex-col">
-		<div class="flex items-center gap-2">
-			<Sidebar.Trigger />
-			<h1 class="align-middle"><Scramble text={pageTitle}></Scramble></h1>
-		</div>
-		<Separator class="my-2"></Separator>
-		<main class="container w-full flex-grow ps-9">
+	<div class="flex w-full flex-col">
+		<header class="fixed z-10 w-full bg-background p-2 pb-0">
+			<div class="flex items-center gap-2">
+				<Sidebar.Trigger />
+				<h1 class="align-middle"><Scramble text={pageTitle}></Scramble></h1>
+			</div>
+			<Separator class="mt-2"></Separator>
+		</header>
+		<main class="container relative w-full flex-grow ps-11">
 			{@render children?.()}
 		</main>
 	</div>
