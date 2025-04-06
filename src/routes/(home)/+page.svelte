@@ -29,7 +29,7 @@
 	</h2>
 {/snippet}
 
-<section class="flex h-full flex-col justify-center gap-2">
+<section class="flex h-3/4 flex-col justify-center gap-2 md:h-full">
 	<h3>Entry DEV-D4D5C0D9</h3>
 	<h1 class="flex gap-x-3 drop-shadow-glow-sm sm:text-3xl sm:drop-shadow-glow lg:text-4xl">
 		Subject: <Scramble text="Robert Babaev" delay={500} />

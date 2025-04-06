@@ -17,7 +17,7 @@
 			</div>
 			<Separator class="mt-2"></Separator>
 		</header>
-		<main class="container relative w-full flex-grow ps-11">
+		<main class="container w-full flex-grow py-14 ps-11">
 			{@render children?.()}
 		</main>
 	</div>
