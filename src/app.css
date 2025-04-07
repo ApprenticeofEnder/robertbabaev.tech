@@ -72,4 +72,12 @@
 	em {
 		@apply text-primary;
 	}
+
+	a {
+		@apply text-primary underline;
+	}
+
+	a.menu {
+		@apply no-underline;
+	}
 }

@@ -22,7 +22,6 @@
 	}
 
 	function scrambleOnce(): boolean {
-		console.log(text.length);
 		if (iterations > text.length) {
 			return false;
 		}

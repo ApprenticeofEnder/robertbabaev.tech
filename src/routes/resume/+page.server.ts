@@ -38,18 +38,24 @@ async function compileResumeEntries(
 
 export const load = async () => {
 	const tomlContent = await readFile('config/resume_data.toml', 'utf-8');
-	const { experience, education, projects }: ResumeDataLoaded = toml.parse(tomlContent);
+	const { experience, education, projects, hackathons, volunteering }: ResumeDataLoaded =
+		toml.parse(tomlContent);
 
-	const [parsedEducation, parsedExperience, parsedProjects] = await Promise.all([
-		compileResumeEntry(education),
-		compileResumeEntries(experience),
-		compileResumeEntries(projects)
-	]);
+	const [parsedEducation, parsedExperience, parsedProjects, parsedHackathons, parsedVolunteering] =
+		await Promise.all([
+			compileResumeEntry(education),
+			compileResumeEntries(experience),
+			compileResumeEntries(projects),
+			compileResumeEntries(hackathons),
+			compileResumeEntries(volunteering)
+		]);
 
 	const resumeData: ResumeData = {
 		education: parsedEducation,
 		experience: parsedExperience,
-		projects: parsedProjects
+		projects: parsedProjects,
+		hackathons: parsedHackathons,
+		volunteering: parsedVolunteering
 	};
 
 	return {

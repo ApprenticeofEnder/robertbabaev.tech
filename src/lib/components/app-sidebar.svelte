@@ -7,7 +7,6 @@
 	import IdCard from 'lucide-svelte/icons/id-card';
 	import Trophy from 'lucide-svelte/icons/trophy';
 	import User from 'lucide-svelte/icons/user';
-	import type { SvelteComponent } from 'svelte';
 
 	import { goto } from '$app/navigation';
 	import * as Collapsible from '$lib/components/ui/collapsible';

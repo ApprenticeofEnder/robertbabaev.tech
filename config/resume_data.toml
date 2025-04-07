@@ -18,7 +18,7 @@ bulletPoints = [
 ]
 
 [experience.bdo-sec-eng]
-title = "Co-op Security Engineer"
+title = "Security Engineer (Co-Op)"
 subtitle = "BDO Canada"
 location = "Ottawa, ON"
 start = "05/2024"
@@ -36,8 +36,16 @@ bulletPoints = [
   "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot* decreasing SOC resolution time by 31% across 189 tickets.",
 ]
 
+[experience.innovapost-security-specialist]
+title = "Security Specialist (Co-Op)"
+subtitle = "Innovapost (Deloitte)"
+location = "Ottawa, ON"
+start = "05/2023"
+end = "08/2023"
+tech = ["JavaScript", "Microsoft Azure"]
+
 [experience.barracuda-swe]
-title = "Co-op Software Engineer"
+title = "Co-op Software Engineer (Co-Op)"
 subtitle = "Barracuda Networks"
 location = "Ottawa, ON"
 start = "01/2023"
@@ -51,12 +59,12 @@ bulletPoints = [
 ]
 
 [experience.software-secured-appsec-eng]
-title = "Co-op Application Security Engineer"
+title = "Application Security Engineer (Co-Op)"
 subtitle = "SoftwareSecured"
 location = "Ottawa, ON"
 start = "05/2022"
 end = "08/2022"
-tech = ["Python"]
+tech = ["AWS", "Python"]
 bulletPoints = [
   "Identified a hard-coded e-commerce API key in 7 *Ruby on Rails* APIs using Semgrep and Postman, preventing over $1K in API charges.",
   "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
@@ -83,4 +91,16 @@ bulletPoints = [
   "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
 ]
 
-[extra]
+[hackathons.cuhacking-2025]
+title = "cuHacking 2025"
+subtitle = "QNXtainer"
+location = "Software Engineer"
+start = "03/2025 (3 Days)"
+tech = ["Python", "QNX", "Bash"]
+
+[hackathons.uottahack-7]
+title = "uOttaHack 7"
+subtitle = "SecureVision"
+location = "Platform / Backend Engineer"
+start = "01/2025 (3 Days)"
+tech = ["Terraform", "Docker", "Python", "FastAPI", "Next.js", "TypeScript"]
