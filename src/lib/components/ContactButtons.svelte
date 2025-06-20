@@ -1,27 +1,27 @@
 <script lang="ts">
-import { Alert, Button, Li, List } from 'flowbite-svelte';
+	import { Alert, Button, Li, List } from 'flowbite-svelte';
 
-import { fade } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
-export let emailCopied = false;
+	export let emailCopied = false;
 
-const copyEmail = () => {
-	if (emailCopied) {
-		return;
-	}
-	console.log('Initialized Copy');
-	navigator.clipboard
-		.writeText('robert@robertbabaev.tech')
-		.then(() => {
-			emailCopied = true;
-			setTimeout(() => {
-				emailCopied = false;
-			}, 3000);
-		})
-		.catch((err) => {
-			alert(err.message);
-		});
-};
+	const copyEmail = () => {
+		if (emailCopied) {
+			return;
+		}
+		console.log('Initialized Copy');
+		navigator.clipboard
+			.writeText('robert@robertbabaev.tech')
+			.then(() => {
+				emailCopied = true;
+				setTimeout(() => {
+					emailCopied = false;
+				}, 3000);
+			})
+			.catch((err) => {
+				alert(err.message);
+			});
+	};
 </script>
 
 <List tag="ul" list="none" class="mb-6 flex flex-wrap items-center justify-center gap-4">
@@ -67,8 +67,8 @@ const copyEmail = () => {
 			color="none"
 			class="mx-4 border-2 border-primary-500 bg-background text-primary-500 transition md:mx-6"
 			on:click={() => {
-                emailCopied = false;
-            }}
+				emailCopied = false;
+			}}
 		>
 			Email copied!
 		</Alert>

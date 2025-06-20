@@ -1,7 +1,7 @@
-<script>
-import '../app.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+<script lang="ts">
+	import '../app.css';
+	import '@fortawesome/fontawesome-free/css/all.min.css';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
 
 <div class="relative px-8">
@@ -30,4 +30,5 @@ import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	</div>
 </div>
 
-<style></style>
+<style>
+</style>
