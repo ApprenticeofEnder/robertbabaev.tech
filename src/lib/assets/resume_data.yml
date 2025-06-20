@@ -8,11 +8,15 @@ experience:
     tech:
       - 'Microsoft Azure'
       - 'Python'
-      - 'Flask'
+      - 'Terraform'
+      - 'Rust'
+      - 'JavaScript'
       - 'MySQL'
     sar:
-      - Designed and refactored a Python monorepo using uv to organize 7 related sub-projects, minimizing overhead between repositories.
-      - Implemented a Telegram message interceptor using Azure event brokers, allowing real time data ingestion for credential breaches.
+      - Optimized a data ingestion script using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, processing 1.5 million lines of data in 3 minutes.
+      - Implemented a data processing pipeline using Python async programming, MQTT, and pub-sub to process and enrich files up to 100 GB/day.
+      - Designed secure cloud architecture for the pipeline using *Terraform* and Azure, ensuring proper access control and network segmentation.
+      - Wrote a script using *JavaScript* script to exfiltrate 2TB of data from MongoDB to place into MySQL using async/await and mass insert queries.
   - title: 'Co-op Cybersecurity Analyst'
     company: 'BDO Canada'
     start: '05/2024'
@@ -26,9 +30,10 @@ experience:
       - 'Microsoft Sentinel'
       - 'KQL'
       - 'Power BI'
+      - 'REST APIs'
     sar:
       - 'Designed Azure KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website.'
-      - 'Documented GenAI-assisted threat hunting procedures using Microsoft Copilot, decreasing SOC resolution time by 31% across 189 tickets.'
+      - Developed a dashboard for monthly reports using *Azure* SIEM data and REST APIs which saved up to 2 hours/report, impacting 18 reports.
       - 'Wrote a Powershell script to find 50 users with unauthorized software installed, consolidating IP and user data from Microsoft Defender.'
   - title: 'Co-op Security Specialist'
     company: 'Innovapost'
@@ -39,10 +44,11 @@ experience:
     alt: 'Innovapost'
     tech:
       - 'HTML'
+      - 'CSS'
       - 'JavaScript'
       - 'VBA'
     sar:
-      - 'Independently streamlined access control audit timeframes from 2 weeks to 10 minutes by implementing an automation suite with JavaScript and VBA that cross-referenced Excel sheets for discrepancies without the need for external dependencies.'
+      - 'Automated an access control audit using VBA and *JavaScript* and without relying on third party dependencies, saving up to $8400 per month in working hours with zero risk of supply chain attacks.'
       - 'Confirmed antivirus installation was unnecessary on a proprietary OS due to the inherent endpoint protection properties and narrow attack surface by researching CVEs, security features, and antivirus platform support.'
   - title: 'Co-op Software Engineer'
     company: 'Barracuda Networks'
@@ -60,7 +66,7 @@ experience:
       - 'Windows'
       - 'AWS'
     sar:
-      - 'Designed and implemented a CSV log export system using C#, Blazor, and ASP.NET, saving the IT team up to 30 minutes per incident.'
+      - 'Designed and implemented a CSV log export system using *C#*, *Blazor*, and *ASP.NET*, saving the IT team up to 30 minutes per incident.'
       - 'Identified and mitigated a source code leak in a .NET and Blazor application, preventing potential sensitive information disclosure.'
       - 'Presented selected *AWS* AI services to 5 members of regional leadership, leading to the integration of a new security camera model.'
       - 'Diagnosed the cause of a failing health check using *Azure Linux* virtual machines and *Docker* tooling, resolving 168 false positive alerts.'
@@ -113,6 +119,33 @@ experience:
       - 'Migrated *JavaScript* visualization code for processing data to a custom PostgreSQL query in *Django*, boosting render times by 0.76 seconds.'
       - 'Built a CVSS calculator integration for a reporting tool using Django and Angular, saving up to 3 hours per penetration test across 15 clients.'
 projects:
+  - title: 'Speedbeaver'
+    start: '03/2025'
+    end: 'Present'
+    featured: true
+    alt: 'Speedbeaver'
+    link: 'https://github.com/ApprenticeofEnder/speedbeaver'
+    description: 'A Structlog integration for FastAPI, designed to get developers up and running with supercharged logging in as little as 4 lines of code.'
+    tech:
+      - 'Python'
+      - 'FastAPI'
+    sar:
+  - title: 'CyberSci Nationals - Challenge Creator'
+    start: '01/2025'
+    end: '06/2025'
+    featured: true
+    alt: 'CyberSci Nationals 2025'
+    link: '#'
+    description: 'Volunteered to create challenges for CyberSci Nationals 2025.'
+    tech:
+      - 'Python'
+      - 'FastAPI'
+      - 'TypeScript'
+      - 'Next.js'
+      - 'SvelteKit'
+      - 'MQTT'
+      - 'Terraform'
+      - 'Docker'
   - title: 'FastAPI Automated Security Testing'
     start: 'Jul. 2024'
     end: 'Present'
