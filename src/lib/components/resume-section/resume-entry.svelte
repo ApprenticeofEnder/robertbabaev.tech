@@ -14,11 +14,11 @@
 <Card.Root class="">
 	<Card.Header class="mb-4">
 		<Card.Title class="flex flex-col gap-1 sm:flex-row sm:gap-2 sm:divide-x">
-			<h2 class="drop-shadow-glow-sm">{title}</h2>
-			<h2 class="sm:ps-2">{subtitle}</h2>
+			<h2 class="drop-shadow-glow-sm">{@html title}</h2>
+			<h2 class="sm:ps-2">{@html subtitle}</h2>
 		</Card.Title>
 		<Card.Description class="flex flex-col justify-between gap-1">
-			<span>{location}</span>
+			<span>{@html location}</span>
 			{#if start && end}
 				<span>{start} - {end}</span>
 			{:else if start}

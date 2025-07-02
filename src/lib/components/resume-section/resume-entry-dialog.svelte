@@ -22,7 +22,15 @@
 					{/if}
 				</h4>
 			</AlertDialog.Title>
-			<AlertDialog.Description></AlertDialog.Description>
+			<AlertDialog.Description>
+				{#if bulletPoints}
+					<ul>
+						{#each bulletPoints as bulletPoint}
+							<li>{@html bulletPoint}</li>
+						{/each}
+					</ul>
+				{/if}
+			</AlertDialog.Description>
 		</AlertDialog.Header>
 		<AlertDialog.Footer>
 			<AlertDialog.Cancel>Go Back</AlertDialog.Cancel>

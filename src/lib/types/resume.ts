@@ -11,16 +11,8 @@ export interface ResumeEntry {
 
 export interface ResumeData {
 	education: ResumeEntry;
-	experience: ResumeEntry[];
-	projects: ResumeEntry[];
-	hackathons: ResumeEntry[];
-	volunteering: ResumeEntry[];
-}
-
-export interface ResumeDataLoaded {
-	education?: ResumeEntry;
-	experience?: Record<string, ResumeEntry>;
-	projects?: Record<string, ResumeEntry>;
-	hackathons?: Record<string, ResumeEntry>;
-	volunteering?: Record<string, ResumeEntry>;
+	experience: Record<string, ResumeEntry>;
+	projects: Record<string, ResumeEntry>;
+	hackathons: Record<string, ResumeEntry>;
+	volunteering: Record<string, ResumeEntry>;
 }

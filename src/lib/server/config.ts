@@ -4,8 +4,16 @@ import { JSDOM } from 'jsdom';
 import * as marked from 'marked';
 import toml from 'smol-toml';
 
+marked.use({
+	renderer: {
+		link({ href }) {
+			return href;
+		}
+	}
+});
+
 async function compile(src: string): Promise<string> {
-	const parsed = marked.parse(src, { async: true });
+	const parsed = marked.parseInline(src, { async: true });
 	const virtualDom = new JSDOM('').window;
 	const purifier = DOMPurify(virtualDom);
 	const sanitized = purifier.sanitize(await parsed);

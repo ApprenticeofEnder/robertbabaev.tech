@@ -5,6 +5,8 @@ location = "Ottawa, ON"
 start = "09/2019"
 end = "01/2025"
 
+[experience]
+
 [experience.deepcode-sec-swe]
 title = "Security Software Engineer"
 subtitle = "DeepCode"
@@ -71,6 +73,8 @@ bulletPoints = [
   "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
 ]
 
+[projects]
+
 [projects.coursefull]
 title = "Full Stack Software Engineer"
 subtitle = "CourseFull"
@@ -91,6 +95,8 @@ bulletPoints = [
   "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
 ]
 
+[hackathons]
+
 [hackathons.cuhacking-2025]
 title = "cuHacking 2025"
 subtitle = "QNXtainer"
@@ -104,3 +110,5 @@ subtitle = "SecureVision"
 location = "Platform / Backend Engineer"
 start = "01/2025 (3 Days)"
 tech = ["Terraform", "Docker", "Python", "FastAPI", "Next.js", "TypeScript"]
+
+[volunteering]
