@@ -30,8 +30,6 @@ export async function compileArrayEntry(
 	return [key, newValues];
 }
 
-// TODO: Add unit tests with vitest because screw testing this manually
-
 export async function compileEntries<T>(data: Record<string, any> | undefined): Promise<T> {
 	const entries = Object.entries(data ?? {});
 	const compiledEntries = await Promise.all(
