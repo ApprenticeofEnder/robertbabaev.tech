@@ -28,13 +28,11 @@
 			<AlertDialog.Cancel>Go Back</AlertDialog.Cancel>
 			{#if link}
 				<Button
-					onclick={() => {
-						if (!link) {
-							return;
-						}
-						window.open(link, '_blank', 'noopener noreferrer');
-					}}
 					variant="outline"
+					href={link}
+					class="text-foreground"
+					target="_blank"
+					rel="noopener noreferrer"
 				>
 					See Project
 				</Button>
