@@ -53,7 +53,12 @@
 </script>
 
 {#if href}
-	<a bind:this={ref} class={cn(buttonVariants({ variant, size }), className)} {href} {...restProps}>
+	<a
+		bind:this={ref}
+		class={cn(buttonVariants({ variant, size }), 'decoration-transparent', className)}
+		{href}
+		{...restProps}
+	>
 		{@render children?.()}
 	</a>
 {:else}
