@@ -40,7 +40,3 @@
 		<ResumeEntryDialog {title} {subtitle} {location} {start} {end} {link} {tech} {bulletPoints} />
 	</Card.Footer>
 </Card.Root>
-
-<style lang="postcss">
-	@reference "../../../app.css";
-</style>
