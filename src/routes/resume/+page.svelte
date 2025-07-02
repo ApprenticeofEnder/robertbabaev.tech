@@ -31,6 +31,8 @@
 	});
 </script>
 
+<!-- TODO: Add education, add link to PDF copy, maybe add Open Source section? -->
+
 <div class="flex flex-col gap-4">
 	<ResumeSection title="Experience" entries={experience} scrollTarget="#experience" />
 	<ResumeSection title="Projects" entries={projects} scrollTarget="#projects" />
