@@ -5,23 +5,12 @@
 	import Scramble from '$lib/components/scramble.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
-	import type { FeaturedProject } from '$lib/types';
 
-	let designations = ['Security SWE', 'Full Stack SWE', 'Platform Engineer', 'DevOps Engineer'];
-	let currentAffiliation = 'DeepCode';
-	let homepageFields = [
-		{ name: 'Designation', content: designations },
-		{ name: 'Current Affiliation', content: currentAffiliation },
-		{ name: 'Pronouns', content: 'He/Him' }
-	];
+	import type { PageProps } from './$types';
 
-	const projects: FeaturedProject[] = [
-		{
-			name: 'CourseFull',
-			description: 'Hello',
-			link: 'https://github.com/ApprenticeofEnder/CourseFull'
-		}
-	];
+	let { data }: PageProps = $props();
+
+	const { featuredProjects, homepageConfig } = data;
 
 	// Home page:
 	// Options: Resume, About, Contact
@@ -45,7 +34,7 @@
 	<h1 class="flex gap-x-3 drop-shadow-glow-sm sm:text-3xl sm:drop-shadow-glow lg:text-4xl">
 		Subject: <Scramble text="Robert Babaev" delay={500} />
 	</h1>
-	{#each homepageFields as field}
+	{#each Object.values(homepageConfig.fields) as field}
 		{@render homepageField(field.name, field.content)}
 	{/each}
 
@@ -61,7 +50,7 @@
 <section class="home-section">
 	<h1>Featured Projects</h1>
 
-	<FeaturedProjects {projects}></FeaturedProjects>
+	<FeaturedProjects projects={Object.values(featuredProjects)}></FeaturedProjects>
 </section>
 
 <section class="home-section">

@@ -1,0 +1,9 @@
+[speedbeaver]
+name = "speedbeaver"
+description = "A set-it-and-forget-it logging integration for FastAPI."
+link = "https://github.com/ApprenticeofEnder/speedbeaver"
+
+[coursefull]
+name = "CourseFull"
+description = "A better way for students to track their goals."
+link = "https://github.com/ApprenticeofEnder/CourseFull"
