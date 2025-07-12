@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { TypeWriter } from 'svelte-typewrite';
 
+	import { BlogPosts } from '$lib/components/blog-posts';
 	import { FeaturedProjects } from '$lib/components/featured-projects';
 	import Scramble from '$lib/components/scramble.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
@@ -10,7 +11,7 @@
 
 	let { data }: PageProps = $props();
 
-	const { featuredProjects, homepageConfig } = data;
+	const { featuredProjects, homepageConfig, blogPosts } = data;
 
 	// Home page:
 	// Options: Resume, About, Contact
@@ -50,11 +51,13 @@
 <section class="home-section">
 	<h1>Featured Projects</h1>
 
-	<FeaturedProjects projects={Object.values(featuredProjects)}></FeaturedProjects>
+	<FeaturedProjects projects={Object.values(featuredProjects)} />
 </section>
 
 <section class="home-section">
 	<h1>Blog Posts</h1>
+
+	<BlogPosts posts={blogPosts} />
 </section>
 
 <style lang="postcss">

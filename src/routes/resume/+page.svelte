@@ -22,7 +22,6 @@
 		if (!readyToScroll) {
 			return;
 		}
-		console.log('Hash changed.');
 		if (!page.url.hash) {
 			scrollTop();
 			return;

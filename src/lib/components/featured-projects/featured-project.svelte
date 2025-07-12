@@ -6,7 +6,7 @@
 	let { name, description, link }: FeaturedProject = $props();
 </script>
 
-<Card.Root class="flex basis-1/3 flex-col gap-4">
+<Card.Root class="flex w-full flex-col justify-between gap-4 md:basis-1/2 lg:basis-1/3">
 	<Card.Header>
 		<Card.Title>{name}</Card.Title>
 		<Card.Description>{description}</Card.Description>

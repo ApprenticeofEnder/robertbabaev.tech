@@ -1,5 +1,5 @@
-import { compileConfig } from '$lib/server/config';
-import type { FeaturedProject, HomepageConfig } from '$lib/types';
+import { compileConfig, fetchRssFeed } from '$lib/server';
+import type { FeaturedProject, HomepageConfig, RssFeedItem } from '$lib/types';
 
 export const load = async () => {
 	const featuredProjects: Record<string, FeaturedProject> = await compileConfig<
@@ -9,8 +9,19 @@ export const load = async () => {
 	const homepageConfig: HomepageConfig =
 		await compileConfig<HomepageConfig>('config/homepage.toml');
 
+	console.log(homepageConfig);
+
+	const feeds: (RssFeedItem[] | null)[] = await Promise.all(
+		homepageConfig.rss.map(async (rssUrl) => {
+			return await fetchRssFeed(rssUrl);
+		})
+	);
+
+	const blogPosts = feeds.filter((feedItems) => !!feedItems).flat(1);
+
 	return {
 		featuredProjects,
-		homepageConfig
+		homepageConfig,
+		blogPosts
 	};
 };

@@ -1,3 +1,5 @@
+rss = ["https://rss.beehiiv.com/feeds/DAqOWBaHM7.xml"]
+
 [fields]
 
 [fields.designation]
