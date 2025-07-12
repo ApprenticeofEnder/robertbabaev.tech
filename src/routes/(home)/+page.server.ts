@@ -15,6 +15,8 @@ export const load = async () => {
 		})
 	);
 
+	// This just flattens all the feeds
+	// Once I add more I should probably have a way of sorting by publication date or something
 	const blogPosts = feeds.filter((feedItems) => !!feedItems).flat(1);
 
 	return {
