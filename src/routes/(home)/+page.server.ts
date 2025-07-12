@@ -9,8 +9,6 @@ export const load = async () => {
 	const homepageConfig: HomepageConfig =
 		await compileConfig<HomepageConfig>('config/homepage.toml');
 
-	console.log(homepageConfig);
-
 	const feeds: (RssFeedItem[] | null)[] = await Promise.all(
 		homepageConfig.rss.map(async (rssUrl) => {
 			return await fetchRssFeed(rssUrl);
