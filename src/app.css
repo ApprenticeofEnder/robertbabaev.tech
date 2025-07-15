@@ -81,3 +81,13 @@
 		@apply no-underline;
 	}
 }
+
+@layer components {
+	.contact-icon {
+		width: 64px;
+		height: 64px;
+	}
+}
+
+@layer utilities {
+}

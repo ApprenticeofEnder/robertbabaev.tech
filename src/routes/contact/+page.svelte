@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { ContactSection } from '$lib/components/contact-section';
+
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+	const { contactLinks } = data;
 </script>
 
-<!-- TODO
-- LinkedIn
-- Github
-- Email
--->
+<ContactSection links={contactLinks}></ContactSection>
