@@ -18,3 +18,17 @@ content = "Independent"
 [fields.pronouns]
 name = "Pronouns"
 content = "He/Him"
+
+[options]
+
+[options.resume]
+text = "Resume"
+href = "/resume"
+
+[options.about]
+text = "About Me"
+href = "/about"
+
+[options.contact]
+text = "Contact"
+href = "/contact"

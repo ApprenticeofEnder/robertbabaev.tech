@@ -3,6 +3,7 @@
 
 	import { BlogPosts } from '$lib/components/blog-posts';
 	import { FeaturedProjects } from '$lib/components/featured-projects';
+	import { HomeOptions } from '$lib/components/home-options';
 	import Scramble from '$lib/components/scramble.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
@@ -12,9 +13,6 @@
 	let { data }: PageProps = $props();
 
 	const { featuredProjects, homepageConfig, blogPosts } = data;
-
-	// Home page:
-	// Options: Resume, About, Contact
 </script>
 
 {#snippet homepageField(name: string, content: string | string[])}
@@ -42,11 +40,7 @@
 	<Separator></Separator>
 
 	<!-- TODO: Maybe make these cards instead of buttons -->
-	<div class="flex flex-col gap-2 md:flex-row">
-		<Button href="/resume">Resume</Button>
-		<Button href="/about">About Me</Button>
-		<Button href="/contact">Contact</Button>
-	</div>
+	<HomeOptions links={homepageConfig.options}></HomeOptions>
 </section>
 
 <section class="home-section">
