@@ -12,11 +12,15 @@
 	}
 
 	let { cardType, link }: ContactCardProps = $props();
+
+	function open() {
+		window.open(link.href, '_blank');
+	}
 </script>
 
 <Card.Root
 	class="flex aspect-video cursor-pointer flex-col justify-center hover:bg-primary/25"
-	onclick={() => {}}
+	onclick={open}
 >
 	<Card.Header>
 		<div class="flex justify-center">
