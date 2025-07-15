@@ -13,8 +13,8 @@
 	<AlertDialog.Content>
 		<AlertDialog.Header>
 			<AlertDialog.Title>
-				<div class="drop-shadow-glow-sm">{title}</div>
-				<div>{subtitle}</div>
+				<h2 class="drop-shadow-glow-sm">{title}</h2>
+				<h3>{subtitle}</h3>
 				<h4 class="text-sm">
 					{location} | {start}
 					{#if end}
@@ -24,9 +24,9 @@
 			</AlertDialog.Title>
 			<AlertDialog.Description>
 				{#if bulletPoints}
-					<ul>
+					<ul class="list-inside list-disc">
 						{#each bulletPoints as bulletPoint}
-							<li>{@html bulletPoint}</li>
+							<li class="text-justify">{@html bulletPoint}</li>
 						{/each}
 					</ul>
 				{/if}

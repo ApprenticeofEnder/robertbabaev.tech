@@ -41,6 +41,7 @@
 
 	<Separator></Separator>
 
+	<!-- TODO: Maybe make these cards instead of buttons -->
 	<div class="flex flex-col gap-2 md:flex-row">
 		<Button href="/resume">Resume</Button>
 		<Button href="/about">About Me</Button>
