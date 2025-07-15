@@ -15,7 +15,7 @@
 </script>
 
 <Card.Root
-	class="flex aspect-video cursor-pointer flex-col justify-center transition-all hover:bg-primary/25 hover:drop-shadow-glow-sm"
+	class="flex aspect-video cursor-pointer flex-col justify-center hover:bg-primary/25"
 	onclick={() => {}}
 >
 	<Card.Header>
