@@ -5,6 +5,8 @@ export const load = async () => {
 	const resumeData: ResumeData = await compileConfig<ResumeData>('config/resume_data.toml');
 
 	return {
-		resumeData
+		resumeData,
+		title: 'Resume',
+		description: "Robert Babaev's Resume page."
 	};
 };

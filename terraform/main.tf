@@ -47,6 +47,11 @@ resource "digitalocean_app" "website" {
         key   = "PUBLIC_DEV_RESUME"
         value = "https://${var.do_bucket}.${var.do_region}.digitaloceanspaces.com/resumes/dev/Robert_Babaev_resume.pdf"
       }
+
+      env {
+        key   = "PUBLIC_URL_ORIGIN"
+        value = "https://robertbabaev.tech"
+      }
     }
   }
 }
