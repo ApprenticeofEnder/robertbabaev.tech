@@ -15,11 +15,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install fonts
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-roboto awscli
+
+      - name: Install specific fonts
         run: |
           set -x
-          sudo apt-get update
-          sudo apt-get install -y fonts-roboto fonts-font-awesome
 
           PROJECT_ROOT=$PWD
           cd $(mktemp -d /tmp/script.XXXXXXX)
@@ -62,25 +65,36 @@ jobs:
           cd resume
           typst compile dev/Robert_Babaev_resume.typ dev/Robert_Babaev_resume.pdf --root .
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Robert_Babaev_resume.dev.pdf
-          path: resume/dev/Robert_Babaev_resume.pdf
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: Robert_Babaev_resume.dev.pdf
+      #     path: resume/dev/Robert_Babaev_resume.pdf
 
-      # - name: Install AWS CLI (for S3-compatible upload)
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y awscli
-      #
-      # - name: Configure AWS CLI for Digital Ocean Spaces
-      #   run: |
-      #     aws configure set aws_access_key_id ${{ secrets.DO_SPACES_ACCESS_KEY }}
-      #     aws configure set aws_secret_access_key ${{ secrets.DO_SPACES_SECRET_KEY }}
-      #     aws configure set default.region ${{ secrets.DO_SPACES_REGION }}
-      #
+      - name: Configure DO Spaces creds
+        env:
+          DO_SPACES_ACCESS_KEY: ${{ secrets.DO_SPACES_ACCESS_KEY }}
+          DO_SPACES_SECRET_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
+          DO_SPACES_REGION: ${{ vars.DO_SPACES_REGION }}
+        run: |
+          aws configure set aws_access_key_id $DO_SPACES_ACCESS_KEY
+          aws configure set aws_secret_access_key $DO_SPACES_SECRET_KEY
+          aws configure set default.region $DO_SPACES_REGION
+      - name: Upload resume
+        env:
+          DO_SPACES_REGION: ${{ vars.DO_SPACES_REGION }}
+          DO_SPACES_BUCKET: ${{ vars.DO_SPACES_BUCKET }}
+        run: |
+          aws s3 cp \
+            resume/dev/Robert_Babaev_resume.pdf \
+            s3://$DO_SPACES_BUCKET/resumes/dev/Robert_Babaev_resume.pdf \
+            --endpoint https://$DO_SPACES_REGION.digitaloceanspaces.com \
+            --acl public-read
       # - name: Upload to Digital Ocean Spaces
+      #   env:
+      #     DO_SPACES_BUCKET: ${{ vars.DO_SPACES_BUCKET }}
       #   run: |
-      #     aws s3 cp Robert_Babaev_resume.pdf s3://${{ secrets.DO_SPACES_BUCKET }}/Robert_Babaev_resume.pdf \
-      #       --endpoint-url https://${{ secrets.DO_SPACES_REGION }}.digitaloceanspaces.com \
+      #     aws --profile do-tor1 s3 cp \
+      #       resume/dev/Robert_Babaev_resume.pdf \
+      #       s3://$DO_SPACES_BUCKET/resumes/dev/Robert_Babaev_resume.pdf \
       #       --acl public-read
