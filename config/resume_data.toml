@@ -12,11 +12,13 @@ title = "Security Software Engineer"
 subtitle = "DeepCode"
 location = "Ottawa, ON"
 start = "02/2025"
-end = "Present"
+end = "05/2025"
 tech = ["Azure", "Python", "Flask", "MySQL", "Terraform", "Rust"]
 bulletPoints = [
-  "Designed and refactored a *Python* monorepo using uv to organize 7 related sub-projects, minimizing overhead between repositories.",
-  "Implemented a Telegram message interceptor using *Azure* event brokers, allowing real time data ingestion for credential breaches.",
+  "Optimized a data ingestion script using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, processing 1.5 million lines of data in 3 minutes.",
+  "Implemented a data processing pipeline using Python async programming, *MQTT*, and *pub-sub* to process and enrich files up to 100 GB/day.",
+  "Designed secure cloud architecture for the pipeline using *Terraform* and Azure, ensuring proper access control and network segmentation.",
+  "Wrote a script using *JavaScript* to exfiltrate 2TB of data from *MongoDB* to place into MySQL using async/await and mass insert queries.",
 ]
 
 [experience.bdo-sec-eng]
@@ -33,9 +35,9 @@ tech = [
   "KQL",
 ]
 bulletPoints = [
-  "Designed *Azure* KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website.",
-  "Wrote a Powershell script to find 50 users with unauthorized software installed, consolidating IP and user data from Microsoft Defender.",
-  "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot* decreasing SOC resolution time by 31% across 189 tickets.",
+  "Developed a dashboard for monthly reports using *Azure* SIEM data and REST APIs which saved up to 2 hours/report, impacting 18 reports.",
+  "Designed Azure KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website.",
+  "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot*, decreasing SOC resolution time by 31% across 189 tickets.",
 ]
 
 [experience.innovapost-security-specialist]
@@ -68,34 +70,64 @@ start = "05/2022"
 end = "08/2022"
 tech = ["AWS", "Python"]
 bulletPoints = [
-  "Identified a hard-coded e-commerce API key in 7 *Ruby on Rails* APIs using Semgrep and Postman, preventing over $1K in API charges.",
+  "Identified a hard-coded secret key in a *Ruby on Rails* microservice API using Semgrep, preventing potential account takeover.",
   "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
-  "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
+  "Deployed an *AWS* compute instance, confirming an SSRF vulnerability potentially leading to privilege escalation via AWS Lambda.",
+]
+
+[experience.software-secured-swe]
+title = "Software Engineer (Co-Op)"
+subtitle = "SoftwareSecured"
+start = "05/2021"
+end = "12/2021"
+location = "Ottawa, ON"
+tech = ["Python", "Django"]
+bulletPoints = [
+  "Implemented an authentication system with SSO and OAuth2 in a *SvelteKit* application using *TypeScript*, mitigating credential breaches.",
+  "Managed deployments on *Linux* virtual machines using *Docker Compose*, avoiding environment-based errors that took hours to debug.",
+  "Fixed a broken CI/CD pipeline in *TravisCI* by analyzing logs and cross-referencing source code, unblocking a client.",
+  "Designed a custom metrics dashboard using Angular and d3.js for data visualization surrounding bugs found, including a project heatmap.",
+  "Migrated *JavaScript* visualization code for processing data to a custom *PostgreSQL* query in *Django*, boosting render times by 0.76 seconds.",
+  "Built a CVSS calculator integration for a reporting tool using *Django* and *Angular*, saving up to 3 hours per penetration test across 15 clients.",
 ]
 
 [projects]
 
+[projects.speedbeaver]
+title = "Software Engineer"
+subtitle = "Speedbeaver"
+location = "github.com/ApprenticeofEnder/speedbeaver"
+start = "03/2025"
+end = "Present"
+link = "https://github.com/ApprenticeofEnder/speedbeaver"
+tech = ["Python", "FastAPI", "OpenTelemetry", "Pytest"]
+bulletPoints = []
+
 [projects.coursefull]
 title = "Full Stack Software Engineer"
 subtitle = "CourseFull"
-location = "coursefull.app"
+location = "github.com/ApprenticeofEnder/CourseFull"
 start = "01/2023"
 end = "04/2023"
-link = "https://coursefull.app"
-tech = [
-  "Microsoft Azure",
-  "PowerShell",
-  "Microsoft Sentinel",
-  "KQL",
-  "Crowdstrike Falcon",
-]
-bulletPoints = [
-  "Identified a hard-coded e-commerce API key in 7 *Ruby on Rails* APIs using Semgrep and Postman, preventing over $1K in API charges.",
-  "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
-  "Deployed an AWS compute instance, confirming a server-side request forgery vulnerability which led to privilege escalation via AWS Lambda.",
-]
+link = "https://github.com/ApprenticeofEnder/CourseFull"
+tech = ["Next.js", "TypeScript", "Ruby on Rails", "Supabase", "PostgreSQL"]
+bulletPoints = []
 
 [hackathons]
+
+[hackathons.ai-tinkerers-2025]
+title = "AI Tinkerers Ottawa 2025"
+subtitle = "FastCTX"
+location = "AI Software Engineer"
+start = "07/2025 (1 Day)"
+tech = ["Python", "FastAPI", "Neo4J", "LangChain", "MCP"]
+
+[hackathons.spurhacks-2025]
+title = "SpurHacks 2025"
+subtitle = "QuantDog"
+location = "Software Engineer"
+start = "06/2025 (3 Days)"
+tech = ["Python", "Docker"]
 
 [hackathons.cuhacking-2025]
 title = "cuHacking 2025"
@@ -112,3 +144,16 @@ start = "01/2025 (3 Days)"
 tech = ["Terraform", "Docker", "Python", "FastAPI", "Next.js", "TypeScript"]
 
 [volunteering]
+
+[volunteering.cybersci-nationals-2025]
+title = "CyberSci"
+subtitle = "Software Engineer (Challenge Creator)"
+location = "Ottawa, ON"
+start = "01/2025"
+end = "06/2025"
+tech = ["SvelteKit"]
+bulletPoints = [
+  "Designed, implemented, and deployed an intentionally vulnerable *SvelteKit* service using the *MQTT* protocol, producing 8 vulnerabilities.",
+  "Created stable, reproducible deployment systems for challenges using *Terraform* and *Docker Compose*, resulting in 0 environment-based issues.",
+  "Built a test suite of 16 total use cases using *Python* to assess patches during the defence challenge, which ran in under 20 seconds vs. target of 60.",
+]
