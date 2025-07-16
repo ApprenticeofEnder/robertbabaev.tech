@@ -6,6 +6,9 @@ on:
       - 'main'
   workflow_dispatch:
 
+env:
+  TERRAFORM_DIR: terraform
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +19,7 @@ jobs:
 
       - name: 'Install Dependencies'
         run: |
-          scripts/install-opentofu.sh --install-method deb
+          scripts/install_opentofu.sh --install-method deb
 
       - name: 'Setup Terraform'
         env:
@@ -30,3 +33,15 @@ jobs:
           cd $TERRAFORM_DIR
           tofu init
           tofu validate
+
+      - name: 'Deploy'
+        env:
+          DIGITALOCEAN_TOKEN: ${{ secrets.DO_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
+          TF_VAR_do_bucket: ${{ vars.DO_SPACES_BUCKET }}
+          TF_VAR_do_region: ${{ vars.DO_SPACES_REGION }}
+        run: |
+          cd $TERRAFORM_DIR
+          tofu plan -out .terraform-plan
+          tofu apply .terraform-plan
