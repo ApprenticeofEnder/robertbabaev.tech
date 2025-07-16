@@ -31,4 +31,4 @@
 	<Button class="h-fit text-xs" onclick={download}><Download />Download PDF</Button>
 {/snippet}
 
-<AppLayout pageTitle="Resume" extra={resumeDownloader}>{@render children?.()}</AppLayout>
+<AppLayout extra={resumeDownloader}>{@render children?.()}</AppLayout>

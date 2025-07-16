@@ -5,6 +5,8 @@ export const load = async () => {
 	const contactLinks: ContactLinks = await compileConfig<ContactLinks>('config/contact.toml');
 
 	return {
-		contactLinks
+		contactLinks,
+		title: 'Contact Me',
+		description: "Robert Babaev's Contact page."
 	};
 };

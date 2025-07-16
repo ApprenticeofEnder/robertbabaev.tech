@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
+	import { page } from '$app/state';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import Scramble from '$lib/components/scramble.svelte';
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 
-	let { children, pageTitle, extra } = $props<{
+	let { children, extra } = $props<{
 		children?: unknown;
-		pageTitle: string;
 		extra?: Snippet;
 	}>();
 </script>
@@ -19,7 +19,7 @@
 		<header class="fixed z-10 w-full bg-background p-2">
 			<div class="flex items-center gap-2">
 				<Sidebar.Trigger />
-				<h1 class="align-middle"><Scramble text={pageTitle}></Scramble></h1>
+				<h1 class="align-middle"><Scramble text={page.data.title}></Scramble></h1>
 			</div>
 		</header>
 		<div class="fixed right-2 z-20 flex items-center gap-2 p-2">

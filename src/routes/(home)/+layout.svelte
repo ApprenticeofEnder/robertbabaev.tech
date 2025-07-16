@@ -4,4 +4,4 @@
 	let { children } = $props();
 </script>
 
-<AppLayout pageTitle="Home">{@render children?.()}</AppLayout>
+<AppLayout>{@render children?.()}</AppLayout>

@@ -22,6 +22,8 @@ export const load = async () => {
 	return {
 		featuredProjects,
 		homepageConfig,
-		blogPosts
+		blogPosts,
+		title: 'Home',
+		description: "Robert Babaev's personal website."
 	};
 };
