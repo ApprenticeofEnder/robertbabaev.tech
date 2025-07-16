@@ -10,6 +10,7 @@ on:
 
 env:
   PUBLIC_DEV_RESUME: https://${{ vars.DO_SPACES_BUCKET }}.${{vars.DO_SPACES_REGION }}.digitaloceanspaces.com/resumes/dev/Robert_Babaev_resume.pdf
+  PUBLIC_URL_ORIGIN: https://robertbabaev.tech
 
 jobs:
   test:
