@@ -1,0 +1,86 @@
+name: Build and Upload Resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resume/'
+  workflow_dispatch:
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install fonts
+        run: |
+          set -x
+          sudo apt-get update
+          sudo apt-get install -y fonts-roboto fonts-font-awesome
+
+          PROJECT_ROOT=$PWD
+          cd $(mktemp -d /tmp/script.XXXXXXX)
+          TEMP_DIR=$PWD
+
+          # Install Source Sans Pro (not available in Ubuntu repos)
+          cp $PROJECT_ROOT/assets/source_sans_pro.zip .
+          unzip source_sans_pro.zip
+          sudo mkdir -p /usr/share/fonts/opentype/source-sans-pro
+          sudo cp source-sans-2.020R-ro-1.075R-it/OTF/*.otf /usr/share/fonts/opentype/source-sans-pro
+          rm -rf ./*
+
+          # Install Source Sans 3 (not available in Ubuntu repos)
+          cp $PROJECT_ROOT/assets/Source_Sans_3.zip .
+          unzip Source_Sans_3.zip
+          sudo mkdir -p /usr/share/fonts/truetype/source-sans-3
+          sudo cp *.ttf static/*.ttf /usr/share/fonts/truetype/source-sans-3/
+          rm -rf ./*
+
+          # Install FontAwesome 6
+          cp $PROJECT_ROOT/assets/fontawesome-free-6.7.2-desktop.zip .
+          unzip fontawesome-free-6.7.2-desktop.zip
+          sudo mkdir -p /usr/share/fonts/opentype/fontawesome-6
+          sudo cp fontawesome-free-6.7.2-desktop/otfs/*.otf /usr/share/fonts/opentype/fontawesome-6
+          rm -rf ./*
+
+          # Reload font cache
+          sudo fc-cache -f -v
+
+          cd ~
+          rm -rf $TEMP_DIR
+
+      - name: Install Typst
+        run: |
+          curl -fsSL https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz | tar -xJ
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+
+      - name: Compile resume
+        run: |
+          cd resume
+          typst compile dev/Robert_Babaev_resume.typ dev/Robert_Babaev_resume.pdf --root .
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Robert_Babaev_resume.dev.pdf
+          path: resume/dev/Robert_Babaev_resume.pdf
+
+      # - name: Install AWS CLI (for S3-compatible upload)
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y awscli
+      #
+      # - name: Configure AWS CLI for Digital Ocean Spaces
+      #   run: |
+      #     aws configure set aws_access_key_id ${{ secrets.DO_SPACES_ACCESS_KEY }}
+      #     aws configure set aws_secret_access_key ${{ secrets.DO_SPACES_SECRET_KEY }}
+      #     aws configure set default.region ${{ secrets.DO_SPACES_REGION }}
+      #
+      # - name: Upload to Digital Ocean Spaces
+      #   run: |
+      #     aws s3 cp Robert_Babaev_resume.pdf s3://${{ secrets.DO_SPACES_BUCKET }}/Robert_Babaev_resume.pdf \
+      #       --endpoint-url https://${{ secrets.DO_SPACES_REGION }}.digitaloceanspaces.com \
+      #       --acl public-read

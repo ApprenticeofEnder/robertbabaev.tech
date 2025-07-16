@@ -97,5 +97,5 @@ describe('fetchRssFeed', () => {
 		// Testing with an invalid URL
 		const result = await fetchRssFeed('https://invalid-url-that-doesnt-exist.xyz');
 		expect(result).toBeNull();
-	});
+	}, 10000);
 });

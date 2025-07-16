@@ -16,8 +16,18 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+!.env.tpl
 !.env.test
+
+# Secrets
+.secrets
+.secrets.*
+!.secrets.tpl
+!.secrets.example
 
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Typst
+*.pdf
