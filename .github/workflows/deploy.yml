@@ -35,6 +35,7 @@ jobs:
           tofu validate
 
       - name: 'Deploy'
+        timeout-minutes: 5
         env:
           DIGITALOCEAN_TOKEN: ${{ secrets.DO_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_ACCESS_KEY }}
