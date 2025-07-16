@@ -1,6 +1,6 @@
-data "digitalocean_domain" "robertbabaev_tech" {
-  name = "robertbabaev.tech"
-}
+# data "digitalocean_domain" "robertbabaev_tech" {
+#   name = "robertbabaev.tech"
+# }
 
 data "digitalocean_project" "personal_website" {
   name = "Personal Website"
@@ -18,6 +18,19 @@ resource "digitalocean_app" "website" {
 
     name   = "personal-website"
     region = var.do_region
+
+    ingress {
+      rule {
+        component {
+          name = "web-test"
+        }
+        match {
+          path {
+            prefix = "/"
+          }
+        }
+      }
+    }
 
     static_site {
       name          = "web-test"
