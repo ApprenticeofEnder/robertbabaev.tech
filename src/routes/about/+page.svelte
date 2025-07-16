@@ -1,69 +1,54 @@
-<script lang="ts">
-import { Heading, Img, Table, TableBody, TableBodyCell, TableBodyRow } from 'flowbite-svelte';
-import Typewriter from 'svelte-typewriter';
-
-let i = 0;
-const tableData: App.TableData[] = [
-	{ key: 'NAME', value: 'Robert Babaev' },
-	{ key: 'NATIONALITY', value: 'Canadian' },
-	{ key: 'ROLE', value: 'Security Engineer/Developer' },
-	{ key: 'SPECIALIZATION', value: 'Web Application Security' },
-	{ key: 'STRENGTHS', value: 'Creativity, Professionalism, Friendliness, Fearless Innovation' },
-	{ key: 'FAVOURITE TECH', value: 'Python, Rust, Svelte, Docker, Linux' }
-].map((entry: App.TableData) => {
-	entry.duration = 1000 + i * 250;
-	i++;
-	return entry;
-});
-</script>
-
-<main class="flex flex-initial justify-center">
-	<div class="lg:w-3/4">
-		<Heading tag="h1" color="text-primary-500" customSize="text-2xl sm:text-4xl text-center my-4"
-			>About Me</Heading
-		>
-
-		<div class="grid gap-x-16 lg:grid-flow-row lg:grid-cols-5">
-			<div class="animate-fade lg:col-span-2">
-				<Img src="/images/PFP_V2.jpg" size="max-w-xs" imgClass="mx-auto" alt="sample 1" />
-			</div>
-
-			<div class="lg:col-span-3 lg:col-start-3">
-				<Table noborder={true} class="animate-fade">
-					<TableBody>
-						{#each tableData as entry}
-							<TableBodyRow class="border-b-2 border-solid border-text/25 bg-transparent">
-								<TableBodyCell class="pl-0 text-text md:text-base">{entry.key}</TableBodyCell>
-								<Typewriter mode="scramble" scrambleDuration={entry.duration}>
-									<TableBodyCell class="text-balance text-text lg:text-base">
-										{entry.value}
-									</TableBodyCell></Typewriter
-								>
-							</TableBodyRow>
-						{/each}
-					</TableBody>
-				</Table>
-			</div>
-
-			<div class="animate-fade lg:col-span-5">
-				<p class="text-justify">
-					Hey, I'm Robert! I'm a cybersecurity and software development aficionado that loves
-					building software, locking it down, and making friends along the way.
-				</p>
-
-				<p class="text-justify">
-					I've done security and security-adjacent things for 5+ years -- from my first foray with
-					pitching a terrible security startup idea that still got me into an accelerator, to
-					competing in high-stakes hacking competitions at international levels, to finishing my
-					Honours Thesis on password sharing, access control, and why we don't have more systems to
-					address that kind of thing.
-				</p>
-
-				<p class="text-justify">
-					Outside of work, you can find me digging into coding/networking/security projects, playing
-					tabletop games such as Lancer, practicing martial arts, or cooking!
-				</p>
-			</div>
-		</div>
+<section class="flex flex-col justify-center gap-8">
+	<h1>To Locking Down A Better Future</h1>
+	<div class="grid grid-cols-1 items-center gap-8 text-justify md:grid-cols-2">
+		<p class="md:order-1">
+			Hi! I'm Robert, a security software engineer based in Ottawa, Ontario, Canada, with experience
+			building, breaking, and locking down complex systems that produce millions of dollars in
+			revenue. While I am a software/devops engineer first, my background in security helps me keep
+			a proactive mind when developing and find flaws well before they hit production.
+		</p>
+		<img
+			alt="A young white man in a black shirt with his arms folded."
+			src="/images/PFP_V2.jpg"
+			class="mx-auto max-w-64 object-contain md:order-2"
+		/>
+		<p class="md:order-4">
+			I love seeing new ideas come to life and knowing that attackers will have a hard time bringing
+			them down. I also have an itch to build things and iterate on ideas. Staying on my toes,
+			keeping up with new trends in security and development, and integrating new tools into my
+			workflow - including, as of late, GenAI tools - help me solve real problems better and faster
+			than the week before.
+		</p>
+		<img
+			alt="A group of men gathered around a computer, with three behind and one explaining the architecture of a project."
+			src="/images/cuhacking_2025.jpg"
+			class="mx-auto object-contain md:order-3"
+		/>
+		<p class="md:order-5">
+			My hunger to build has also helped turn some heads - most recently, my team and I won Best MCP
+			Agent and Best Async/Ambient Agent at the AI Tinkerers Ottawa hackathon with FastCTX, a
+			visualizer to help developers understand what's really going on in their codebase. I built the
+			backend of a prototype using tech I had hardly seen before: MCP servers, graph databases, and
+			LangChain. Teams I worked with also took home prizes at SpurHacks 2025, cuHacking 2025, and
+			uOttaHack 7.
+		</p>
+		<img
+			alt="A young white man in a black shirt with his arms folded."
+			src="/images/ai_tinkerers_2025.jpg"
+			class="mx-auto object-contain md:order-6"
+		/>
 	</div>
-</main>
+	<p>
+		Professionally, I've also built data pipelines for threat intelligence companies, overhauled
+		penetration testing management tools, and helped patch security flaws in software helping
+		enterprise clients around the world. Building secure software is a process that requires
+		proactive thinking, communication, and a willingness to learn - all of which I like to think I
+		develop through martial arts, improv, and attending weekly hacker meetups.
+	</p>
+	<p>
+		I'm currently open to opportunities in security and software engineering! If you want a
+		security-minded software/devops engineer who can use and build AI tools to staggering effect,
+		reach out to <a href="mailto:contact@robertbabaev.tech">contact@robertbabaev.tech</a> and we can
+		connect.
+	</p>
+</section>

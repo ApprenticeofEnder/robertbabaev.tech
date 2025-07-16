@@ -1,0 +1,6 @@
+field1 = "*test*"
+arrayTest = ["Hello, world", "*Good stuff!*"]
+
+[testKey]
+name = "test"
+data = "This is a *test*!"

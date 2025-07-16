@@ -1,0 +1,11 @@
+[github]
+text = "Github"
+href = "https://github.com/ApprenticeofEnder"
+
+[linkedin]
+text = "LinkedIn"
+href = "https://linkedin.com/in/robertbabaev2001"
+
+[email]
+text = "Email"
+href = "mailto:contact@robertbabaev.tech"

@@ -1,0 +1,15 @@
+firstname = "Robert"
+lastname = "Babaev"
+email = "robert@robertbabaev.tech"
+homepage = "https://robertbabaev.tech"
+address = "Ottawa, ON, CA - Open to Relocation"
+phone = "(613)-601-3902"
+github = "ApprenticeofEnder"
+linkedin = "robertbabaev2001"
+accent_color = "00a933"
+
+[education]
+title = "Carleton University"
+location = "Ottawa, ON"
+date = "09/2019 - 01/2025"
+description = "Bachelor of Computer Science, Honours"

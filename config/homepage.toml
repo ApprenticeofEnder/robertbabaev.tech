@@ -1,0 +1,34 @@
+rss = ["https://rss.beehiiv.com/feeds/DAqOWBaHM7.xml"]
+
+[fields]
+
+[fields.designation]
+name = "Designation"
+content = [
+  "Security SWE",
+  "Full Stack SWE",
+  "Platform Engineer",
+  "DevOps Engineer",
+]
+
+[fields.current_affiliation]
+name = "Current Affiliation"
+content = "Independent"
+
+[fields.pronouns]
+name = "Pronouns"
+content = "He/Him"
+
+[options]
+
+[options.resume]
+text = "Resume"
+href = "/resume"
+
+[options.about]
+text = "About Me"
+href = "/about"
+
+[options.contact]
+text = "Contact"
+href = "/contact"
