@@ -11,7 +11,7 @@ resource "digitalocean_app" "website" {
 
   spec {
     domain {
-      name = "staging.robertbabaev.tech"
+      name = "robertbabaev.tech"
       type = "PRIMARY"
       zone = "robertbabaev.tech"
     }
@@ -22,7 +22,7 @@ resource "digitalocean_app" "website" {
     ingress {
       rule {
         component {
-          name = "web-test"
+          name = "static-site"
         }
         match {
           path {
@@ -33,12 +33,12 @@ resource "digitalocean_app" "website" {
     }
 
     static_site {
-      name          = "web-test"
+      name          = "static-site"
       build_command = "pnpm build"
       output_dir    = "/build"
 
       github {
-        branch         = "overhaul"
+        branch         = "main"
         deploy_on_push = true
         repo           = "ApprenticeofEnder/robertbabaev.tech"
       }

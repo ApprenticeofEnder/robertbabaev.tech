@@ -18,6 +18,7 @@ bulletPoints = [
   "Optimized a data ingestion script using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, processing 1.5 million lines of data in 3 minutes.",
   "Implemented a data processing pipeline using Python async programming, *MQTT*, and *pub-sub* to process and enrich files up to 100 GB/day.",
   "Designed secure cloud architecture for the pipeline using *Terraform* and Azure, ensuring proper access control and network segmentation.",
+  "Deployed a CI/CD pipeline for a 6-package *Python* monorepo, maintaining production-ready code with individual test suites and a secrets scanner.",
   "Wrote a script using *JavaScript* to exfiltrate 2TB of data from *MongoDB* to place into MySQL using async/await and mass insert queries.",
 ]
 
@@ -38,6 +39,8 @@ bulletPoints = [
   "Developed a dashboard for monthly reports using *Azure* SIEM data and REST APIs which saved up to 2 hours/report, impacting 18 reports.",
   "Designed Azure KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website.",
   "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot*, decreasing SOC resolution time by 31% across 189 tickets.",
+  "Centralized the team's SIEM rule management using *Azure* DevOps and Git, saving hours of aggregated back and forth over lost files.",
+  "Identified 50 users with unauthorized software installed by cross-referencing 4 sources of data in Microsoft Defender for Endpoint, as well as a PowerShell script to map users to devices.",
 ]
 
 [experience.innovapost-security-specialist]
@@ -68,11 +71,13 @@ subtitle = "SoftwareSecured"
 location = "Ottawa, ON"
 start = "05/2022"
 end = "08/2022"
-tech = ["AWS", "Python"]
+tech = ["AWS", "Python", "Burp Suite", "Semgrep"]
 bulletPoints = [
+  "Assessed an *AWS* cloud network, including *S3* permissions and *IAM* configurations, to identify a publicly writable S3 bucket.",
   "Identified a hard-coded secret key in a *Ruby on Rails* microservice API using Semgrep, preventing potential account takeover.",
   "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
   "Deployed an *AWS* compute instance, confirming an SSRF vulnerability potentially leading to privilege escalation via AWS Lambda.",
+  "Investigated a medical application's input validation using Burp Suite, identifying a total denial-of-service vulnerability.",
 ]
 
 [experience.software-secured-swe]
@@ -93,6 +98,8 @@ bulletPoints = [
 
 [projects]
 
+# TODO: MORE SAR STATEMENTS
+
 [projects.speedbeaver]
 title = "Software Engineer"
 subtitle = "Speedbeaver"
@@ -112,6 +119,20 @@ end = "04/2023"
 link = "https://github.com/ApprenticeofEnder/CourseFull"
 tech = ["Next.js", "TypeScript", "Ruby on Rails", "Supabase", "PostgreSQL"]
 bulletPoints = []
+
+[projects.cuhacking-ctf]
+title = "Platform Engineer / Presenter"
+subtitle = "cuHacking 2025 Attack Proxy Workshop"
+location = "github.com/ApprenticeofEnder/CUHacking-2025-CTF"
+start = "01/2025"
+end = "03/2025"
+link = "https://github.com/ApprenticeofEnder/CUHacking-2025-CTF"
+bulletPoints = [
+  "Deployed a SvelteKit server and PostgreSQL database using *Docker Swarm*, *Ansible* and *Terraform*, making a scalable distributed cloud platform.",
+  "Developed *Github Actions* CI/CD pipelines to deploy the app on push and destroy it on command, saving ~$20/month in compute costs.",
+  "Attempted to use *Kubernetes* to manage the application and database deployments, but scrapped it after low ROI on complexity vs needs.",
+]
+
 
 [hackathons]
 
