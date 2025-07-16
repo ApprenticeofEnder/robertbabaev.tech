@@ -108,6 +108,9 @@ importers:
       svelte:
         specifier: ^5.0.0
         version: 5.25.7
+      svelte-adapter-static-digitalocean:
+        specifier: ^3.0.1
+        version: 3.0.1(@sveltejs/kit@2.20.4(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.0)(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.0)(jiti@1.21.7)(yaml@2.7.1)))
       svelte-check:
         specifier: ^4.0.0
         version: 4.1.5(picomatch@4.0.2)(svelte@5.25.7)(typescript@5.8.3)
@@ -1882,6 +1885,9 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  svelte-adapter-static-digitalocean@3.0.1:
+    resolution: {integrity: sha512-HaB48tHYHcizmvWMBS8Tq/glWxxfITK2qV4V5agIsVU/TmQ1mEJCWfKa9OMBVgQrn0vKkin1W2ww5HnJcz+cCA==}
 
   svelte-check@4.1.5:
     resolution: {integrity: sha512-Gb0T2IqBNe1tLB9EB1Qh+LOe+JB8wt2/rNBDGvkxQVvk8vNeAoG+vZgFB/3P5+zC7RWlyBlzm9dVjZFph/maIg==}
@@ -3806,6 +3812,13 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  svelte-adapter-static-digitalocean@3.0.1(@sveltejs/kit@2.20.4(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.0)(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.0)(jiti@1.21.7)(yaml@2.7.1))):
+    dependencies:
+      '@sveltejs/adapter-static': 3.0.8(@sveltejs/kit@2.20.4(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.0)(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.0)(jiti@1.21.7)(yaml@2.7.1)))
+      yaml: 2.7.1
+    transitivePeerDependencies:
+      - '@sveltejs/kit'
 
   svelte-check@4.1.5(picomatch@4.0.2)(svelte@5.25.7)(typescript@5.8.3):
     dependencies:
