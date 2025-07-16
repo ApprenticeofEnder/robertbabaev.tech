@@ -158,4 +158,4 @@ body = "Gave a talk about securing production secrets, including topics like con
 [activities.uottahack]
 title = "uOttaHack 2025"
 timeframe = "01/2025 (3 Days)"
-body = "Won the DeepCode sponsor challenge with SecureVision (#link(\"https://devpost.com/software/securevision\")[devpost.com/software/securevision])."
+body = "Won the DeepCode sponsor challenge with SecureVision (#link(\"https://dorahacks.io/buidl/21611\")[dorahacks.io/buidl/21611])."
