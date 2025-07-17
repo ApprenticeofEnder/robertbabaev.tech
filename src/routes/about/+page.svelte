@@ -1,3 +1,4 @@
+<!-- TODO: See if there's a better way of doing this grid with alternating placement order on larger screens. -->
 <section class="flex flex-col justify-center gap-8">
 	<h1>To Locking Down A Better Future</h1>
 	<div class="grid grid-cols-1 items-center gap-8 text-justify md:grid-cols-2">

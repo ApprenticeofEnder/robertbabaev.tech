@@ -32,6 +32,7 @@ tech = [
   "Crowdstrike Falcon",
   "Microsoft Azure",
   "Microsoft Sentinel",
+  "Microsoft Defender",
   "PowerShell",
   "KQL",
 ]
@@ -71,7 +72,7 @@ subtitle = "SoftwareSecured"
 location = "Ottawa, ON"
 start = "05/2022"
 end = "08/2022"
-tech = ["AWS", "Python", "Burp Suite", "Semgrep"]
+tech = ["AWS", "Python", "Burp Suite", "Semgrep", "Ruby on Rails"]
 bulletPoints = [
   "Assessed an *AWS* cloud network, including *S3* permissions and *IAM* configurations, to identify a publicly writable S3 bucket.",
   "Identified a hard-coded secret key in a *Ruby on Rails* microservice API using Semgrep, preventing potential account takeover.",
@@ -86,7 +87,16 @@ subtitle = "SoftwareSecured"
 start = "05/2021"
 end = "12/2021"
 location = "Ottawa, ON"
-tech = ["Python", "Django"]
+tech = [
+  "AWS",
+  "Docker",
+  "Python",
+  "JavaScript",
+  "TypeScript",
+  "Django",
+  "Angular",
+  "SvelteKit",
+]
 bulletPoints = [
   "Implemented an authentication system with SSO and OAuth2 in a *SvelteKit* application using *TypeScript*, mitigating credential breaches.",
   "Managed deployments on *Linux* virtual machines using *Docker Compose*, avoiding environment-based errors that took hours to debug.",
@@ -127,6 +137,14 @@ location = "github.com/ApprenticeofEnder/CUHacking-2025-CTF"
 start = "01/2025"
 end = "03/2025"
 link = "https://github.com/ApprenticeofEnder/CUHacking-2025-CTF"
+tech = [
+  "SvelteKit",
+  "TypeScript",
+  "Github Actions",
+  "Docker Swarm",
+  "Ansible",
+  "PostgreSQL",
+]
 bulletPoints = [
   "Deployed a SvelteKit server and PostgreSQL database using *Docker Swarm*, *Ansible* and *Terraform*, making a scalable distributed cloud platform.",
   "Developed *Github Actions* CI/CD pipelines to deploy the app on push and destroy it on command, saving ~$20/month in compute costs.",

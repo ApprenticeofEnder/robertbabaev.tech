@@ -7,8 +7,7 @@
 	}
 
 	const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	let { text, delay }: ScramblerProps = $props();
-	delay ??= 0;
+	let { text, delay = 0 }: ScramblerProps = $props();
 
 	let iterations = $state(0);
 	let currentValue = $state(text.split('').map(getRandomLetter).join(''));

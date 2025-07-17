@@ -15,7 +15,7 @@
 		window.open(PUBLIC_DEV_RESUME, '_blank');
 	}
 
-	// TODO: Migrate the resume downloader into its own component
+	// TODO: Migrate the resume downloader into its own component, maybe?
 </script>
 
 {#snippet resumeDownloader()}
