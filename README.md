@@ -1,38 +1,43 @@
-# sv
+# robertbabaev.tech
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The repository for Robert Babaev's personal website and related material. [See the website.](https://robertbabaev.tech)
 
-## Creating a project
+![A green, white, and black eye logo with a nexus pattern in the iris.](https://github.com/ApprenticeofEnder/robertbabaev.tech/blob/988a468144d0308d945355a384460ed45185dcde/static/images/enderlogo_v2.png)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Table of Contents
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+- [Developing](#developing)
+- [FAQ](#faq)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Prerequisites
+
+- pnpm (preferably v10 or higher)
+- node (v20 LTS)
+
+### Install Dependencies
 
 ```bash
-npm run dev
+# in the main folder of the project
+pnpm i
+```
+
+### Running Locally
+
+```bash
+pnpm dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev -- --open
 ```
 
-## Building
+## FAQ
 
-To create a production version of your app:
+### Why does this repo/website have a...?
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- **Terraform folder?** I didn't want to do ClickOps during transitionary periods -- or, preferably, ever.
+- **Resume folder?** Because I made a CI/CD pipeline for my resume.
+- **CI/CD pipeline for a resume?** I got tired of jumping between 5 different locations to manage my resume, personal website, etc. This way, everything is in one place, and any time I make changes to my website or resume, I can make changes to the PDF resume that the site links to.
+- **TOML based config system?** It was easier than YAML, and I finally worked out a way of doing it automatically. No more digging through source files just to change some content!
+- **Series of `.tpl` files for use with 1Password?** It's easier to initialize local development on multiple devices than having to copy-paste a bunch of API keys.
