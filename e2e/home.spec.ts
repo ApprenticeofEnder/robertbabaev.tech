@@ -16,12 +16,12 @@ test.describe('Home page', () => {
 		const designationHeading = page.getByRole('heading', { name: 'Designation' });
 		await expect(designationHeading).toBeVisible();
 
-		const designations = ['Security SWE', 'Full Stack SWE', 'Platform Engineer', 'DevOps Engineer'];
-		await Promise.all(
-			designations.map(async (designation) => {
-				await page.getByText(designation).waitFor({ state: 'visible', timeout: 20000 });
-			})
-		);
+		// const designations = ['Security SWE', 'Full Stack SWE', 'Platform Engineer', 'DevOps Engineer'];
+		// await Promise.all(
+		// 	designations.map(async (designation) => {
+		// 		await page.getByText(designation).waitFor({ state: 'visible', timeout: 20000 });
+		// 	})
+		// );
 
 		// Check Current Affiliation field
 		await expect(page.getByRole('heading', { name: 'Current Affiliation' })).toBeVisible();

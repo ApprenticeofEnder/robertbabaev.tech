@@ -12,14 +12,10 @@
 	}
 
 	const { link, icon, testId }: OptionCardProps = $props();
-
-	function open() {
-		goto(link.href);
-	}
 </script>
 
 <Card.Root class="flex cursor-pointer flex-col justify-center hover:bg-primary/25 lg:aspect-video">
-	<button data-testid={testId} onclick={open}>
+	<a data-testid={testId} href={link.href} class="text-foreground decoration-transparent">
 		<Card.Header>
 			<div class="flex justify-center">
 				{@render icon()}
@@ -28,5 +24,5 @@
 		<Card.Footer class="justify-center">
 			<div>{link.text}</div>
 		</Card.Footer>
-	</button>
+	</a>
 </Card.Root>
