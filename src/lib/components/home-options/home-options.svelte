@@ -15,19 +15,19 @@
 </script>
 
 {#snippet resume()}
-	<FileText class="contact-icon drop-shadow-glow"></FileText>
+	<FileText class="lg:contact-icon drop-shadow-glow"></FileText>
 {/snippet}
 
 {#snippet about()}
-	<User class="contact-icon drop-shadow-glow"></User>
+	<User class="lg:contact-icon drop-shadow-glow"></User>
 {/snippet}
 
 {#snippet contact()}
-	<IdCard class="contact-icon drop-shadow-glow"></IdCard>
+	<IdCard class="lg:contact-icon drop-shadow-glow"></IdCard>
 {/snippet}
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-	<OptionCard icon={resume} link={links.resume}></OptionCard>
-	<OptionCard icon={about} link={links.about}></OptionCard>
-	<OptionCard icon={contact} link={links.contact}></OptionCard>
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+	<OptionCard icon={resume} link={links.resume} testId="home-option-resume"></OptionCard>
+	<OptionCard icon={about} link={links.about} testId="home-option-about"></OptionCard>
+	<OptionCard icon={contact} link={links.contact} testId="home-option-contact"></OptionCard>
 </div>

@@ -15,10 +15,10 @@
 	const { featuredProjects, homepageConfig, blogPosts } = data;
 </script>
 
-{#snippet homepageField(name: string, content: string | string[])}
+{#snippet homepageField(name: string, content: string | string[], testId: string)}
 	<h2 class="flex flex-col drop-shadow-glow-sm sm:gap-x-3 sm:text-2xl lg:flex-row lg:text-3xl">
 		<span>{name}:</span>
-		<span>
+		<span data-testid={testId}>
 			{#if typeof content === 'string'}
 				<Scramble text={content} delay={500} />
 			{:else}
@@ -33,8 +33,8 @@
 	<h1 class="flex gap-x-3 drop-shadow-glow-sm sm:text-3xl sm:drop-shadow-glow lg:text-4xl">
 		Subject: <Scramble text="Robert Babaev" delay={500} />
 	</h1>
-	{#each Object.values(homepageConfig.fields) as field}
-		{@render homepageField(field.name, field.content)}
+	{#each Object.entries(homepageConfig.fields) as [fieldId, field]}
+		{@render homepageField(field.name, field.content, fieldId)}
 	{/each}
 
 	<Separator></Separator>
