@@ -8,25 +8,25 @@
 	interface OptionCardProps {
 		link: Link;
 		icon: Snippet;
+		testId?: string;
 	}
 
-	const { link, icon }: OptionCardProps = $props();
+	const { link, icon, testId }: OptionCardProps = $props();
 
 	function open() {
 		goto(link.href);
 	}
 </script>
 
-<Card.Root
-	class="flex aspect-video cursor-pointer flex-col justify-center hover:bg-primary/25"
-	onclick={open}
->
-	<Card.Header>
-		<div class="flex justify-center">
-			{@render icon()}
-		</div>
-	</Card.Header>
-	<Card.Footer class="justify-center">
-		<div>{link.text}</div>
-	</Card.Footer>
+<Card.Root class="flex cursor-pointer flex-col justify-center hover:bg-primary/25 lg:aspect-video">
+	<button data-testid={testId} onclick={open}>
+		<Card.Header>
+			<div class="flex justify-center">
+				{@render icon()}
+			</div>
+		</Card.Header>
+		<Card.Footer class="justify-center">
+			<div>{link.text}</div>
+		</Card.Footer>
+	</button>
 </Card.Root>

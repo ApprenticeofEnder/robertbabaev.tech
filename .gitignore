@@ -31,3 +31,9 @@ vite.config.ts.timestamp-*
 
 # Typst
 *.pdf
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
