@@ -1,4 +1,16 @@
-import { type Page, expect, test } from '@playwright/test';
+import { type Page, test as baseTest, expect } from '@playwright/test';
+
+import { compileConfig } from '../src/lib/server/config';
+import { type HomepageConfig } from '../src/lib/types/index';
+
+const test = baseTest.extend<{
+	config: HomepageConfig;
+}>({
+	config: async ({}, use) => {
+		const config = await compileConfig<HomepageConfig>('config/homepage.toml');
+		await use(config);
+	}
+});
 
 test.describe('Home page', () => {
 	test('has the right title', async ({ page }) => {
@@ -7,10 +19,8 @@ test.describe('Home page', () => {
 		await expect(page).toHaveTitle('Home - Robert Babaev');
 	});
 
-	test('hero section displays correct fields', async ({ page }) => {
+	test('hero section displays correct fields', async ({ page, config }) => {
 		await page.goto('/');
-
-		// TODO: Update these to use the loaded config instead
 
 		// Check if the Designation field exists and has correct content
 		const designationHeading = page.getByRole('heading', { name: 'Designation' });
@@ -25,11 +35,15 @@ test.describe('Home page', () => {
 
 		// Check Current Affiliation field
 		await expect(page.getByRole('heading', { name: 'Current Affiliation' })).toBeVisible();
-		await expect(page.getByText('Independent')).toBeVisible();
+		await page
+			.getByText(config.fields['current_affiliation'].content as string)
+			.waitFor({ state: 'visible', timeout: 5000 });
 
 		// Check Pronouns field
 		await expect(page.getByRole('heading', { name: 'Pronouns' })).toBeVisible();
-		await expect(page.getByText('He/Him')).toBeVisible();
+		await page
+			.getByText(config.fields['pronouns'].content as string)
+			.waitFor({ state: 'visible', timeout: 5000 });
 	});
 
 	test.describe('navigation cards', () => {
