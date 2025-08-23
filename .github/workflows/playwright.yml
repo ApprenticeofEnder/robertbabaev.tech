@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [main, master]
 jobs:
-  test:
+  test-e2e:
     timeout-minutes: 60
     runs-on: ubuntu-22.04
     steps:
