@@ -1,4 +1,4 @@
-.PHONY: compile-resume upload-resume watch-resume
+.PHONY: resume upload-resume resume-watch
 
 resume:
 	scripts/compile_resume.sh
