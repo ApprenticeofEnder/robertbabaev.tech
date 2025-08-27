@@ -33,17 +33,21 @@ test.describe('Home page', () => {
 		// 	})
 		// );
 
+		await page.evaluate(() => {
+			return new Promise((resolve) => setTimeout(resolve, 2000));
+		});
+
 		// Check Current Affiliation field
 		await expect(page.getByRole('heading', { name: 'Current Affiliation' })).toBeVisible();
 		await page
 			.getByText(config.fields['current_affiliation'].content as string)
-			.waitFor({ state: 'visible', timeout: 5000 });
+			.waitFor({ state: 'visible', timeout: 1000 });
 
 		// Check Pronouns field
 		await expect(page.getByRole('heading', { name: 'Pronouns' })).toBeVisible();
 		await page
 			.getByText(config.fields['pronouns'].content as string)
-			.waitFor({ state: 'visible', timeout: 5000 });
+			.waitFor({ state: 'visible', timeout: 1000 });
 	});
 
 	test.describe('navigation cards', () => {
