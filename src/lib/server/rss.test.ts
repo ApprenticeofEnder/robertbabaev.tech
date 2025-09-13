@@ -1,7 +1,6 @@
 import { test as baseTest, describe, expect } from 'vitest';
 
-import { type HomepageConfig } from '$lib/types';
-
+import { type HomepageConfig } from '../types';
 import { compileConfig } from './config';
 import { extractFeedItems, fetchRawRssFeed, fetchRssFeed, parseRssFeed } from './rss';
 

@@ -39,7 +39,6 @@
 
 	<Separator></Separator>
 
-	<!-- TODO: Maybe make these cards instead of buttons -->
 	<HomeOptions links={homepageConfig.options}></HomeOptions>
 </section>
 
