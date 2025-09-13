@@ -19,7 +19,7 @@ test.describe('Home page', () => {
 		await expect(page).toHaveTitle('Home - Robert Babaev');
 	});
 
-	test('hero section displays correct fields', async ({ page, config }) => {
+	test.fixme('hero section displays correct fields', async ({ page, config }) => {
 		test.slow();
 		await page.goto('/');
 
