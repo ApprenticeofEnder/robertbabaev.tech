@@ -11,9 +11,10 @@ resource "digitalocean_app" "website" {
 
   spec {
     domain {
-      name = "robertbabaev.tech"
-      type = "PRIMARY"
-      zone = "robertbabaev.tech"
+      name     = "robertbabaev.tech"
+      type     = "PRIMARY"
+      wildcard = false
+      zone     = "robertbabaev.tech"
     }
 
     name   = "personal-website"
