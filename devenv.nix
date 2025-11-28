@@ -4,7 +4,9 @@
   config,
   inputs,
   ...
-}: {
+}: let
+  resumeRoot = "${config.git.root}/resume";
+in {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
 
@@ -63,9 +65,9 @@
       exec = ''
         set -euxo pipefail
 
-        cd ${config.git.root}/resume
+        cd ${resumeRoot}
 
-        ${lib.getExe pkgs.typst} compile ${config.git.root}/dev/Robert_Babaev_resume.typ
+        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/dev/Robert_Babaev_resume.typ
       '';
     };
     check-fonts = {
