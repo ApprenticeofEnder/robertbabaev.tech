@@ -1,4 +1,5 @@
 #import "./lib.typ": *
+// #import "@preview/modern-cv:0.9.0": *
 
 #let details = toml("data_common.toml")
 

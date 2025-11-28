@@ -16,9 +16,11 @@
   packages = with pkgs; [
     act
     git
+    tree
     gnumake
 
     # fonts
+    roboto
     source-sans
     source-sans-pro
     font-awesome_6
@@ -42,9 +44,10 @@
     typst = {
       enable = true;
       fontPaths = [
+        "${pkgs.roboto}/share/fonts/truetype"
         "${pkgs.source-sans-pro}/share/fonts/truetype"
         "${pkgs.source-sans}/share/fonts/truetype"
-        "${pkgs.font-awesome_6}/share/fonts/truetype"
+        "${pkgs.font-awesome_6}/share/fonts/opentype"
       ];
     };
   };
@@ -67,16 +70,20 @@
     };
     check-fonts = {
       exec = ''
-        ls ${pkgs.source-sans-pro}/share
-        ls ${pkgs.source-sans}/share
-        ls ${pkgs.font-awesome_6}/share
+        tree ${pkgs.source-sans-pro}
+        tree ${pkgs.source-sans}
+        tree ${pkgs.font-awesome_6}
       '';
+      description = "\tCheck the installation directories of the fonts installed";
     };
   };
 
   # https://devenv.sh/basics/
   enterShell = ''
     git --version # Use packages
+    typst --version
+    echo pnpm $(pnpm --version)
+    tofu --version
   '';
 
   # https://devenv.sh/tasks/
