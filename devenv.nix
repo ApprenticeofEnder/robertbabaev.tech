@@ -8,15 +8,18 @@
   resumeRoot = "${config.git.root}/resume";
   bucketRegion = "tor1";
   bucketName = "robertbabaev-tech";
+  bucketBaseUrl = "https://${bucketName}.${bucketRegion}.digitaloceanspaces.com";
   resumeName = "Robert_Babaev_resume";
   domain = "robertbabaev.tech";
+  envFile = ".env";
+  secretsFile = ".secrets";
 in {
   # https://devenv.sh/basics/
   env = {
     GREET = "devenv";
     DO_SPACES_REGION = bucketRegion;
     DO_SPACES_BUCKET = bucketName;
-    PUBLIC_DEV_RESUME = "https://${bucketName}.${bucketRegion}.digitaloceanspaces.com/resumes/dev/${resumeName}.pdf";
+    PUBLIC_DEV_RESUME = "${bucketBaseUrl}/resumes/dev/${resumeName}.pdf";
     PUBLIC_URL_ORIGIN = "https://${domain}";
   };
 
@@ -30,6 +33,7 @@ in {
     git
     tree
     gnumake
+    pulumi-esc
 
     # fonts
     roboto
@@ -77,8 +81,9 @@ in {
 
         cd ${resumeRoot}
 
-        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/dev/Robert_Babaev_resume.typ
+        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/dev/${resumeName}.typ
       '';
+      description = "\tCompile resume files";
     };
     check-fonts = {
       exec = ''
@@ -99,10 +104,16 @@ in {
   '';
 
   # https://devenv.sh/tasks/
-  # tasks = {
-  #   "myproj:setup".exec = "mytool build";
-  #   "devenv:enterShell".after = [ "myproj:setup" ];
-  # };
+  tasks = {
+    "secrets:populate".exec = ''
+      rm ${secretsFile} || echo "No secrets file found."
+      echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> ${secretsFile}
+      echo "DO_SPACES_ACCESS_KEY=$DO_SPACES_ACCESS_KEY" >> ${secretsFile}
+      echo "DO_SPACES_SECRET_KEY=$DO_SPACES_SECRET_KEY" >> ${secretsFile}
+      echo "DO_TOKEN=$DO_TOKEN" >> ${secretsFile}
+    '';
+    "devenv:enterShell".after = ["secrets:populate"];
+  };
 
   # https://devenv.sh/tests/
   enterTest = ''
