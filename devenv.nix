@@ -32,6 +32,7 @@ in {
     act
     git
     tree
+    awscli
     gnumake
     pulumi-esc
 
@@ -92,6 +93,28 @@ in {
         tree ${pkgs.font-awesome_6}
       '';
       description = "\tCheck the installation directories of the fonts installed";
+    };
+    upload-resume = {
+      exec = ''
+        set -euo pipefail
+
+        AWS_CLI=${lib.getExe pkgs.awscli}
+
+        echo "Configuring AWS CLI..."
+
+        $AWS_CLI configure set aws_access_key_id "$DO_SPACES_ACCESS_KEY"
+        $AWS_CLI configure set aws_secret_access_key "$DO_SPACES_SECRET_KEY"
+        $AWS_CLI configure set default.region "$DO_SPACES_REGION"
+
+        echo "Uploading resume(s)..."
+
+        $AWS_CLI s3 cp \
+          "${resumeRoot}/dev/${resumeName}.pdf" \
+          "s3://$DO_SPACES_BUCKET/resumes/dev" \
+          --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
+          --acl public-read
+      '';
+      description = "\tUpload resume(s) to the DO Spaces bucket";
     };
   };
 
