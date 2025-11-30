@@ -6,9 +6,19 @@
   ...
 }: let
   resumeRoot = "${config.git.root}/resume";
+  bucketRegion = "tor1";
+  bucketName = "robertbabaev-tech";
+  resumeName = "Robert_Babaev_resume";
+  domain = "robertbabaev.tech";
 in {
   # https://devenv.sh/basics/
-  env.GREET = "devenv";
+  env = {
+    GREET = "devenv";
+    DO_SPACES_REGION = bucketRegion;
+    DO_SPACES_BUCKET = bucketName;
+    PUBLIC_DEV_RESUME = "https://${bucketName}.${bucketRegion}.digitaloceanspaces.com/resumes/dev/${resumeName}.pdf";
+    PUBLIC_URL_ORIGIN = "https://${domain}";
+  };
 
   cachix.pull = [
     "rbabaev"
