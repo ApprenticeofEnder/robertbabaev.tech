@@ -1,10 +1,10 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}: let
+{ pkgs
+, lib
+, config
+, inputs
+, ...
+}:
+let
   resumeRoot = "${config.git.root}/resume";
   bucketRegion = "tor1";
   bucketName = "robertbabaev-tech";
@@ -13,8 +13,11 @@
   domain = "robertbabaev.tech";
   envFile = ".env";
   secretsFile = ".secrets";
-in {
+in
+{
   # https://devenv.sh/basics/
+  name = "robertbabaev.tech";
+
   env = {
     GREET = "devenv";
     DO_SPACES_REGION = bucketRegion;
@@ -135,7 +138,7 @@ in {
       echo "DO_SPACES_SECRET_KEY=$DO_SPACES_SECRET_KEY" >> ${secretsFile}
       echo "DO_TOKEN=$DO_TOKEN" >> ${secretsFile}
     '';
-    "devenv:enterShell".after = ["secrets:populate"];
+    "devenv:enterShell".after = [ "secrets:populate" ];
   };
 
   # https://devenv.sh/tests/
