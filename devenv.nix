@@ -1,9 +1,4 @@
-{ pkgs
-, lib
-, config
-, inputs
-, ...
-}:
+{ pkgs, lib, config, inputs, ... }:
 let
   resumeRoot = "${config.git.root}/resume";
   bucketRegion = "tor1";
