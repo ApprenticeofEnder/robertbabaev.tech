@@ -11,10 +11,10 @@ resource "digitalocean_app" "website" {
 
   spec {
     domain {
-      name     = "robertbabaev.tech"
+      name     = var.domain
       type     = "PRIMARY"
       wildcard = false
-      zone     = "robertbabaev.tech"
+      zone     = var.domain
     }
 
     name   = "personal-website"
@@ -51,7 +51,7 @@ resource "digitalocean_app" "website" {
 
       env {
         key   = "PUBLIC_URL_ORIGIN"
-        value = "https://robertbabaev.tech"
+        value = "https://${var.domain}"
       }
     }
   }
