@@ -19,9 +19,8 @@ jobs:
       - name: 'Checkout Code'
         uses: actions/checkout@v4
 
-      - name: 'Install Dependencies'
-        run: |
-          scripts/install_opentofu.sh --install-method deb
+      - name: 'Install Opentofu'
+        uses: opentofu/setup-opentofu@v1
 
       - name: 'Setup Terraform'
         env:
@@ -38,6 +37,7 @@ jobs:
 
       - name: 'Deploy'
         timeout-minutes: 5
+        if: ${{ !github.event.act }}
         env:
           DIGITALOCEAN_TOKEN: ${{ secrets.DO_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_ACCESS_KEY }}
