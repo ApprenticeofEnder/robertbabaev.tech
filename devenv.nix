@@ -1,5 +1,10 @@
-{ pkgs, lib, config, inputs, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}: let
   resumeRoot = "${config.git.root}/resume";
   bucketRegion = "tor1";
   bucketName = "robertbabaev-tech";
@@ -8,8 +13,7 @@ let
   domain = "robertbabaev.tech";
   envFile = ".env";
   secretsFile = ".secrets";
-in
-{
+in {
   # https://devenv.sh/basics/
   name = "robertbabaev.tech";
 
@@ -33,6 +37,8 @@ in
     awscli
     gnumake
     pulumi-esc
+    playwright
+    playwright-test
 
     # fonts
     roboto
@@ -133,7 +139,7 @@ in
       echo "DO_SPACES_SECRET_KEY=$DO_SPACES_SECRET_KEY" >> ${secretsFile}
       echo "DO_TOKEN=$DO_TOKEN" >> ${secretsFile}
     '';
-    "devenv:enterShell".after = [ "secrets:populate" ];
+    "devenv:enterShell".after = ["secrets:populate"];
   };
 
   # https://devenv.sh/tests/
