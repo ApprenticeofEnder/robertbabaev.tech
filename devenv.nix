@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }: let
   resumeRoot = "${config.git.root}/resume";
@@ -11,7 +10,6 @@
   bucketBaseUrl = "https://${bucketName}.${bucketRegion}.digitaloceanspaces.com";
   resumeName = "Robert_Babaev_resume";
   domain = "robertbabaev.tech";
-  envFile = ".env";
   secretsFile = ".secrets";
 in {
   # https://devenv.sh/basics/
@@ -53,7 +51,6 @@ in {
       enable = true;
       pnpm = {
         enable = true;
-        install.enable = true;
       };
     };
     opentofu = {
