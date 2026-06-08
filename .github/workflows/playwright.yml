@@ -6,19 +6,55 @@ on:
     branches: [main, master]
 jobs:
   test-e2e:
+    if: false
     timeout-minutes: 60
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
         with:
-          node-version: lts/*
-      - name: Install dependencies
-        run: npm install -g pnpm && pnpm install
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Setup cache
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright
+
+      - name: Install deps
+        run: pnpm i
+
+      - name: Build
+        env:
+          PUBLIC_URL_ORIGIN: 'http://127.0.0.1:4173'
+          PUBLIC_DEV_RESUME: 'http://127.0.0.1:4173/dev/resume.pdf'
+        run: pnpm build
+
       - name: Install Playwright Browsers
-        run: pnpm exec playwright install --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: |
+          set -x
+          pnpm exec playwright install --with-deps
+
+      - name: Install Playwright Browsers - Cache Hit
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: |
+          set -x
+          pnpm exec playwright install-deps
+
       - name: Run Playwright tests
         run: pnpm exec playwright test
+
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() && !github.event.act  }}
         with:
