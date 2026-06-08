@@ -1,1 +1,24 @@
 # TODO: Add data
+[skills]
+software = [
+  "AWS",
+  "Azure",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "Packer",
+  "Ansible",
+  "DataDog",
+  "GitHub Actions",
+  "Jenkins",
+  "Linux",
+  "PostgreSQL",
+  "MongoDB",
+  "Bash",
+  "Git",
+]
+
+[skills.programming]
+comfortable = ["Python (7yrs)", "TypeScript (4yrs)"]
+intermediate = ["Rust (3yrs)", "Java (3yrs)"]
+beginner = ["Ruby (1yr)", "Go (3mos)"]
