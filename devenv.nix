@@ -130,11 +130,13 @@ in {
   # https://devenv.sh/tasks/
   tasks = {
     "secrets:populate".exec = ''
-      rm ${secretsFile} || echo "No secrets file found."
-      echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> ${secretsFile}
-      echo "DO_SPACES_ACCESS_KEY=$DO_SPACES_ACCESS_KEY" >> ${secretsFile}
-      echo "DO_SPACES_SECRET_KEY=$DO_SPACES_SECRET_KEY" >> ${secretsFile}
-      echo "DO_TOKEN=$DO_TOKEN" >> ${secretsFile}
+      if [ -z "''${GITHUB_ACTIONS:-}" ]; then
+        rm ${secretsFile} || echo "No secrets file found."
+        echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> ${secretsFile}
+        echo "DO_SPACES_ACCESS_KEY=$DO_SPACES_ACCESS_KEY" >> ${secretsFile}
+        echo "DO_SPACES_SECRET_KEY=$DO_SPACES_SECRET_KEY" >> ${secretsFile}
+        echo "DO_TOKEN=$DO_TOKEN" >> ${secretsFile}
+      fi
     '';
     "devenv:enterShell".after = ["secrets:populate"];
   };

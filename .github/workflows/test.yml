@@ -8,31 +8,23 @@ on:
     branches:
       - 'main'
 
-env:
-  PUBLIC_DEV_RESUME: https://${{ vars.DO_SPACES_BUCKET }}.${{vars.DO_SPACES_REGION }}.digitaloceanspaces.com/resumes/dev/Robert_Babaev_resume.pdf
-  PUBLIC_URL_ORIGIN: https://robertbabaev.tech
-
 jobs:
   test-vitest:
     timeout-minutes: 60
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: devenv shell bash -- -e {0}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - uses: ./.github/actions/devenv-setup
         with:
-          node-version: '22'
-          cache: 'pnpm'
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: latest
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Install Node.js dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run PNPM tests
         run: pnpm test

@@ -14,13 +14,17 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: devenv shell bash -- -e {0}
 
     steps:
       - name: 'Checkout Code'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: 'Install Opentofu'
-        uses: opentofu/setup-opentofu@v1
+      - uses: ./.github/actions/devenv-setup
+        with:
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: 'Setup Terraform'
         env:

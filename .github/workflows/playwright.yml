@@ -9,19 +9,15 @@ jobs:
     if: false
     timeout-minutes: 60
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: devenv shell bash -- -e {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
+      - uses: ./.github/actions/devenv-setup
         with:
-          version: latest
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: 'pnpm'
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Setup cache
         uses: actions/cache@v4
@@ -32,7 +28,7 @@ jobs:
           key: ${{ runner.os }}-playwright
 
       - name: Install deps
-        run: pnpm i
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         env:
