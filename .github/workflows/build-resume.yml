@@ -11,10 +11,6 @@ on:
       - 'src/lib/resume/**'
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   build-resume:
     runs-on: ubuntu-22.04
@@ -28,6 +24,8 @@ jobs:
 
       - name: Load secrets from Pulumi ESC
         uses: ./.github/actions/pulumi-esc
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
         with:
           export-environment-variables: >-
             CACHIX_AUTH_TOKEN,DO_SPACES_ACCESS_KEY,DO_SPACES_SECRET_KEY,DO_SPACES_BUCKET,DO_SPACES_REGION

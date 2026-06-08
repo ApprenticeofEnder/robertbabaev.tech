@@ -9,10 +9,6 @@ on:
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
-
 env:
   TERRAFORM_DIR: terraform
 
@@ -29,6 +25,8 @@ jobs:
 
       - name: Load secrets from Pulumi ESC
         uses: ./.github/actions/pulumi-esc
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
       - uses: ./.github/actions/devenv-setup
 
