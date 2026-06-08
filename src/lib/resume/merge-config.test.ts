@@ -1,10 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import {
-	mergeVariantConfig,
-	parsePdfVariantConfig,
-	parseWebVariantConfig
-} from './merge-config';
+import { mergeVariantConfig, parsePdfVariantConfig, parseWebVariantConfig } from './merge-config';
 import type { VariantConfig } from './types';
 
 describe('mergeVariantConfig', () => {
@@ -28,7 +24,13 @@ describe('mergeVariantConfig', () => {
 					beginner: ['Go (3mos)']
 				}
 			},
-			entries: [{ id: 'experience.deepcode-sec-swe', output: 'experience', bullets: ['ingestion'] }]
+			entries: [
+				{
+					id: 'experience.deepcode-sec-swe',
+					output: 'experience',
+					bullets: ['ingestion']
+				}
+			]
 		};
 
 		const merged = mergeVariantConfig(base, variant);
@@ -45,14 +47,26 @@ describe('parsePdfVariantConfig', () => {
 	test('rejects incompatible output sections', () => {
 		expect(() =>
 			parsePdfVariantConfig({
-				entries: [{ id: 'experience.deepcode-sec-swe', output: 'projects', bullets: ['a'] }]
+				entries: [
+					{
+						id: 'experience.deepcode-sec-swe',
+						output: 'projects',
+						bullets: ['a']
+					}
+				]
 			})
 		).toThrow('incompatible with master section');
 	});
 
 	test('allows hackathon entries in projects output', () => {
 		const config = parsePdfVariantConfig({
-			entries: [{ id: 'hackathons.ai-tinkerers-2025', output: 'projects', bullets: ['neo4j-backend'] }]
+			entries: [
+				{
+					id: 'hackathons.ai-tinkerers-2025',
+					output: 'projects',
+					bullets: ['neo4j-backend']
+				}
+			]
 		});
 
 		expect(config.entries[0].output).toBe('projects');
@@ -63,7 +77,13 @@ describe('parseWebVariantConfig', () => {
 	test('rejects mismatched web output sections', () => {
 		expect(() =>
 			parseWebVariantConfig({
-				entries: [{ id: 'experience.deepcode-sec-swe', output: 'projects', bullets: ['a'] }]
+				entries: [
+					{
+						id: 'experience.deepcode-sec-swe',
+						output: 'projects',
+						bullets: ['a']
+					}
+				]
 			})
 		).toThrow('incompatible with master section');
 	});

@@ -6,11 +6,7 @@ import { describe, expect, test } from 'vitest';
 
 import { buildPdfData } from './build-pdf';
 import { buildWebData } from './build-web';
-import {
-	mergeVariantConfig,
-	parsePdfVariantConfig,
-	parseWebVariantConfig
-} from './merge-config';
+import { mergeVariantConfig, parsePdfVariantConfig, parseWebVariantConfig } from './merge-config';
 import type { PdfVariant, RawResumeData } from './types';
 import { BASE_VARIANT_FILE, listPdfVariantNames } from './variants';
 
@@ -33,22 +29,25 @@ describe('generate resume integration', () => {
 		expect(webData.experience).not.toHaveProperty('innovapost-security-specialist');
 	});
 
-	test.each(['dev', 'devops', 'security'])('builds %s pdf variant from real config', async (variant) => {
-		const master = (await loadToml(
-			path.join(root, 'config/resume_data.toml')
-		)) as unknown as RawResumeData;
-		const baseConfig = parsePdfVariantConfig(
-			await loadToml(path.join(variantsDir, BASE_VARIANT_FILE))
-		);
-		const variantConfig = parsePdfVariantConfig(
-			await loadToml(path.join(variantsDir, `${variant}.toml`))
-		);
-		const mergedConfig = mergeVariantConfig(baseConfig, variantConfig);
-		const pdf = buildPdfData(master, mergedConfig, variant as PdfVariant);
+	test.each(['dev', 'devops', 'security'])(
+		'builds %s pdf variant from real config',
+		async (variant) => {
+			const master = (await loadToml(
+				path.join(root, 'config/resume_data.toml')
+			)) as unknown as RawResumeData;
+			const baseConfig = parsePdfVariantConfig(
+				await loadToml(path.join(variantsDir, BASE_VARIANT_FILE))
+			);
+			const variantConfig = parsePdfVariantConfig(
+				await loadToml(path.join(variantsDir, `${variant}.toml`))
+			);
+			const mergedConfig = mergeVariantConfig(baseConfig, variantConfig);
+			const pdf = buildPdfData(master, mergedConfig, variant as PdfVariant);
 
-		expect(pdf.experience && Object.keys(pdf.experience).length).toBeGreaterThan(0);
-		expect(pdf.activities && Object.keys(pdf.activities).length).toBeGreaterThan(0);
-	});
+			expect(pdf.experience && Object.keys(pdf.experience).length).toBeGreaterThan(0);
+			expect(pdf.activities && Object.keys(pdf.activities).length).toBeGreaterThan(0);
+		}
+	);
 
 	test('lists the expected pdf variants', async () => {
 		await expect(listPdfVariantNames(variantsDir)).resolves.toEqual(['dev', 'devops', 'security']);

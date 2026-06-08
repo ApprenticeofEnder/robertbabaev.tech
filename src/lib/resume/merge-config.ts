@@ -154,9 +154,7 @@ export function mergeVariantConfig(base: VariantConfig, variant: VariantConfig):
 	};
 }
 
-export function indexVariantEntries(
-	entries: VariantEntry[]
-): Map<string, VariantEntry> {
+export function indexVariantEntries(entries: VariantEntry[]): Map<string, VariantEntry> {
 	return new Map(entries.map((entry) => [entry.id, entry]));
 }
 

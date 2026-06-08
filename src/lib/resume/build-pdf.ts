@@ -73,11 +73,13 @@ function buildPdfEntry(
 			: []
 	};
 
-	if (options.includeLink) {
-		const link = override.link ?? entry.link;
-		if (typeof link === 'string') {
-			pdfEntry.link = link;
-		}
+	if (!options.includeLink) {
+		return pdfEntry;
+	}
+
+	const link = override.link ?? entry.link;
+	if (typeof link === 'string') {
+		pdfEntry.link = link;
 	}
 
 	return pdfEntry;
@@ -89,6 +91,52 @@ function buildActivityEntry(entry: RawResumeEntry, override: VariantEntry): PdfA
 		timeframe: override.timeframe ?? entry.timeframe ?? formatDate(entry, override.date),
 		body: override.body ?? entry.body ?? ''
 	};
+}
+
+function addExperienceEntry(
+	variantEntry: VariantEntry,
+	channel: BulletChannel,
+	experience: Record<string, PdfEntry>,
+	master: RawResumeData
+) {
+	const { section, entryId, entry } = findMasterEntry(master, variantEntry.id);
+
+	if (section !== 'experience') {
+		throw new Error(`Entry "${variantEntry.id}" cannot be placed in experience section.`);
+	}
+
+	experience[entryId] = buildPdfEntry(entry, variantEntry, channel, {
+		includeLink: false
+	});
+}
+
+function addProjectEntry(
+	variantEntry: VariantEntry,
+	channel: BulletChannel,
+	projects: Record<string, PdfEntry>,
+	master: RawResumeData
+) {
+	const { section, entryId, entry } = findMasterEntry(master, variantEntry.id);
+	if (section !== 'projects' && section !== 'hackathons' && section !== 'volunteering') {
+		throw new Error(
+			`Entry "${variantEntry.id}" cannot be placed in projects section from master section "${section}".`
+		);
+	}
+	projects[entryId] = buildPdfEntry(entry, variantEntry, channel, {
+		includeLink: true
+	});
+}
+
+function addActivityEntry(
+	variantEntry: VariantEntry,
+	activities: Record<string, PdfActivityEntry>,
+	master: RawResumeData
+) {
+	const { section, entryId, entry } = findMasterEntry(master, variantEntry.id);
+	if (section !== 'activities') {
+		throw new Error(`Entry "${variantEntry.id}" cannot be placed in activities section.`);
+	}
+	activities[entryId] = buildActivityEntry(entry, variantEntry);
 }
 
 export function buildPdfData(
@@ -113,26 +161,11 @@ export function buildPdfData(
 		const { section, entryId, entry } = findMasterEntry(master, variantEntry.id);
 
 		if (variantEntry.output === 'experience') {
-			if (section !== 'experience') {
-				throw new Error(`Entry "${variantEntry.id}" cannot be placed in experience section.`);
-			}
-			experience[entryId] = buildPdfEntry(entry, variantEntry, channel, { includeLink: false });
+			addExperienceEntry(variantEntry, channel, experience, master);
 		} else if (variantEntry.output === 'projects') {
-			if (
-				section !== 'projects' &&
-				section !== 'hackathons' &&
-				section !== 'volunteering'
-			) {
-				throw new Error(
-					`Entry "${variantEntry.id}" cannot be placed in projects section from master section "${section}".`
-				);
-			}
-			projects[entryId] = buildPdfEntry(entry, variantEntry, channel, { includeLink: true });
+			addProjectEntry(variantEntry, channel, projects, master);
 		} else if (variantEntry.output === 'activities') {
-			if (section !== 'activities') {
-				throw new Error(`Entry "${variantEntry.id}" cannot be placed in activities section.`);
-			}
-			activities[entryId] = buildActivityEntry(entry, variantEntry);
+			addActivityEntry(variantEntry, activities, master);
 		} else {
 			throw new Error(`Unknown output section "${variantEntry.output}".`);
 		}
