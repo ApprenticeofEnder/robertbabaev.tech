@@ -12,7 +12,7 @@
 </script>
 
 <section id={scrollTarget.replace('#', '')} use:scrollRef={scrollTarget} class="w-full">
-	<h2 class="sticky top-0 z-10 bg-background py-2 text-left">{title}</h2>
+	<h2 class="sticky top-11 z-10 bg-background py-2 text-left md:top-12">{title}</h2>
 	<div class="mt-4 flex flex-col gap-4">
 		{#each Object.values(entries) as entry}
 			<Entry {...entry} />
