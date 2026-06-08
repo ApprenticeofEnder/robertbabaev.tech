@@ -4,9 +4,13 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   test-e2e:
-    if: false
     timeout-minutes: 60
     runs-on: ubuntu-22.04
     defaults:
@@ -15,9 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - uses: ./.github/actions/devenv-setup
+      - name: Load secrets from Pulumi ESC
+        uses: ./.github/actions/pulumi-esc
         with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          export-environment-variables: CACHIX_AUTH_TOKEN
+
+      - uses: ./.github/actions/devenv-setup
 
       - name: Setup cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5

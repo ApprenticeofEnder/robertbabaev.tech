@@ -1,9 +1,5 @@
 name: Setup devenv
 description: Install Nix, Cachix, and devenv
-inputs:
-  cachix-auth-token:
-    description: Auth token for the rbabaev Cachix cache
-    required: false
 runs:
   using: composite
   steps:
@@ -13,9 +9,12 @@ runs:
         name: devenv
     - name: Configure rbabaev Cachix cache
       shell: bash
-      env:
-        CACHIX_AUTH_TOKEN: ${{ inputs.cachix-auth-token }}
-      run: cachix use rbabaev
+      run: |
+        if [ -z "$CACHIX_AUTH_TOKEN" ]; then
+          echo "CACHIX_AUTH_TOKEN is not set. Load secrets from Pulumi ESC before devenv-setup." >&2
+          exit 1
+        fi
+        cachix use rbabaev
     - name: Install devenv.sh
       shell: bash
       run: nix profile add nixpkgs#devenv

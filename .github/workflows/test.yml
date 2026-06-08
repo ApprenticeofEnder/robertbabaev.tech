@@ -8,6 +8,10 @@ on:
     branches:
       - 'main'
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   test-vitest:
     timeout-minutes: 60
@@ -19,9 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - uses: ./.github/actions/devenv-setup
+      - name: Load secrets from Pulumi ESC
+        uses: ./.github/actions/pulumi-esc
         with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          export-environment-variables: CACHIX_AUTH_TOKEN
+
+      - uses: ./.github/actions/devenv-setup
 
       - name: Install Node.js dependencies
         run: pnpm install --frozen-lockfile

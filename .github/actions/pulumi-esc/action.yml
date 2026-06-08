@@ -1,0 +1,31 @@
+name: Load Pulumi ESC environment
+description: Authenticate with Pulumi Cloud via OIDC and inject ESC environment variables
+inputs:
+  organization:
+    description: Pulumi organization name
+    required: false
+    default: ApprenticeofEnder
+  environment:
+    description: ESC environment name (org/project/env)
+    required: false
+    default: ApprenticeofEnder/robertbabaev.tech/prod
+  export-environment-variables:
+    description: >
+      ESC variables to export. Use true for all, false for none, or a comma-separated
+      list (optionally ENV=SECRET mappings). See pulumi/esc-action docs.
+    required: false
+    default: 'true'
+runs:
+  using: composite
+  steps:
+    - name: Authenticate with Pulumi Cloud
+      uses: pulumi/auth-actions@141415910c3beb54e03b48e9057c204c97b956f2 # v2.1.0
+      with:
+        organization: ${{ inputs.organization }}
+        requested-token-type: urn:pulumi:token-type:access_token:organization
+
+    - name: Load ESC environment
+      uses: pulumi/esc-action@f3cfbabf37488463817366338165b92b5f99117e # v2.0.0
+      with:
+        environment: ${{ inputs.environment }}
+        export-environment-variables: ${{ inputs.export-environment-variables }}

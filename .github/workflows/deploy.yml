@@ -9,6 +9,10 @@ on:
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   TERRAFORM_DIR: terraform
 
@@ -23,37 +27,26 @@ jobs:
       - name: 'Checkout Code'
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - uses: ./.github/actions/devenv-setup
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - name: Load secrets from Pulumi ESC
+        uses: ./.github/actions/pulumi-esc
 
-      # - name: 'Debug auth diagnostics'
-      #   env:
-      #     DIGITALOCEAN_TOKEN: ${{ secrets.DO_TOKEN }}
-      #     TF_VAR_do_token: ${{ vars.DO_TOKEN }}
-      #     TF_VAR_do_access_id: ${{ secrets.DO_SPACES_ACCESS_KEY }}
-      #     TF_VAR_do_secret_key: ${{ secrets.DO_SPACES_SECRET_KEY }}
-      #   run: |
-      #     diag() {
-      #       local name="$1" val="$2"
-      #       if [ -n "$val" ]; then echo "agent-log hypothesisId=$3 location=deploy.yml:diag message=$name data={\"present\":true,\"length\":${#val}}"
-      #       else echo "agent-log hypothesisId=$3 location=deploy.yml:diag message=$name data={\"present\":false,\"length\":0}"; fi
-      #     }
-      #     diag "DIGITALOCEAN_TOKEN" "$DIGITALOCEAN_TOKEN" "A"
-      #     diag "TF_VAR_do_token_from_vars" "$TF_VAR_do_token" "A"
-      #     diag "TF_VAR_do_access_id" "$TF_VAR_do_access_id" "C"
-      #     diag "TF_VAR_do_secret_key" "$TF_VAR_do_secret_key" "C"
+      - uses: ./.github/actions/devenv-setup
+
+      - name: Map ESC vars for Terraform
+        shell: bash
+        run: |
+          {
+            echo "AWS_ACCESS_KEY_ID=$DO_SPACES_ACCESS_KEY"
+            echo "AWS_SECRET_ACCESS_KEY=$DO_SPACES_SECRET_KEY"
+            echo "DIGITALOCEAN_TOKEN=$DO_TOKEN"
+            echo "TF_VAR_do_token=$DO_TOKEN"
+            echo "TF_VAR_do_access_id=$DO_SPACES_ACCESS_KEY"
+            echo "TF_VAR_do_secret_key=$DO_SPACES_SECRET_KEY"
+            echo "TF_VAR_do_bucket=$DO_SPACES_BUCKET"
+            echo "TF_VAR_do_region=$DO_SPACES_REGION"
+          } >> "$GITHUB_ENV"
 
       - name: 'Setup Terraform'
-        env:
-          DIGITALOCEAN_TOKEN: ${{ secrets.DO_TOKEN }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
-          TF_VAR_do_bucket: ${{ vars.DO_SPACES_BUCKET }}
-          TF_VAR_do_region: ${{ vars.DO_SPACES_REGION }}
-          TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
-          TF_VAR_do_access_id: ${{ secrets.DO_SPACES_ACCESS_KEY }}
-          TF_VAR_do_secret_key: ${{ secrets.DO_SPACES_SECRET_KEY }}
         run: |
           tofu -version
           cd $TERRAFORM_DIR
@@ -63,15 +56,6 @@ jobs:
       - name: 'Deploy'
         timeout-minutes: 5
         if: ${{ !github.event.act }}
-        env:
-          DIGITALOCEAN_TOKEN: ${{ secrets.DO_TOKEN }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
-          TF_VAR_do_bucket: ${{ vars.DO_SPACES_BUCKET }}
-          TF_VAR_do_region: ${{ vars.DO_SPACES_REGION }}
-          TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
-          TF_VAR_do_access_id: ${{ secrets.DO_SPACES_ACCESS_KEY }}
-          TF_VAR_do_secret_key: ${{ secrets.DO_SPACES_SECRET_KEY }}
         run: |
           cd $TERRAFORM_DIR
           tofu plan -out .terraform-plan

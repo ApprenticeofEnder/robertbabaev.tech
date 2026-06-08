@@ -11,6 +11,10 @@ on:
       - 'src/lib/resume/**'
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-resume:
     runs-on: ubuntu-22.04
@@ -22,9 +26,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - uses: ./.github/actions/devenv-setup
+      - name: Load secrets from Pulumi ESC
+        uses: ./.github/actions/pulumi-esc
         with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          export-environment-variables: >-
+            CACHIX_AUTH_TOKEN,DO_SPACES_ACCESS_KEY,DO_SPACES_SECRET_KEY,DO_SPACES_BUCKET,DO_SPACES_REGION
+
+      - uses: ./.github/actions/devenv-setup
 
       - name: Verify generated resume data
         run: |
@@ -35,7 +43,4 @@ jobs:
         run: compile-resume
 
       - name: Upload Resume(s)
-        env:
-          DO_SPACES_ACCESS_KEY: ${{ secrets.DO_SPACES_ACCESS_KEY }}
-          DO_SPACES_SECRET_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
         run: upload-resume
