@@ -5,15 +5,15 @@ rss = ["https://rss.beehiiv.com/feeds/DAqOWBaHM7.xml"]
 [fields.designation]
 name = "Designation"
 content = [
-  "Security SWE",
-  "Full Stack SWE",
-  "Platform Engineer",
-  "DevOps Engineer",
+  "DevOps Developer",
+  "Platform Developer",
+  "Security Software Developer",
+  "Full Stack Software Developer",
 ]
 
 [fields.current_affiliation]
 name = "Current Affiliation"
-content = "Independent"
+content = "Acre Security"
 
 [fields.pronouns]
 name = "Pronouns"
