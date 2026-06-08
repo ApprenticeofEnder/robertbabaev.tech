@@ -167,5 +167,20 @@ in {
   # https://devenv.sh/git-hooks/
   # git-hooks.hooks.shellcheck.enable = true;
 
+  git-hooks.hooks = {
+    actionlint.enable = true;
+    alejandra.enable = true;
+    convco.enable = true;
+    deadnix.enable = true;
+    detect-aws-credentials.enable = true;
+    eslint.enable = true;
+    keep-sorted.enable = true;
+    prettier.enable = true;
+    ripsecrets.enable = true;
+    shellcheck.enable = true;
+    taplo.enable = true;
+    zizmor.enable = true;
+  };
+
   # See full reference at https://devenv.sh/reference/options/
 }
