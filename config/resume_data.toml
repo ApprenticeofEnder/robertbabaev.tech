@@ -7,6 +7,19 @@ end = "01/2025"
 
 [experience]
 
+# [experience.acre-security]
+# title = "TBD"
+# subtitle = "Acre Security"
+# location = "TBD"
+# start = "TBD"
+# end = "Present"
+# tech = ["TBD"]
+# bulletPoints = [
+#   "TODO: Add Acre Security bullet describing platform/infrastructure work.",
+#   "TODO: Add Acre Security bullet describing CI/CD or observability work.",
+#   "TODO: Add Acre Security bullet describing cloud or automation work.",
+# ]
+
 [experience.deepcode-sec-swe]
 title = "Security Software Engineer"
 subtitle = "DeepCode"

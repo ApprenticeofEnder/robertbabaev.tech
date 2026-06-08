@@ -28,6 +28,17 @@ beginner = ["Ruby (1yr)", "Go (3mos)"]
 
 [experience]
 
+# [experience.acre-security-swe]
+# title = "Software Developer"
+# description = "Acre Security"
+# date = "10/2025 - 01/2026"
+# location = "Ottawa, ON"
+# bulletPoints = [
+#   "TODO: Add Acre Security bullet describing software engineering work.",
+#   "TODO: Add Acre Security bullet describing application or platform development.",
+#   "TODO: Add Acre Security bullet describing technical delivery work.",
+# ]
+
 [experience.deepcode]
 title = "Security Software Engineer"
 description = "DeepCode"

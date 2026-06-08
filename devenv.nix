@@ -20,6 +20,7 @@ in {
     DO_SPACES_REGION = bucketRegion;
     DO_SPACES_BUCKET = bucketName;
     PUBLIC_DEV_RESUME = "${bucketBaseUrl}/resumes/dev/${resumeName}.pdf";
+    PUBLIC_DEVOPS_RESUME = "${bucketBaseUrl}/resumes/devops/${resumeName}.pdf";
     PUBLIC_URL_ORIGIN = "https://${domain}";
   };
 
@@ -84,6 +85,7 @@ in {
         cd ${resumeRoot}
 
         ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/dev/${resumeName}.typ
+        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/devops/${resumeName}.typ
       '';
       description = "\tCompile resume files";
     };
@@ -112,6 +114,12 @@ in {
         $AWS_CLI s3 cp \
           "${resumeRoot}/dev/${resumeName}.pdf" \
           "s3://$DO_SPACES_BUCKET/resumes/dev" \
+          --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
+          --acl public-read
+
+        $AWS_CLI s3 cp \
+          "${resumeRoot}/devops/${resumeName}.pdf" \
+          "s3://$DO_SPACES_BUCKET/resumes/devops" \
           --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
           --acl public-read
       '';
