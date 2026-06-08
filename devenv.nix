@@ -31,15 +31,18 @@ in {
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
+    # keep-sorted start
     act
+    awscli
+    doctl
     entr
     git
-    tree
-    awscli
     gnumake
-    pulumi-esc
     playwright
     playwright-test
+    pulumi-esc
+    tree
+    # keep-sorted end
 
     # fonts
     roboto

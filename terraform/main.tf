@@ -6,6 +6,21 @@ data "digitalocean_project" "personal_website" {
   name = "Personal Website"
 }
 
+data "digitalocean_spaces_bucket" "robertbabaev_tech" {
+  name   = var.do_bucket
+  region = var.do_region
+}
+
+locals {
+  website_bucket  = data.digitalocean_spaces_bucket.robertbabaev_tech
+  resume_url_base = "https://${local.website_bucket.bucket_domain_name}/resumes"
+
+  resume_urls = {
+    for variant in ["dev", "devops", "security"] :
+    variant => "${local.resume_url_base}/${variant}/Robert_Babaev_resume.pdf"
+  }
+}
+
 resource "digitalocean_app" "website" {
   project_id = data.digitalocean_project.personal_website.id
 
@@ -46,17 +61,17 @@ resource "digitalocean_app" "website" {
 
       env {
         key   = "PUBLIC_DEV_RESUME"
-        value = "https://${var.do_bucket}.${var.do_region}.digitaloceanspaces.com/resumes/dev/Robert_Babaev_resume.pdf"
+        value = local.resume_urls.dev
       }
 
       env {
         key   = "PUBLIC_DEVOPS_RESUME"
-        value = "https://${var.do_bucket}.${var.do_region}.digitaloceanspaces.com/resumes/devops/Robert_Babaev_resume.pdf"
+        value = local.resume_urls.devops
       }
 
       env {
         key   = "PUBLIC_SECURITY_RESUME"
-        value = "https://${var.do_bucket}.${var.do_region}.digitaloceanspaces.com/resumes/security/Robert_Babaev_resume.pdf"
+        value = local.resume_urls.security
       }
 
       env {

@@ -9,6 +9,21 @@ variable "do_region" {
 }
 
 variable "domain" {
-  type = string
+  type    = string
   default = "robertbabaev.tech"
+}
+
+variable "do_token" {
+  type      = string
+  sensitive = true
+}
+
+variable "do_access_id" {
+  type      = string
+  sensitive = true
+}
+
+variable "do_secret_key" {
+  type      = string
+  sensitive = true
 }
