@@ -26,7 +26,7 @@
 				{#if bulletPoints}
 					<ul class="list-inside list-disc">
 						{#each bulletPoints as bulletPoint}
-							<li class="text-justify">{@html bulletPoint}</li>
+							<li class="py-2 text-justify">{@html bulletPoint}</li>
 						{/each}
 					</ul>
 				{/if}

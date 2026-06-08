@@ -2,8 +2,8 @@
 	import Download from '@lucide/svelte/icons/download';
 
 	import {
-		PUBLIC_DEV_RESUME,
 		PUBLIC_DEVOPS_RESUME,
+		PUBLIC_DEV_RESUME,
 		PUBLIC_SECURITY_RESUME
 	} from '$env/static/public';
 	import { Badge } from '$lib/components/ui/badge';
@@ -43,4 +43,6 @@
 		<option value={variant.url}>{variant.label}</option>
 	{/each}
 </select>
-<Button class="h-fit text-xs" onclick={download}><Download />Download PDF</Button>
+<Button class="h-fit min-w-fit text-xs" onclick={download}>
+	<Download /><span class="hidden md:block">Download PDF</span>
+</Button>
