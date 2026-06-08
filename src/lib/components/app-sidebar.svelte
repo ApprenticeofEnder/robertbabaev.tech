@@ -2,6 +2,7 @@
 	import Boxes from 'lucide-svelte/icons/boxes';
 	import BriefcaseBusiness from 'lucide-svelte/icons/briefcase-business';
 	import FileText from 'lucide-svelte/icons/file-text';
+	import Github from 'lucide-svelte/icons/github';
 	import HelpingHand from 'lucide-svelte/icons/hand-helping';
 	import House from 'lucide-svelte/icons/house';
 	import IdCard from 'lucide-svelte/icons/id-card';
@@ -49,6 +50,8 @@
 			icon: IdCard
 		}
 	];
+
+	const sourceRepositoryUrl = 'https://github.com/ApprenticeofEnder/robertbabaev.tech';
 
 	const sidebar = Sidebar.useSidebar();
 	const isMobile = new IsMobile();
@@ -112,5 +115,28 @@
 			</Sidebar.GroupContent>
 		</Sidebar.Group>
 	</Sidebar.Content>
-	<Sidebar.Footer />
+	<Sidebar.Footer>
+		<Sidebar.Menu>
+			<Sidebar.MenuItem>
+				<Sidebar.MenuButton>
+					{#snippet child({ props })}
+						<a
+							href={sourceRepositoryUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							{...props}
+							onclick={() => {
+								if (isMobile.current) {
+									sidebar.toggle();
+								}
+							}}
+						>
+							<Github />
+							<span>Source</span>
+						</a>
+					{/snippet}
+				</Sidebar.MenuButton>
+			</Sidebar.MenuItem>
+		</Sidebar.Menu>
+	</Sidebar.Footer>
 </Sidebar.Root>
