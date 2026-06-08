@@ -21,6 +21,23 @@ locals {
   }
 }
 
+resource "digitalocean_spaces_bucket_policy" "robertbabaev_tech_resumes_public_read" {
+  region = local.website_bucket.region
+  bucket = local.website_bucket.name
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "PublicReadResumes"
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = "s3:GetObject"
+        Resource  = "arn:aws:s3:::${local.website_bucket.name}/resumes/*"
+      }
+    ]
+  })
+}
+
 resource "digitalocean_app" "website" {
   project_id = data.digitalocean_project.personal_website.id
 

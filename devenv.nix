@@ -131,8 +131,7 @@ in {
           $AWS_CLI s3 cp \
             "${resumeRoot}/$variant/${resumeName}.pdf" \
             "s3://$DO_SPACES_BUCKET/resumes/$variant" \
-            --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
-            --acl public-read
+            --endpoint "https://${bucketRegion}.digitaloceanspaces.com"
         done < <(${config.git.root}/scripts/list_resume_variants.sh)
       '';
       description = "\tUpload resume(s) to the DO Spaces bucket";

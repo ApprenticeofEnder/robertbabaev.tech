@@ -8,6 +8,5 @@ while IFS= read -r variant; do
 	aws s3 cp \
 		"resume/${variant}/Robert_Babaev_resume.pdf" \
 		"s3://$DO_SPACES_BUCKET/resumes/${variant}/Robert_Babaev_resume.pdf" \
-		--endpoint "https://$DO_SPACES_REGION.digitaloceanspaces.com" \
-		--acl public-read
+		--endpoint "https://$DO_SPACES_REGION.digitaloceanspaces.com"
 done < <("$root/scripts/list_resume_variants.sh")
