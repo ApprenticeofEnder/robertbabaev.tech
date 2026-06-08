@@ -3,14 +3,7 @@
 
 #let details = toml("data_common.toml")
 
-// TODO: See if there is a cleaner way of managing the experience vs bullet points
-
-// #let details = toml("common-details.toml")
-// #let specific_details = toml("specific-details.toml")
-// #details.insert("skills", specific_details.at("skills"))
-// #for (key, position) in specific_details.experience {
-//   details.experience.at(key).insert("bulletPoints", position.bulletPoints)
-// }
+// Resume content is generated from config/resume_data.toml + config/resume_variants/.
 
 #details.pairs()
 

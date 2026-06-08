@@ -1,135 +1,81 @@
+# GENERATED — edit config/resume_data.toml and config/resume_variants/
+
+header = [ "DevOps Engineer", "Platform Engineer", "Site Reliability Engineer" ]
+
 [skills]
-software = [
-  "AWS",
-  "Azure",
-  "Docker",
-  "Kubernetes",
-  "Terraform",
-  "Packer",
-  "Ansible",
-  "DataDog",
-  "GitHub Actions",
-  "Jenkins",
-  "Linux",
-  "PostgreSQL",
-  "MongoDB",
-  "Bash",
-  "Git",
-]
+software = [ "AWS", "Azure", "Docker", "Kubernetes", "Terraform", "Packer", "Ansible", "DataDog", "GitHub Actions", "Jenkins", "Linux", "PostgreSQL", "MongoDB", "Bash", "Git" ]
 
 [skills.programming]
-comfortable = ["Python (7yrs)", "TypeScript (4yrs)"]
-intermediate = ["Rust (3yrs)", "Java (3yrs)"]
-beginner = ["Ruby (1yr)", "Go (3mos)"]
+comfortable = [ "Python (7yrs)", "TypeScript (4yrs)" ]
+intermediate = [ "Rust (3yrs)", "Java (3yrs)" ]
+beginner = [ "Ruby (1yr)", "Go (3mos)" ]
 
 [experience]
-
-# [experience.acre-security]
-# title = "TBD"
-# description = "Acre Security"
-# date = "TBD - Present"
-# location = "TBD"
-# bulletPoints = [
-#   "TODO: Add Acre Security bullet describing platform/infrastructure work.",
-#   "TODO: Add Acre Security bullet describing CI/CD or observability work.",
-#   "TODO: Add Acre Security bullet describing cloud or automation work.",
-# ]
-
-[experience.deepcode]
+[experience.deepcode-sec-swe]
 title = "Security Software Engineer"
 description = "DeepCode"
 date = "02/2025 - 05/2025"
 location = "Ottawa, ON"
-bulletPoints = [
-  "Operated a high-throughput data ingestion pipeline using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, sustaining 1.5 million lines of data in 3 minutes.",
-  "Ran a production data processing pipeline using *MQTT* pub-sub and *Python* async workers, handling and enriching files up to 100 GB/day.",
-  "Designed and provisioned secure cloud architecture for the pipeline using *Terraform* and *Azure*, with access control and network segmentation.",
-]
+bulletPoints = [ "Operated a high-throughput data ingestion pipeline using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, sustaining 1.5 million lines of data in 3 minutes.", "Ran a production data processing pipeline using *MQTT* pub-sub and *Python* async workers, handling and enriching files up to 100 GB/day.", "Designed and provisioned secure cloud architecture for the pipeline using *Terraform* and *Azure*, with access control and network segmentation." ]
 
-[experience.barracuda]
+[experience.barracuda-swe]
 title = "Software Engineer (Co-Op)"
 description = "Barracuda Networks"
 date = "01/2023 - 04/2023"
 location = "Ottawa, ON"
-bulletPoints = [
-  "Diagnosed a failing health check on *Azure Linux* virtual machines using *Docker* tooling, resolving 168 false positive alerts.",
-  "Evaluated *AWS* AI services for regional leadership, informing the integration of a new security camera model into existing infrastructure.",
-  "Supported IT incident response by implementing a CSV log export system, reducing per-incident triage time by up to 30 minutes.",
-]
+bulletPoints = [ "Diagnosed a failing health check on *Azure Linux* virtual machines using *Docker* tooling, resolving 168 false positive alerts.", "Evaluated *AWS* AI services for regional leadership, informing the integration of a new security camera model into existing infrastructure.", "Supported IT incident response by implementing a CSV log export system, reducing per-incident triage time by up to 30 minutes." ]
 
-[experience.software-secured-pentest]
+[experience.software-secured-appsec-eng]
 title = "Penetration Tester (Co-Op)"
 description = "SoftwareSecured"
 date = "05/2022 - 08/2022"
 location = "Ottawa, ON"
-bulletPoints = [
-  "Provisioned an *AWS* compute instance to validate an SSRF path to privilege escalation via *AWS Lambda*.",
-  "Automated open source vulnerability lookups with a *Python* script, saving 8 hours of work across 4 client engagements.",
-  "Assessed cloud and application configurations using static analysis tooling, identifying exploitable misconfigurations before production release.",
-]
+bulletPoints = [ "Provisioned an *AWS* compute instance to validate an SSRF path to privilege escalation via *AWS Lambda*.", "Automated open source vulnerability lookups with a *Python* script, saving 8 hours of work across 4 client engagements.", "Assessed cloud and application configurations using static analysis tooling, identifying exploitable misconfigurations before production release." ]
 
 [experience.software-secured-swe]
 title = "Software Engineer (Co-Op)"
 description = "SoftwareSecured"
 date = "05/2021 - 12/2024"
 location = "Ottawa, ON"
-bulletPoints = [
-  "Managed production deployments on *Linux* virtual machines using *Docker Compose*, eliminating environment-based errors that previously took hours to debug.",
-  "Maintained deployment consistency across client environments by standardizing containerized service configuration and runtime dependencies.",
-  "Supported reporting infrastructure used across 15 clients, reducing manual effort per engagement through integrated tooling.",
-]
+bulletPoints = [ "Managed production deployments on *Linux* virtual machines using *Docker Compose*, eliminating environment-based errors that previously took hours to debug.", "Maintained deployment consistency across client environments by standardizing containerized service configuration and runtime dependencies.", "Supported reporting infrastructure used across 15 clients, reducing manual effort per engagement through integrated tooling." ]
 
 [projects]
-
-[projects.fastctx]
+[projects.ai-tinkerers-2025]
 title = "AI Software Engineer"
 description = "FastCTX - AI Tinkerers 2025"
 date = "07/2025 (1 Day)"
-link = "https://devpost.com/software/fastctx"
 location = "devpost.com/software/fastctx"
-bulletPoints = [
-  "Wrote a *Docker Compose* configuration with healthchecks and volume specifications for reproducible local and demo deployments.",
-  "Containerized a *FastAPI* back-end supporting MCP integrations with tools like Windsurf and Cursor.",
-  "Deployed supporting services including *Neo4J* for a graph-based codebase visualization workflow.",
-]
+bulletPoints = [ "Wrote a *Docker Compose* configuration with healthchecks and volume specifications for reproducible local and demo deployments.", "Containerized a *FastAPI* back-end supporting MCP integrations with tools like Windsurf and Cursor.", "Deployed supporting services including *Neo4J* for a graph-based codebase visualization workflow." ]
+link = "https://devpost.com/software/fastctx"
 
-[projects.cybersci]
+[projects.cybersci-nationals-2025]
 title = "Software Engineer"
 description = "CyberSci Nationals 2025"
 date = "01/2025 - 06/2025"
-location = "github.com/CyberSci/PastChallenges/tree/main/challenges/nationals-2024-25"
+location = "github.com/CyberSCI/PastChallenges/tree/main/challenges/nationals-2024-25"
+bulletPoints = [ "Created stable, reproducible challenge deployments using *Terraform* and *Docker Compose*, resulting in 0 environment-based issues.", "Provisioned intentionally vulnerable competition services using *MQTT* and containerized infrastructure.", "Built automated validation tooling with a *Python* test suite that ran in under 20 seconds vs. a 60-second target." ]
 link = "https://github.com/CyberSCI/PastChallenges/tree/main/challenges/nationals-2024-25"
-bulletPoints = [
-  "Created stable, reproducible challenge deployments using *Terraform* and *Docker Compose*, resulting in 0 environment-based issues.",
-  "Provisioned intentionally vulnerable competition services using *MQTT* and containerized infrastructure.",
-  "Built automated validation tooling with a *Python* test suite that ran in under 20 seconds vs. a 60-second target.",
-]
 
-[projects.securevision]
+[projects.uottahack-7]
 title = "Platform Engineer"
 description = "SecureVision - uOttaHack 7"
 date = "01/2025 (3 Days)"
 location = "dorahacks.io/buidl/21611"
+bulletPoints = [ "Architected a scalable deployment system with *Terraform* and *Docker*, supporting up to 128 worker nodes plus web applications and database.", "Implemented event-driven worker infrastructure with *Solace pub-sub* and *MQTT*, processing 340K+ lines of data.", "Designed end-to-end platform infrastructure using *Terraform*, *Docker*, *Next.js*, and *FastAPI*." ]
 link = "https://dorahacks.io/buidl/21611"
-bulletPoints = [
-  "Architected a scalable deployment system with *Terraform* and *Docker*, supporting up to 128 worker nodes plus web applications and database.",
-  "Implemented event-driven worker infrastructure with *Solace pub-sub* and *MQTT*, processing 340K+ lines of data.",
-  "Designed end-to-end platform infrastructure using *Terraform*, *Docker*, *Next.js*, and *FastAPI*.",
-]
 
 [activities]
-
-[activities.ai-tinkerers]
+[activities.ai-tinkerers-2025]
 title = "AI Tinkerers 2025"
 timeframe = "07/2025 (1 Day)"
 body = "Won Best MCP Agent and Best Async Ambient Agent with FastCTX (#link(\"https://devpost.com/software/fastctx\")[devpost.com/software/fastctx])."
 
-[activities.spurhacks]
+[activities.spurhacks-2025]
 title = "SpurHacks 2025"
 timeframe = "06/2025 (3 Days)"
 body = "Won Best Quantum Startup and Best Web3 Startup with QuantDog (#link(\"https://devpost.com/software/quantdog\")[devpost.com/software/quantdog])."
 
-[activities.cuhacking]
+[activities.cuhacking-2025]
 title = "cuHacking 2025"
 timeframe = "03/2025 (3 Days)"
 body = "Won the QNX sponsor challenge with QNXtainer (#link(\"https://devpost.com/software/qnxtainer\")[devpost.com/software/qnxtainer])."
@@ -139,7 +85,7 @@ title = "OWASP Ottawa"
 timeframe = "02/2025 (1 Day)"
 body = "Gave a talk about securing production secrets, including topics like containers, CI/CD, and Terraform."
 
-[activities.uottahack]
+[activities.uottahack-7]
 title = "uOttaHack 2025"
 timeframe = "01/2025 (3 Days)"
 body = "Won the DeepCode sponsor challenge with SecureVision (#link(\"https://dorahacks.io/buidl/21611\")[dorahacks.io/buidl/21611])."

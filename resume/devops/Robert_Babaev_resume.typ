@@ -2,10 +2,6 @@
 
 #let data = toml("./data.toml")
 
-#show: resume_header.with((
-  "DevOps Engineer",
-  "Platform Engineer",
-  "Site Reliability Engineer",
-))
+#show: resume_header.with(data.header)
 
 #main_resume(data)
