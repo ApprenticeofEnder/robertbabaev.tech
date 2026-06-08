@@ -32,6 +32,9 @@ jobs:
 
       - uses: ./.github/actions/devenv-setup
 
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Verify generated resume data
         run: |
           pnpm generate-resume-data
