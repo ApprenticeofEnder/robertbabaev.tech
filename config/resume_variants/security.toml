@@ -1,0 +1,77 @@
+header = [
+  "Security Software Engineer",
+  "Application Security Engineer",
+  "Security Engineer",
+]
+
+[skills]
+software = [
+  "AWS",
+  "Azure",
+  "Docker",
+  "Terraform",
+  "Linux",
+  "Python",
+  "Burp Suite",
+  "Semgrep",
+  "Crowdstrike Falcon",
+  "Microsoft Sentinel",
+  "Microsoft Defender",
+  "PowerShell",
+  "KQL",
+  "Git",
+]
+
+[[entries]]
+id = "experience.deepcode-sec-swe"
+output = "experience"
+bullets = ["ingestion", "pipeline", "cloud-architecture", "cicd"]
+
+[[entries]]
+id = "experience.bdo-sec-eng"
+output = "experience"
+bullets = ["siem-dashboard", "kql-detection", "genai-hunting", "siem-gitops"]
+
+[[entries]]
+id = "experience.barracuda-swe"
+output = "experience"
+title = "Software Engineer (Co-Op)"
+bullets = ["source-leak", "healthcheck", "csv-export"]
+
+[[entries]]
+id = "experience.software-secured-appsec-eng"
+output = "experience"
+title = "Application Security Engineer (Co-Op)"
+bullets = ["s3-public", "secret-semgrep", "vuln-db", "ssrf-lambda", "dos-burp"]
+
+[[entries]]
+id = "experience.software-secured-swe"
+output = "experience"
+bullets = ["sso-auth", "docker-deploy"]
+
+[[entries]]
+id = "hackathons.ai-tinkerers-2025"
+output = "projects"
+title = "AI Software Engineer"
+description = "FastCTX - AI Tinkerers 2025"
+link = "https://devpost.com/software/fastctx"
+location = "devpost.com/software/fastctx"
+bullets = ["neo4j-backend", "mcp-integration", "docker-compose"]
+
+[[entries]]
+id = "volunteering.cybersci-nationals-2025"
+output = "projects"
+title = "Software Engineer"
+description = "CyberSci Nationals 2025"
+link = "https://github.com/CyberSCI/PastChallenges/tree/main/challenges/nationals-2024-25"
+location = "github.com/CyberSCI/PastChallenges/tree/main/challenges/nationals-2024-25"
+bullets = ["vulnerable-service", "repro-deploy", "patch-tests"]
+
+[[entries]]
+id = "hackathons.uottahack-7"
+output = "projects"
+title = "Platform Engineer"
+description = "SecureVision - uOttaHack 7"
+link = "https://dorahacks.io/buidl/21611"
+location = "dorahacks.io/buidl/21611"
+bullets = ["platform-design", "event-queue", "scalable-deploy"]

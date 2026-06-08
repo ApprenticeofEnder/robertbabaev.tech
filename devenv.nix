@@ -21,6 +21,7 @@ in {
     DO_SPACES_BUCKET = bucketName;
     PUBLIC_DEV_RESUME = "${bucketBaseUrl}/resumes/dev/${resumeName}.pdf";
     PUBLIC_DEVOPS_RESUME = "${bucketBaseUrl}/resumes/devops/${resumeName}.pdf";
+    PUBLIC_SECURITY_RESUME = "${bucketBaseUrl}/resumes/security/${resumeName}.pdf";
     PUBLIC_URL_ORIGIN = "https://${domain}";
   };
 
@@ -31,6 +32,7 @@ in {
   # https://devenv.sh/packages/
   packages = with pkgs; [
     act
+    entr
     git
     tree
     awscli
@@ -78,14 +80,25 @@ in {
   # services.postgres.enable = true;
 
   scripts = {
+    generate-resume-data = {
+      exec = ''
+        cd ${config.git.root}
+        ${lib.getExe pkgs.pnpm} generate-resume-data
+      '';
+      description = "\tGenerate Typst resume data from config/resume_data.toml";
+    };
     compile-resume = {
       exec = ''
         set -euxo pipefail
 
+        cd ${config.git.root}
+        ${lib.getExe pkgs.pnpm} generate-resume-data
+
         cd ${resumeRoot}
 
-        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/dev/${resumeName}.typ
-        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/devops/${resumeName}.typ
+        while IFS= read -r variant; do
+          ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/$variant/${resumeName}.typ
+        done < <(${config.git.root}/scripts/list_resume_variants.sh)
       '';
       description = "\tCompile resume files";
     };
@@ -111,17 +124,13 @@ in {
 
         echo "Uploading resume(s)..."
 
-        $AWS_CLI s3 cp \
-          "${resumeRoot}/dev/${resumeName}.pdf" \
-          "s3://$DO_SPACES_BUCKET/resumes/dev" \
-          --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
-          --acl public-read
-
-        $AWS_CLI s3 cp \
-          "${resumeRoot}/devops/${resumeName}.pdf" \
-          "s3://$DO_SPACES_BUCKET/resumes/devops" \
-          --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
-          --acl public-read
+        while IFS= read -r variant; do
+          $AWS_CLI s3 cp \
+            "${resumeRoot}/$variant/${resumeName}.pdf" \
+            "s3://$DO_SPACES_BUCKET/resumes/$variant" \
+            --endpoint "https://${bucketRegion}.digitaloceanspaces.com" \
+            --acl public-read
+        done < <(${config.git.root}/scripts/list_resume_variants.sh)
       '';
       description = "\tUpload resume(s) to the DO Spaces bucket";
     };

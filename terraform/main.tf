@@ -50,6 +50,16 @@ resource "digitalocean_app" "website" {
       }
 
       env {
+        key   = "PUBLIC_DEVOPS_RESUME"
+        value = "https://${var.do_bucket}.${var.do_region}.digitaloceanspaces.com/resumes/devops/Robert_Babaev_resume.pdf"
+      }
+
+      env {
+        key   = "PUBLIC_SECURITY_RESUME"
+        value = "https://${var.do_bucket}.${var.do_region}.digitaloceanspaces.com/resumes/security/Robert_Babaev_resume.pdf"
+      }
+
+      env {
         key   = "PUBLIC_URL_ORIGIN"
         value = "https://${var.domain}"
       }

@@ -1,0 +1,72 @@
+header = [
+  "Security Software Engineer",
+  "Full Stack Software Engineer",
+  "Backend Software Engineer",
+]
+
+[skills]
+software = [
+  "AWS",
+  "Azure",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "Ansible",
+  "Linux",
+  "FastAPI",
+  "React",
+  "Next.js",
+  "PostgreSQL",
+  "Bash",
+  "Git",
+]
+
+[[entries]]
+id = "experience.deepcode-sec-swe"
+output = "experience"
+bullets = ["ingestion", "pipeline", "cloud-architecture"]
+
+[[entries]]
+id = "experience.barracuda-swe"
+output = "experience"
+title = "Software Engineer (Co-Op)"
+bullets = ["csv-export", "aws-leadership", "healthcheck"]
+
+[[entries]]
+id = "experience.software-secured-appsec-eng"
+output = "experience"
+title = "Penetration Tester (Co-Op)"
+bullets = ["secret-semgrep", "vuln-db", "ssrf-lambda"]
+
+[[entries]]
+id = "experience.software-secured-swe"
+output = "experience"
+date = "05/2021 - 12/2024"
+bullets = ["sso-auth", "docker-deploy", "cvss-calculator"]
+
+[[entries]]
+id = "hackathons.ai-tinkerers-2025"
+output = "projects"
+title = "AI Software Engineer"
+description = "FastCTX - AI Tinkerers 2025"
+link = "https://devpost.com/software/fastctx"
+location = "devpost.com/software/fastctx"
+bullets = ["neo4j-backend", "mcp-integration", "docker-compose"]
+
+[[entries]]
+id = "volunteering.cybersci-nationals-2025"
+output = "projects"
+title = "Software Engineer"
+description = "CyberSci Nationals 2025"
+link = "https://github.com/CyberSCI/PastChallenges/tree/main/challenges/nationals-2024-25"
+location = "github.com/CyberSCI/PastChallenges/tree/main/challenges/nationals-2024-25"
+bullets = ["vulnerable-service", "repro-deploy", "patch-tests"]
+
+[[entries]]
+id = "hackathons.uottahack-7"
+output = "projects"
+title = "Platform Engineer"
+description = "SecureVision - uOttaHack 7"
+link = "https://dorahacks.io/buidl/21611"
+location = "dorahacks.io/buidl/21611"
+bullets = ["platform-design", "event-queue", "scalable-deploy"]

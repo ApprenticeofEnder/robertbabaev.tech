@@ -1,18 +1,13 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
-aws configure set aws_access_key_id $DO_SPACES_ACCESS_KEY
-aws configure set aws_secret_access_key $DO_SPACES_SECRET_KEY
-aws configure set default.region $DO_SPACES_REGION
+root="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$root"
 
-aws s3 cp \
-  resume/dev/Robert_Babaev_resume.pdf \
-  s3://$DO_SPACES_BUCKET/resumes/dev/Robert_Babaev_resume.pdf \
-  --endpoint https://$DO_SPACES_REGION.digitaloceanspaces.com \
-  --acl public-read
-
-aws s3 cp \
-  resume/devops/Robert_Babaev_resume.pdf \
-  s3://$DO_SPACES_BUCKET/resumes/devops/Robert_Babaev_resume.pdf \
-  --endpoint https://$DO_SPACES_REGION.digitaloceanspaces.com \
-  --acl public-read
+while IFS= read -r variant; do
+	aws s3 cp \
+		"resume/${variant}/Robert_Babaev_resume.pdf" \
+		"s3://$DO_SPACES_BUCKET/resumes/${variant}/Robert_Babaev_resume.pdf" \
+		--endpoint "https://$DO_SPACES_REGION.digitaloceanspaces.com" \
+		--acl public-read
+done < <("$root/scripts/list_resume_variants.sh")

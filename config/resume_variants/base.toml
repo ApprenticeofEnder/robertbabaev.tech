@@ -1,0 +1,24 @@
+[skills.programming]
+comfortable = ["Python (7yrs)", "TypeScript (4yrs)"]
+intermediate = ["Rust (3yrs)", "Java (3yrs)"]
+beginner = ["Ruby (1yr)", "Go (3mos)"]
+
+[[entries]]
+id = "activities.ai-tinkerers-2025"
+output = "activities"
+
+[[entries]]
+id = "activities.spurhacks-2025"
+output = "activities"
+
+[[entries]]
+id = "activities.cuhacking-2025"
+output = "activities"
+
+[[entries]]
+id = "activities.owasp-ottawa"
+output = "activities"
+
+[[entries]]
+id = "activities.uottahack-7"
+output = "activities"

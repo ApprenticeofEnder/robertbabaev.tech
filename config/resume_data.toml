@@ -14,11 +14,6 @@ end = "01/2025"
 # start = "TBD"
 # end = "Present"
 # tech = ["TBD"]
-# bulletPoints = [
-#   "TODO: Add Acre Security bullet describing platform/infrastructure work.",
-#   "TODO: Add Acre Security bullet describing CI/CD or observability work.",
-#   "TODO: Add Acre Security bullet describing cloud or automation work.",
-# ]
 
 [experience.deepcode-sec-swe]
 title = "Security Software Engineer"
@@ -27,13 +22,25 @@ location = "Ottawa, ON"
 start = "02/2025"
 end = "05/2025"
 tech = ["Azure", "Python", "Flask", "MySQL", "Terraform", "Rust"]
-bulletPoints = [
-  "Optimized a data ingestion script using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, processing 1.5 million lines of data in 3 minutes.",
-  "Implemented a data processing pipeline using Python async programming, *MQTT*, and *pub-sub* to process and enrich files up to 100 GB/day.",
-  "Designed secure cloud architecture for the pipeline using *Terraform* and Azure, ensuring proper access control and network segmentation.",
-  "Deployed a CI/CD pipeline for a 6-package *Python* monorepo, maintaining production-ready code with individual test suites and a secrets scanner.",
-  "Wrote a script using *JavaScript* to exfiltrate 2TB of data from *MongoDB* to place into MySQL using async/await and mass insert queries.",
-]
+
+[experience.deepcode-sec-swe.bullets.ingestion]
+default = "Optimized a data ingestion script using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, processing 1.5 million lines of data in 3 minutes."
+devops = "Operated a high-throughput data ingestion pipeline using *Python*, *Rust* FFI modules, and *MySQL* batch inserts, sustaining 1.5 million lines of data in 3 minutes."
+
+[experience.deepcode-sec-swe.bullets.pipeline]
+default = "Implemented a data processing pipeline using Python async programming, *MQTT*, and *pub-sub* to process and enrich files up to 100 GB/day."
+devops = "Ran a production data processing pipeline using *MQTT* pub-sub and *Python* async workers, handling and enriching files up to 100 GB/day."
+
+[experience.deepcode-sec-swe.bullets.cloud-architecture]
+default = "Designed secure cloud architecture for the pipeline using *Terraform* and Azure, ensuring proper access control and network segmentation."
+devops = "Designed and provisioned secure cloud architecture for the pipeline using *Terraform* and *Azure*, with access control and network segmentation."
+
+[experience.deepcode-sec-swe.bullets.cicd]
+web = "Deployed a CI/CD pipeline for a 6-package *Python* monorepo, maintaining production-ready code with individual test suites and a secrets scanner."
+
+[experience.deepcode-sec-swe.bullets.data-migration]
+web = "Wrote a script using *JavaScript* to exfiltrate 2TB of data from *MongoDB* to place into MySQL using async/await and mass insert queries."
+security = "Wrote a script using *JavaScript* to migrate 2TB of data from *MongoDB* to MySQL using async/await and mass insert queries."
 
 [experience.bdo-sec-eng]
 title = "Security Engineer (Co-Op)"
@@ -49,21 +56,21 @@ tech = [
   "PowerShell",
   "KQL",
 ]
-bulletPoints = [
-  "Developed a dashboard for monthly reports using *Azure* SIEM data and REST APIs which saved up to 2 hours/report, impacting 18 reports.",
-  "Designed Azure KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website.",
-  "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot*, decreasing SOC resolution time by 31% across 189 tickets.",
-  "Centralized the team's SIEM rule management using *Azure* DevOps and Git, saving hours of aggregated back and forth over lost files.",
-  "Identified 50 users with unauthorized software installed by cross-referencing 4 sources of data in Microsoft Defender for Endpoint, as well as a PowerShell script to map users to devices.",
-]
 
-[experience.innovapost-security-specialist]
-title = "Security Specialist (Co-Op)"
-subtitle = "Innovapost (Now Deloitte)"
-location = "Ottawa, ON"
-start = "05/2023"
-end = "08/2023"
-tech = ["JavaScript", "Microsoft Azure"]
+[experience.bdo-sec-eng.bullets.siem-dashboard]
+default = "Developed a dashboard for monthly reports using *Azure* SIEM data and REST APIs which saved up to 2 hours/report, impacting 18 reports."
+
+[experience.bdo-sec-eng.bullets.kql-detection]
+default = "Designed Azure KQL analytics rules and heuristics to detect and analyze over 80 unauthorized login attempts against a Wordpress website."
+
+[experience.bdo-sec-eng.bullets.genai-hunting]
+default = "Documented GenAI-assisted threat hunting procedures using *Microsoft Copilot*, decreasing SOC resolution time by 31% across 189 tickets."
+
+[experience.bdo-sec-eng.bullets.siem-gitops]
+default = "Centralized the team's SIEM rule management using *Azure* DevOps and Git, saving hours of aggregated back and forth over lost files."
+
+[experience.bdo-sec-eng.bullets.unauthorized-software]
+default = "Identified 50 users with unauthorized software installed by cross-referencing 4 sources of data in Microsoft Defender for Endpoint, as well as a PowerShell script to map users to devices."
 
 [experience.barracuda-swe]
 title = "Co-op Software Engineer (Co-Op)"
@@ -72,12 +79,22 @@ location = "Ottawa, ON"
 start = "01/2023"
 end = "04/2023"
 tech = ["AWS", "Azure", "Docker", "Linux", "C#", "ASP.NET"]
-bulletPoints = [
-  "Designed and implemented a CSV log export system using *C#*, Blazor, and ASP.NET, saving the IT team up to 30 minutes per incident.",
-  "Identified and mitigated a source code leak in a .NET and Blazor application, preventing potential sensitive information disclosure.",
-  "Diagnosed the cause of a failing health check using *Azure Linux* virtual machines and *Docker* tooling, resolving 168 false positive alerts.",
-  "Presented selected *AWS* AI services to 5 members of regional leadership, leading to the integration of a new security camera model.",
-]
+
+[experience.barracuda-swe.bullets.csv-export]
+default = "Designed and implemented a CSV log export system using *C\\#*, Blazor, and ASP.NET, saving the IT team up to 30 minutes per incident."
+dev = "Designed and implemented a CSV log export system on Windows using *C\\#*, Blazor, and ASP.NET, saving the IT team up to 30 minutes per incident."
+devops = "Supported IT incident response by implementing a CSV log export system, reducing per-incident triage time by up to 30 minutes."
+
+[experience.barracuda-swe.bullets.source-leak]
+default = "Identified and mitigated a source code leak in a .NET and Blazor application, preventing potential sensitive information disclosure."
+
+[experience.barracuda-swe.bullets.healthcheck]
+default = "Diagnosed the cause of a failing health check using *Azure Linux* virtual machines and *Docker* tooling, resolving 168 false positive alerts."
+devops = "Diagnosed a failing health check on *Azure Linux* virtual machines using *Docker* tooling, resolving 168 false positive alerts."
+
+[experience.barracuda-swe.bullets.aws-leadership]
+default = "Presented selected *AWS* AI services to 5 members of regional leadership, leading to the integration of a new security camera model."
+devops = "Evaluated *AWS* AI services for regional leadership, informing the integration of a new security camera model into existing infrastructure."
 
 [experience.software-secured-appsec-eng]
 title = "Application Security Engineer (Co-Op)"
@@ -86,13 +103,24 @@ location = "Ottawa, ON"
 start = "05/2022"
 end = "08/2022"
 tech = ["AWS", "Python", "Burp Suite", "Semgrep", "Ruby on Rails"]
-bulletPoints = [
-  "Assessed an *AWS* cloud network, including *S3* permissions and *IAM* configurations, to identify a publicly writable S3 bucket.",
-  "Identified a hard-coded secret key in a *Ruby on Rails* microservice API using Semgrep, preventing potential account takeover.",
-  "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
-  "Deployed an *AWS* compute instance, confirming an SSRF vulnerability potentially leading to privilege escalation via AWS Lambda.",
-  "Investigated a medical application's input validation using Burp Suite, identifying a total denial-of-service vulnerability.",
-]
+
+[experience.software-secured-appsec-eng.bullets.s3-public]
+default = "Assessed an *AWS* cloud network, including *S3* permissions and *IAM* configurations, to identify a publicly writable S3 bucket."
+
+[experience.software-secured-appsec-eng.bullets.secret-semgrep]
+default = "Identified a hard-coded secret key in a *Ruby on Rails* microservice API using Semgrep, preventing potential account takeover."
+devops = "Assessed cloud and application configurations using static analysis tooling, identifying exploitable misconfigurations before production release."
+
+[experience.software-secured-appsec-eng.bullets.vuln-db]
+default = "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements."
+devops = "Automated open source vulnerability lookups with a *Python* script, saving 8 hours of work across 4 client engagements."
+
+[experience.software-secured-appsec-eng.bullets.ssrf-lambda]
+default = "Deployed an *AWS* compute instance, confirming an SSRF vulnerability potentially leading to privilege escalation via AWS Lambda."
+devops = "Provisioned an *AWS* compute instance to validate an SSRF path to privilege escalation via *AWS Lambda*."
+
+[experience.software-secured-appsec-eng.bullets.dos-burp]
+default = "Investigated a medical application's input validation using Burp Suite, identifying a total denial-of-service vulnerability."
 
 [experience.software-secured-swe]
 title = "Software Engineer (Co-Op)"
@@ -110,18 +138,31 @@ tech = [
   "Angular",
   "SvelteKit",
 ]
-bulletPoints = [
-  "Implemented an authentication system with SSO and OAuth2 in a *SvelteKit* application using *TypeScript*, mitigating credential breaches.",
-  "Managed deployments on *Linux* virtual machines using *Docker Compose*, avoiding environment-based errors that took hours to debug.",
-  "Fixed a broken CI/CD pipeline in *TravisCI* by analyzing logs and cross-referencing source code, unblocking a client.",
-  "Designed a custom metrics dashboard using Angular and d3.js for data visualization surrounding bugs found, including a project heatmap.",
-  "Migrated *JavaScript* visualization code for processing data to a custom *PostgreSQL* query in *Django*, boosting render times by 0.76 seconds.",
-  "Built a CVSS calculator integration for a reporting tool using *Django* and *Angular*, saving up to 3 hours per penetration test across 15 clients.",
-]
+
+[experience.software-secured-swe.bullets.sso-auth]
+default = "Implemented an authentication system with SSO and OAuth2 in a *SvelteKit* application using *TypeScript*, mitigating credential breaches."
+
+[experience.software-secured-swe.bullets.docker-deploy]
+default = "Managed deployments on *Linux* virtual machines using *Docker Compose*, avoiding environment-based errors that took hours to debug."
+devops = "Managed production deployments on *Linux* virtual machines using *Docker Compose*, eliminating environment-based errors that previously took hours to debug."
+
+[experience.software-secured-swe.bullets.travis-fix]
+web = "Fixed a broken CI/CD pipeline in *TravisCI* by analyzing logs and cross-referencing source code, unblocking a client."
+
+[experience.software-secured-swe.bullets.metrics-dashboard]
+web = "Designed a custom metrics dashboard using Angular and d3.js for data visualization surrounding bugs found, including a project heatmap."
+
+[experience.software-secured-swe.bullets.postgres-migrate]
+web = "Migrated *JavaScript* visualization code for processing data to a custom *PostgreSQL* query in *Django*, boosting render times by 0.76 seconds."
+
+[experience.software-secured-swe.bullets.cvss-calculator]
+default = "Built a CVSS calculator integration for a reporting tool using *Django* and *Angular*, saving up to 3 hours per penetration test across 15 clients."
+devops = "Supported reporting infrastructure used across 15 clients, reducing manual effort per engagement through integrated tooling."
+
+[experience.software-secured-swe.bullets.deployment-consistency]
+devops = "Maintained deployment consistency across client environments by standardizing containerized service configuration and runtime dependencies."
 
 [projects]
-
-# TODO: MORE SAR STATEMENTS
 
 [projects.speedbeaver]
 title = "Software Engineer"
@@ -131,7 +172,6 @@ start = "03/2025"
 end = "Present"
 link = "https://github.com/ApprenticeofEnder/speedbeaver"
 tech = ["Python", "FastAPI", "OpenTelemetry", "Pytest"]
-bulletPoints = []
 
 [projects.coursefull]
 title = "Full Stack Software Engineer"
@@ -141,7 +181,6 @@ start = "01/2023"
 end = "04/2023"
 link = "https://github.com/ApprenticeofEnder/CourseFull"
 tech = ["Next.js", "TypeScript", "Ruby on Rails", "Supabase", "PostgreSQL"]
-bulletPoints = []
 
 [projects.cuhacking-ctf]
 title = "Platform Engineer / Presenter"
@@ -158,12 +197,15 @@ tech = [
   "Ansible",
   "PostgreSQL",
 ]
-bulletPoints = [
-  "Deployed a SvelteKit server and PostgreSQL database using *Docker Swarm*, *Ansible* and *Terraform*, making a scalable distributed cloud platform.",
-  "Developed *Github Actions* CI/CD pipelines to deploy the app on push and destroy it on command, saving ~$20/month in compute costs.",
-  "Attempted to use *Kubernetes* to manage the application and database deployments, but scrapped it after low ROI on complexity vs needs.",
-]
 
+[projects.cuhacking-ctf.bullets.swarm-deploy]
+web = "Deployed a SvelteKit server and PostgreSQL database using *Docker Swarm*, *Ansible* and *Terraform*, making a scalable distributed cloud platform."
+
+[projects.cuhacking-ctf.bullets.github-actions]
+web = "Developed *Github Actions* CI/CD pipelines to deploy the app on push and destroy it on command, saving ~$20/month in compute costs."
+
+[projects.cuhacking-ctf.bullets.kubernetes-eval]
+web = "Attempted to use *Kubernetes* to manage the application and database deployments, but scrapped it after low ROI on complexity vs needs."
 
 [hackathons]
 
@@ -173,6 +215,18 @@ subtitle = "FastCTX"
 location = "AI Software Engineer"
 start = "07/2025 (1 Day)"
 tech = ["Python", "FastAPI", "Neo4J", "LangChain", "MCP"]
+
+[hackathons.ai-tinkerers-2025.bullets.neo4j-backend]
+default = "Built a back-end server for a codebase visualization tool using *Neo4J* and *LangChain*, allowing developers to see their codebase as a graph."
+devops = "Deployed supporting services including *Neo4J* for a graph-based codebase visualization workflow."
+
+[hackathons.ai-tinkerers-2025.bullets.mcp-integration]
+default = "Added MCP functionality to a *FastAPI* server written in *Python*, allowing integrations with tools like Windsurf and Cursor."
+devops = "Containerized a *FastAPI* back-end supporting MCP integrations with tools like Windsurf and Cursor."
+
+[hackathons.ai-tinkerers-2025.bullets.docker-compose]
+default = "Wrote a *Docker Compose* configuration, including healthchecks and volume specifications to ensure smooth deployments and collaboration."
+devops = "Wrote a *Docker Compose* configuration with healthchecks and volume specifications for reproducible local and demo deployments."
 
 [hackathons.spurhacks-2025]
 title = "SpurHacks 2025"
@@ -195,6 +249,18 @@ location = "Platform / Backend Engineer"
 start = "01/2025 (3 Days)"
 tech = ["Terraform", "Docker", "Python", "FastAPI", "Next.js", "TypeScript"]
 
+[hackathons.uottahack-7.bullets.platform-design]
+default = "Designed the infrastructure and backend for a credential breach management platform using *Terraform*, *Docker*, *Next.js*, and *FastAPI*."
+devops = "Designed end-to-end platform infrastructure using *Terraform*, *Docker*, *Next.js*, and *FastAPI*."
+
+[hackathons.uottahack-7.bullets.event-queue]
+default = "Implemented an event-driven message queue with worker nodes and *Solace pub-sub*, processing 340K+ lines of data using *MQTT*."
+devops = "Implemented event-driven worker infrastructure with *Solace pub-sub* and *MQTT*, processing 340K+ lines of data."
+
+[hackathons.uottahack-7.bullets.scalable-deploy]
+default = "Architected a scalable deployment system with Terraform and Docker, allowing up to 128 worker nodes plus web applications and database."
+devops = "Architected a scalable deployment system with *Terraform* and *Docker*, supporting up to 128 worker nodes plus web applications and database."
+
 [volunteering]
 
 [volunteering.cybersci-nationals-2025]
@@ -204,8 +270,42 @@ location = "Ottawa, ON"
 start = "01/2025"
 end = "06/2025"
 tech = ["SvelteKit"]
-bulletPoints = [
-  "Designed, implemented, and deployed an intentionally vulnerable *SvelteKit* service using the *MQTT* protocol, producing 8 vulnerabilities.",
-  "Created stable, reproducible deployment systems for challenges using *Terraform* and *Docker Compose*, resulting in 0 environment-based issues.",
-  "Built a test suite of 16 total use cases using *Python* to assess patches during the defence challenge, which ran in under 20 seconds vs. target of 60.",
-]
+
+[volunteering.cybersci-nationals-2025.bullets.vulnerable-service]
+default = "Designed, implemented, and deployed an intentionally vulnerable *SvelteKit* service using the *MQTT* protocol, producing 8 vulnerabilities."
+devops = "Provisioned intentionally vulnerable competition services using *MQTT* and containerized infrastructure."
+
+[volunteering.cybersci-nationals-2025.bullets.repro-deploy]
+default = "Created stable, reproducible deployment systems for challenges using *Terraform* and *Docker Compose*, resulting in 0 environment-based issues."
+devops = "Created stable, reproducible challenge deployments using *Terraform* and *Docker Compose*, resulting in 0 environment-based issues."
+
+[volunteering.cybersci-nationals-2025.bullets.patch-tests]
+default = "Built a test suite of 16 total use cases using *Python* to assess patches during the defence challenge, which ran in under 20 seconds vs. target of 60."
+devops = "Built automated validation tooling with a *Python* test suite that ran in under 20 seconds vs. a 60-second target."
+
+[activities]
+
+[activities.ai-tinkerers-2025]
+title = "AI Tinkerers 2025"
+timeframe = "07/2025 (1 Day)"
+body = "Won Best MCP Agent and Best Async Ambient Agent with FastCTX (#link(\"https://devpost.com/software/fastctx\")[devpost.com/software/fastctx])."
+
+[activities.spurhacks-2025]
+title = "SpurHacks 2025"
+timeframe = "06/2025 (3 Days)"
+body = "Won Best Quantum Startup and Best Web3 Startup with QuantDog (#link(\"https://devpost.com/software/quantdog\")[devpost.com/software/quantdog])."
+
+[activities.cuhacking-2025]
+title = "cuHacking 2025"
+timeframe = "03/2025 (3 Days)"
+body = "Won the QNX sponsor challenge with QNXtainer (#link(\"https://devpost.com/software/qnxtainer\")[devpost.com/software/qnxtainer])."
+
+[activities.owasp-ottawa]
+title = "OWASP Ottawa"
+timeframe = "02/2025 (1 Day)"
+body = "Gave a talk about securing production secrets, including topics like containers, CI/CD, and Terraform."
+
+[activities.uottahack-7]
+title = "uOttaHack 2025"
+timeframe = "01/2025 (3 Days)"
+body = "Won the DeepCode sponsor challenge with SecureVision (#link(\"https://dorahacks.io/buidl/21611\")[dorahacks.io/buidl/21611])."

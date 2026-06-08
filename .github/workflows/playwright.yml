@@ -34,6 +34,8 @@ jobs:
         env:
           PUBLIC_URL_ORIGIN: 'http://127.0.0.1:4173'
           PUBLIC_DEV_RESUME: 'http://127.0.0.1:4173/dev/resume.pdf'
+          PUBLIC_DEVOPS_RESUME: 'http://127.0.0.1:4173/devops/resume.pdf'
+          PUBLIC_SECURITY_RESUME: 'http://127.0.0.1:4173/security/resume.pdf'
         run: pnpm build
 
       - name: Install Playwright Browsers

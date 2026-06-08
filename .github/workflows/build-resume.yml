@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'resume/**'
+      - 'config/resume_data.toml'
+      - 'config/resume_variants/**'
+      - 'scripts/generate_resume_data.ts'
+      - 'src/lib/resume/**'
   workflow_dispatch:
 
 jobs:
@@ -21,6 +25,11 @@ jobs:
       - uses: ./.github/actions/devenv-setup
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Verify generated resume data
+        run: |
+          pnpm generate-resume-data
+          git diff --exit-code resume/
 
       - name: Compile resume
         run: compile-resume

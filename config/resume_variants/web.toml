@@ -1,0 +1,59 @@
+# Website bullet selection — entry metadata comes from config/resume_data.toml
+
+[[entries]]
+id = "experience.deepcode-sec-swe"
+output = "experience"
+bullets = ["ingestion", "pipeline", "cloud-architecture", "cicd", "data-migration"]
+
+[[entries]]
+id = "experience.bdo-sec-eng"
+output = "experience"
+bullets = [
+  "siem-dashboard",
+  "kql-detection",
+  "genai-hunting",
+  "siem-gitops",
+  "unauthorized-software",
+]
+
+[[entries]]
+id = "experience.barracuda-swe"
+output = "experience"
+bullets = ["csv-export", "source-leak", "healthcheck", "aws-leadership"]
+
+[[entries]]
+id = "experience.software-secured-appsec-eng"
+output = "experience"
+bullets = ["s3-public", "secret-semgrep", "vuln-db", "ssrf-lambda", "dos-burp"]
+
+[[entries]]
+id = "experience.software-secured-swe"
+output = "experience"
+bullets = [
+  "sso-auth",
+  "docker-deploy",
+  "travis-fix",
+  "metrics-dashboard",
+  "postgres-migrate",
+  "cvss-calculator",
+]
+
+[[entries]]
+id = "projects.cuhacking-ctf"
+output = "projects"
+bullets = ["swarm-deploy", "github-actions", "kubernetes-eval"]
+
+[[entries]]
+id = "hackathons.ai-tinkerers-2025"
+output = "hackathons"
+bullets = ["neo4j-backend", "mcp-integration", "docker-compose"]
+
+[[entries]]
+id = "hackathons.uottahack-7"
+output = "hackathons"
+bullets = ["platform-design", "event-queue", "scalable-deploy"]
+
+[[entries]]
+id = "volunteering.cybersci-nationals-2025"
+output = "volunteering"
+bullets = ["vulnerable-service", "repro-deploy", "patch-tests"]
