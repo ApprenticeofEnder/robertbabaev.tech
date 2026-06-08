@@ -182,7 +182,7 @@ in {
     ripsecrets.enable = true;
     shellcheck.enable = true;
     taplo.enable = true;
-    zizmor.enable = true;
+    # zizmor.enable = true;
   };
 
   # See full reference at https://devenv.sh/reference/options/

@@ -33,6 +33,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
           TF_VAR_do_bucket: ${{ vars.DO_SPACES_BUCKET }}
           TF_VAR_do_region: ${{ vars.DO_SPACES_REGION }}
+          TF_VAR_do_token: ${{ vars.DO_TOKEN }}
+          TF_VAR_do_access_id: ${{ secrets.DO_SPACES_ACCESS_KEY }}
+          TF_VAR_do_secret_key: ${{ secrets.DO_SPACES_SECRET_KEY }}
         run: |
           tofu -version
           cd $TERRAFORM_DIR
@@ -48,6 +51,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET_KEY }}
           TF_VAR_do_bucket: ${{ vars.DO_SPACES_BUCKET }}
           TF_VAR_do_region: ${{ vars.DO_SPACES_REGION }}
+          TF_VAR_do_token: ${{ vars.DO_TOKEN }}
+          TF_VAR_do_access_id: ${{ secrets.DO_SPACES_ACCESS_KEY }}
+          TF_VAR_do_secret_key: ${{ secrets.DO_SPACES_SECRET_KEY }}
         run: |
           cd $TERRAFORM_DIR
           tofu plan -out .terraform-plan
