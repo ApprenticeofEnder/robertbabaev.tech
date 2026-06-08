@@ -1,10 +1,10 @@
-.PHONY: resume upload-resume resume-watch
+.PHONY: resume deploy resume-watch
 
 resume:
 	scripts/compile_resume.sh
 
-upload-resume:
-	scripts/upload_resume.sh
+deploy:
+	devenv shell deploy
 
 resume-watch:
 	scripts/watch_resume.sh

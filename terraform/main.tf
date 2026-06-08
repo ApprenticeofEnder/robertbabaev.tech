@@ -14,11 +14,6 @@ data "digitalocean_spaces_bucket" "robertbabaev_tech" {
 locals {
   website_bucket  = data.digitalocean_spaces_bucket.robertbabaev_tech
   resume_url_base = "https://${local.website_bucket.bucket_domain_name}/resumes"
-
-  resume_urls = {
-    for variant in ["dev", "devops", "security"] :
-    variant => "${local.resume_url_base}/${variant}/Robert_Babaev_resume.pdf"
-  }
 }
 
 resource "digitalocean_spaces_bucket_policy" "robertbabaev_tech_resumes_public_read" {

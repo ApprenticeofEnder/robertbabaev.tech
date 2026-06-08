@@ -33,7 +33,6 @@ in {
   packages = with pkgs; [
     # keep-sorted start
     act
-    awscli
     doctl
     entr
     git
@@ -113,28 +112,27 @@ in {
       '';
       description = "\tCheck the installation directories of the fonts installed";
     };
-    upload-resume = {
+    deploy = {
       exec = ''
         set -euo pipefail
 
-        AWS_CLI=${lib.getExe pkgs.awscli}
+        export AWS_ACCESS_KEY_ID="$DO_SPACES_ACCESS_KEY"
+        export AWS_SECRET_ACCESS_KEY="$DO_SPACES_SECRET_KEY"
+        export TF_VAR_do_token="$DO_TOKEN"
+        export TF_VAR_do_access_id="$DO_SPACES_ACCESS_KEY"
+        export TF_VAR_do_secret_key="$DO_SPACES_SECRET_KEY"
+        export TF_VAR_do_bucket="$DO_SPACES_BUCKET"
+        export TF_VAR_do_region="$DO_SPACES_REGION"
 
-        echo "Configuring AWS CLI..."
+        compile-resume
 
-        $AWS_CLI configure set aws_access_key_id "$DO_SPACES_ACCESS_KEY"
-        $AWS_CLI configure set aws_secret_access_key "$DO_SPACES_SECRET_KEY"
-        $AWS_CLI configure set default.region "$DO_SPACES_REGION"
-
-        echo "Uploading resume(s)..."
-
-        while IFS= read -r variant; do
-          $AWS_CLI s3 cp \
-            "${resumeRoot}/$variant/${resumeName}.pdf" \
-            "s3://$DO_SPACES_BUCKET/resumes/$variant" \
-            --endpoint "https://${bucketRegion}.digitaloceanspaces.com"
-        done < <(${config.git.root}/scripts/list_resume_variants.sh)
+        cd ${config.git.root}/terraform
+        tofu init
+        tofu validate
+        tofu plan -out .terraform-plan
+        tofu apply .terraform-plan
       '';
-      description = "\tUpload resume(s) to the DO Spaces bucket";
+      description = "\tCompile resumes and deploy via Terraform";
     };
   };
 
