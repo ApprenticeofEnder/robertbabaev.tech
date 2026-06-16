@@ -77,10 +77,10 @@ default = "Designed secure cloud architecture for the pipeline using *Terraform*
 devops = "Designed and provisioned secure cloud architecture for the pipeline using *Terraform* and *Azure*, with access control and network segmentation."
 
 [experience.deepcode-sec-swe.bullets.cicd]
-web = "Deployed a CI/CD pipeline for a 6-package *Python* monorepo, maintaining production-ready code with individual test suites and a secrets scanner."
+default = "Deployed a CI/CD pipeline for a 6-package *Python* monorepo, maintaining production-ready code with individual test suites and a secrets scanner."
 
 [experience.deepcode-sec-swe.bullets.data-migration]
-web = "Wrote a script using *JavaScript* to exfiltrate 2TB of data from *MongoDB* to place into MySQL using async/await and mass insert queries."
+default = "Wrote a script using *JavaScript* to exfiltrate 2TB of data from *MongoDB* to place into MySQL using async/await and mass insert queries."
 security = "Wrote a script using *JavaScript* to migrate 2TB of data from *MongoDB* to MySQL using async/await and mass insert queries."
 
 [experience.bdo-sec-eng]
@@ -188,13 +188,13 @@ default = "Managed deployments on *Linux* virtual machines using *Docker Compose
 devops = "Managed production deployments on *Linux* virtual machines using *Docker Compose*, eliminating environment-based errors that previously took hours to debug."
 
 [experience.software-secured-swe.bullets.travis-fix]
-web = "Fixed a broken CI/CD pipeline in *TravisCI* by analyzing logs and cross-referencing source code, unblocking a client."
+default = "Fixed a broken CI/CD pipeline in *TravisCI* by analyzing logs and cross-referencing source code, unblocking a client."
 
 [experience.software-secured-swe.bullets.metrics-dashboard]
-web = "Designed a custom metrics dashboard using Angular and d3.js for data visualization surrounding bugs found, including a project heatmap."
+default = "Designed a custom metrics dashboard using Angular and d3.js for data visualization surrounding bugs found, including a project heatmap."
 
 [experience.software-secured-swe.bullets.postgres-migrate]
-web = "Migrated *JavaScript* visualization code for processing data to a custom *PostgreSQL* query in *Django*, boosting render times by 0.76 seconds."
+default = "Migrated *JavaScript* visualization code for processing data to a custom *PostgreSQL* query in *Django*, boosting render times by 0.76 seconds."
 
 [experience.software-secured-swe.bullets.cvss-calculator]
 default = "Built a CVSS calculator integration for a reporting tool using *Django* and *Angular*, saving up to 3 hours per penetration test across 15 clients."
@@ -240,13 +240,13 @@ tech = [
 ]
 
 [projects.cuhacking-ctf.bullets.swarm-deploy]
-web = "Deployed a SvelteKit server and PostgreSQL database using *Docker Swarm*, *Ansible* and *Terraform*, making a scalable distributed cloud platform."
+default = "Deployed a SvelteKit server and PostgreSQL database using *Docker Swarm*, *Ansible* and *Terraform*, making a scalable distributed cloud platform."
 
 [projects.cuhacking-ctf.bullets.github-actions]
-web = "Developed *Github Actions* CI/CD pipelines to deploy the app on push and destroy it on command, saving ~$20/month in compute costs."
+default = "Developed *Github Actions* CI/CD pipelines to deploy the app on push and destroy it on command, saving ~$20/month in compute costs."
 
 [projects.cuhacking-ctf.bullets.kubernetes-eval]
-web = "Attempted to use *Kubernetes* to manage the application and database deployments, but scrapped it after low ROI on complexity vs needs."
+default = "Attempted to use *Kubernetes* to manage the application and database deployments, but scrapped it after low ROI on complexity vs needs."
 
 [hackathons]
 

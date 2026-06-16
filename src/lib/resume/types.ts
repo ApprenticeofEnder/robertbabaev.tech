@@ -2,7 +2,7 @@ import type { ResumeData, ResumeEntry } from '$lib/types';
 
 export type { ResumeData, ResumeEntry };
 
-export type BulletChannel = 'web' | 'dev' | 'devops' | 'security' | 'default';
+export type BulletChannel = 'dev' | 'devops' | 'security' | 'default';
 
 export type PdfVariant = 'dev' | 'devops' | 'security';
 

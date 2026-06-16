@@ -12,10 +12,10 @@ export function isBulletsTable(value: unknown): value is BulletsTable {
 
 function fallbackChain(channel: BulletChannel): BulletChannel[] {
 	if (channel === 'default') {
-		return ['default', 'web'];
+		return ['default'];
 	}
 
-	return [channel, 'web', 'default'];
+	return [channel, 'default'];
 }
 
 export function resolveBulletText(

@@ -174,10 +174,12 @@ export function assertWebCoverage(
 		}
 
 		const webEntry = configById.get(qualifiedId);
-		if (!webEntry?.bullets?.length) {
-			throw new Error(
-				`Entry "${qualifiedId}" has bullets but no web variant config entry with bullets.`
-			);
+		if (!webEntry) {
+			continue;
+		}
+
+		if (!webEntry.bullets?.length) {
+			throw new Error(`Web variant entry "${qualifiedId}" is listed but has no bullets selected.`);
 		}
 
 		if (webEntry.output !== sectionName) {

@@ -9,8 +9,8 @@ describe('resolveBulletText', () => {
 			default: 'Default ingestion text.',
 			devops: 'DevOps ingestion text.'
 		},
-		'web-only': {
-			web: 'Web only text.'
+		'default-only': {
+			default: 'Default only text.'
 		}
 	};
 
@@ -18,17 +18,17 @@ describe('resolveBulletText', () => {
 		expect(resolveBulletText(bullets, 'ingestion', 'devops')).toBe('DevOps ingestion text.');
 	});
 
-	test('falls back to default then web', () => {
+	test('falls back to default for other variants', () => {
 		expect(resolveBulletText(bullets, 'ingestion', 'security')).toBe('Default ingestion text.');
-		expect(resolveBulletText(bullets, 'web-only', 'security')).toBe('Web only text.');
+		expect(resolveBulletText(bullets, 'default-only', 'security')).toBe('Default only text.');
 	});
 
 	test('throws for unknown bullet id', () => {
-		expect(() => resolveBulletText(bullets, 'missing', 'web')).toThrow('Unknown bullet id');
+		expect(() => resolveBulletText(bullets, 'missing', 'default')).toThrow('Unknown bullet id');
 	});
 
 	test('throws when no text is available', () => {
-		expect(() => resolveBulletText({ empty: {} }, 'empty', 'web')).toThrow('has no text');
+		expect(() => resolveBulletText({ empty: {} }, 'empty', 'default')).toThrow('has no text');
 	});
 });
 
@@ -40,11 +40,11 @@ describe('resolveBulletsForEntry', () => {
 			location: 'Ottawa, ON',
 			bullets: {
 				a: { default: 'A text.' },
-				b: { web: 'B text.' }
+				b: { default: 'B text.' }
 			}
 		};
 
-		expect(resolveBulletsForEntry(entry, 'web', ['a', 'b'], 'experience.test')).toEqual([
+		expect(resolveBulletsForEntry(entry, 'default', ['a', 'b'], 'experience.test')).toEqual([
 			'A text.',
 			'B text.'
 		]);

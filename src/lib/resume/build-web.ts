@@ -20,7 +20,7 @@ function toResumeEntry(
 	const result: ResumeEntry = { ...rest };
 
 	if (webEntry?.bullets?.length) {
-		result.bulletPoints = resolveBulletsForEntry(entry, 'web', webEntry.bullets, context);
+		result.bulletPoints = resolveBulletsForEntry(entry, 'default', webEntry.bullets, context);
 	}
 
 	return result;

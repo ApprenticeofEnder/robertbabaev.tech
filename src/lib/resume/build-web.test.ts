@@ -24,7 +24,7 @@ describe('buildWebData', () => {
 							devops: 'Operated ingestion using *Python*.'
 						},
 						pipeline: {
-							web: 'Built a pipeline using *MQTT*.'
+							default: 'Built a pipeline using *MQTT*.'
 						}
 					}
 				}
@@ -54,16 +54,16 @@ describe('buildWebData', () => {
 		expect(result.experience['deepcode-sec-swe']).not.toHaveProperty('bullets');
 	});
 
-	test('throws when bullets exist without web config entry', () => {
+	test('allows master entries with bullets that are not listed in web config', () => {
 		const master: RawResumeData = {
 			education: { title: 'School', subtitle: 'Degree', location: 'City' },
 			experience: {
-				'bad-entry': {
+				'pdf-only': {
 					title: 'Role',
 					subtitle: 'Company',
 					location: 'City',
 					bullets: {
-						a: { web: 'Text.' }
+						a: { default: 'Text.' }
 					}
 				}
 			},
@@ -72,7 +72,39 @@ describe('buildWebData', () => {
 			volunteering: {}
 		};
 
-		expect(() => buildWebData(master, { header: [], entries: [] })).toThrow('web variant config');
+		expect(() => buildWebData(master, { header: [], entries: [] })).not.toThrow();
+	});
+
+	test('throws when a listed web entry has no bullets selected', () => {
+		const master: RawResumeData = {
+			education: { title: 'School', subtitle: 'Degree', location: 'City' },
+			experience: {
+				'bad-entry': {
+					title: 'Role',
+					subtitle: 'Company',
+					location: 'City',
+					bullets: {
+						a: { default: 'Text.' }
+					}
+				}
+			},
+			projects: {},
+			hackathons: {},
+			volunteering: {}
+		};
+
+		const config: VariantConfig = {
+			header: [],
+			entries: [
+				{
+					id: 'experience.bad-entry',
+					output: 'experience',
+					bullets: []
+				}
+			]
+		};
+
+		expect(() => buildWebData(master, config)).toThrow('no bullets selected');
 	});
 
 	test('throws for missing bullet id', () => {
@@ -84,7 +116,7 @@ describe('buildWebData', () => {
 					subtitle: 'Company',
 					location: 'City',
 					bullets: {
-						a: { web: 'Text.' }
+						a: { default: 'Text.' }
 					}
 				}
 			},

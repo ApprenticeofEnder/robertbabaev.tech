@@ -1,9 +1,25 @@
 # Website bullet selection — entry metadata comes from config/resume_data.toml
 
 [[entries]]
+id = "experience.acre-security-devops"
+output = "experience"
+bullets = ["release-strategy", "iac", "blue-green"]
+
+[[entries]]
+id = "experience.acre-security-dev"
+output = "experience"
+bullets = ["ecs-rollback", "windows-ec2", "linting"]
+
+[[entries]]
 id = "experience.deepcode-sec-swe"
 output = "experience"
-bullets = ["ingestion", "pipeline", "cloud-architecture", "cicd", "data-migration"]
+bullets = [
+  "ingestion",
+  "pipeline",
+  "cloud-architecture",
+  "cicd",
+  "data-migration",
+]
 
 [[entries]]
 id = "experience.bdo-sec-eng"
