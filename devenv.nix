@@ -175,7 +175,10 @@ in {
     detect-aws-credentials.enable = true;
     eslint.enable = true;
     keep-sorted.enable = true;
-    prettier.enable = true;
+    prettier = {
+      enable = true;
+      settings.configPath = "${config.devenv.root}/.prettierrc";
+    };
     ripsecrets.enable = true;
     shellcheck.enable = true;
     taplo.enable = true;
