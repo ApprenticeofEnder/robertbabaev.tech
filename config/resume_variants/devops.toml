@@ -19,6 +19,16 @@ software = [
 ]
 
 [[entries]]
+id = "experience.acre-security-devops"
+output = "experience"
+bullets = ["release-strategy", "iac", "blue-green"]
+
+[[entries]]
+id = "experience.acre-security-dev"
+output = "experience"
+bullets = ["ecs-rollback", "windows-ec2", "linting"]
+
+[[entries]]
 id = "experience.deepcode-sec-swe"
 output = "experience"
 bullets = ["ingestion", "pipeline", "cloud-architecture"]
@@ -29,17 +39,17 @@ output = "experience"
 title = "Software Engineer (Co-Op)"
 bullets = ["healthcheck", "aws-leadership", "csv-export"]
 
-[[entries]]
-id = "experience.software-secured-appsec-eng"
-output = "experience"
-title = "Penetration Tester (Co-Op)"
-bullets = ["ssrf-lambda", "vuln-db", "secret-semgrep"]
-
-[[entries]]
-id = "experience.software-secured-swe"
-output = "experience"
-date = "05/2021 - 12/2024"
-bullets = ["docker-deploy", "deployment-consistency", "cvss-calculator"]
+# [[entries]]
+# id = "experience.software-secured-appsec-eng"
+# output = "experience"
+# title = "Penetration Tester (Co-Op)"
+# bullets = ["ssrf-lambda", "vuln-db", "secret-semgrep"]
+#
+# [[entries]]
+# id = "experience.software-secured-swe"
+# output = "experience"
+# date = "05/2021 - 12/2024"
+# bullets = ["docker-deploy", "deployment-consistency", "cvss-calculator"]
 
 [[entries]]
 id = "hackathons.ai-tinkerers-2025"

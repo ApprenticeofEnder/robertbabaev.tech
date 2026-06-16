@@ -28,8 +28,10 @@ async function writeVariantData(variant: string, data: Record<string, unknown>):
 }
 
 async function main(): Promise<void> {
-	const master = (await loadToml(masterPath)) as RawResumeData;
-	const baseConfig = parsePdfVariantConfig(await loadToml(path.join(variantsDir, BASE_VARIANT_FILE)));
+	const master = (await loadToml(masterPath)) as unknown as RawResumeData;
+	const baseConfig = parsePdfVariantConfig(
+		await loadToml(path.join(variantsDir, BASE_VARIANT_FILE))
+	);
 
 	for (const variant of await listPdfVariantNames(variantsDir)) {
 		const variantConfig = parsePdfVariantConfig(

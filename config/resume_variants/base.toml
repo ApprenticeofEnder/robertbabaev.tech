@@ -7,18 +7,18 @@ beginner = ["Ruby (1yr)", "Go (3mos)"]
 id = "activities.ai-tinkerers-2025"
 output = "activities"
 
-[[entries]]
-id = "activities.spurhacks-2025"
-output = "activities"
+# [[entries]]
+# id = "activities.spurhacks-2025"
+# output = "activities"
 
-[[entries]]
-id = "activities.cuhacking-2025"
-output = "activities"
+# [[entries]]
+# id = "activities.cuhacking-2025"
+# output = "activities"
 
 [[entries]]
 id = "activities.owasp-ottawa"
 output = "activities"
 
-[[entries]]
-id = "activities.uottahack-7"
-output = "activities"
+# [[entries]]
+# id = "activities.uottahack-7"
+# output = "activities"

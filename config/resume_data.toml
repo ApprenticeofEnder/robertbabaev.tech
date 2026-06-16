@@ -7,13 +7,54 @@ end = "01/2025"
 
 [experience]
 
-# [experience.acre-security]
-# title = "TBD"
-# subtitle = "Acre Security"
-# location = "TBD"
-# start = "TBD"
-# end = "Present"
-# tech = ["TBD"]
+[experience.acre-security-devops]
+title = "Junior DevOps Developer"
+subtitle = "Acre Security"
+location = "Ottawa, ON"
+start = "01/2025"
+end = "Present"
+tech = ["C#", "AWS", "GitHub Actions", "Bash", "Terraform", "Python", "MongoDB"]
+
+[experience.acre-security-devops.bullets.release-strategy]
+default = "Designed and coordinated a release strategy through updated *GitHub Actions* workflows, alleviating manual cherry-picked releases."
+
+[experience.acre-security-devops.bullets.iac]
+default = "Migrated 7 existing AWS environments to IaC (Infrastructure as Code) using composable *Terraform* modules, achieving 80% prod conversion."
+
+[experience.acre-security-devops.bullets.blue-green]
+default = "Consolidated 3 blue-green deployment scripts from *Bash* to *Python* using *Claude Code*, allowing log ingestion via SEQ & DataDog."
+
+[experience.acre-security-devops.bullets.inventory-management]
+default = "Investigating and coordinating across multiple teams to resolve repeated 5+ week blockers in hardware management."
+
+[experience.acre-security-dev]
+title = "Junior Software Developer"
+subtitle = "Acre Security"
+location = "Ottawa, ON"
+start = "10/2025"
+end = "01/2026"
+tech = [
+  "Flutter",
+  "C#",
+  "AWS",
+  "GitHub Actions",
+  "MongoDB",
+  "Bash",
+  "Terraform",
+]
+
+[experience.acre-security-dev.bullets.ecs-rollback]
+default = "Fixed an AWS ECS (Elastic Container Service) rollback issue using Bash scripts and AWS documentation, resolving a 3 month old bug."
+
+[experience.acre-security-dev.bullets.windows-ec2]
+default = "Deployed a Windows EC2 development machine using *Terraform*, avoiding unnecessary AWS Console overhead to make changes."
+
+[experience.acre-security-dev.bullets.linting]
+default = "Added linting rules to a Flutter project via GitHub Actions, proactively resolving issues that otherwise stalled code review for 3+ weeks."
+
+[experience.acre-security-dev.bullets.watchdog]
+default = ""
+
 
 [experience.deepcode-sec-swe]
 title = "Security Software Engineer"
