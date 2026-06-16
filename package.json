@@ -12,7 +12,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"generate-resume-data": "tsx scripts/generate_resume_data.ts",
+		"generate-resume-data": "tsx scripts/generate_resume_data.ts && taplo fmt resume/*/data.toml",
 		"test": "vitest run",
 		"e2e": "playwright test --trace on"
 	},
@@ -68,6 +68,8 @@
 		"xml2js": "^0.6.2"
 	},
 	"pnpm": {
-		"onlyBuiltDependencies": ["esbuild"]
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
 	}
 }
