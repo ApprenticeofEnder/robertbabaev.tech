@@ -17,4 +17,8 @@ runs:
         cachix use rbabaev
     - name: Install devenv.sh
       shell: bash
-      run: nix profile add nixpkgs#devenv
+      run: |
+        chmod +x ./scripts/devenv-ci.sh
+        DEVENV_CI_LIB_ONLY=1 source ./scripts/devenv-ci.sh
+        with_gc_race_retry nix profile add nixpkgs#devenv
+        with_gc_race_retry devenv shell -- echo "devenv shell ready"
