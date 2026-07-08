@@ -15,10 +15,13 @@ runs:
           exit 1
         fi
         cachix use rbabaev
+    - name: Install devenv CI wrapper
+      shell: bash
+      run: |
+        install -m 755 ./scripts/devenv-ci.sh /usr/local/bin/devenv-ci
     - name: Install devenv.sh
       shell: bash
       run: |
-        chmod +x ./scripts/devenv-ci.sh
         DEVENV_CI_LIB_ONLY=1 source ./scripts/devenv-ci.sh
         with_gc_race_retry nix profile add nixpkgs#devenv
         with_gc_race_retry devenv shell -- echo "devenv shell ready"
