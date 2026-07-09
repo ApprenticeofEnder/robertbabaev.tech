@@ -1,14 +1,10 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import { type ResumeEntry } from '$lib/types';
-	import { cn } from '$lib/utils';
 
 	import ResumeEntryDialog from './resume-entry-dialog.svelte';
 
 	const { title, subtitle, location, start, end, link, tech, bulletPoints }: ResumeEntry = $props();
-
-	let showMore = $state(false);
 </script>
 
 <Card.Root class="">
@@ -18,7 +14,7 @@
 			<h2 class="sm:ps-2">{subtitle}</h2>
 		</Card.Title>
 		<Card.Description class="flex flex-col justify-between gap-1">
-			<span>{@html location}</span>
+			<span>{location}</span>
 			{#if start && end}
 				<span>{start} - {end}</span>
 			{:else if start}

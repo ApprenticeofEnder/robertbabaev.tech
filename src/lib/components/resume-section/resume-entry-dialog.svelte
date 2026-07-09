@@ -3,7 +3,7 @@
 	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import { type ResumeEntry } from '$lib/types';
 
-	const { title, subtitle, location, start, end, link, tech, bulletPoints }: ResumeEntry = $props();
+	const { title, subtitle, location, start, end, link, bulletPoints }: ResumeEntry = $props();
 </script>
 
 <AlertDialog.Root>
