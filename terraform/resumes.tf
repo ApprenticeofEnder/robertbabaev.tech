@@ -5,18 +5,24 @@ locals {
     trimsuffix(f, ".toml")
     if !contains(["base", "web"], trimsuffix(f, ".toml"))
   ])
-  resume_urls = {
+  resumes = {
     for variant in local.resume_variants :
-    variant => "${local.resume_url_base}/${variant}/${local.resume_name}.pdf"
+    variant => {
+      key    = "resumes/${variant}/${local.resume_name}.pdf"
+      source = "${path.module}/../resume/${variant}/${local.resume_name}.pdf"
+      url    = "${local.local.resume_url_base}/${variant}/${local.resume_name}.pdf"
+    }
   }
 }
 
 resource "digitalocean_spaces_bucket_object" "resume" {
-  for_each = toset(local.resume_variants)
+  for_each = local.resumes
 
   region       = local.website_bucket.region
   bucket       = local.website_bucket.name
-  key          = "resumes/${each.key}/${local.resume_name}.pdf"
-  source       = "${path.module}/../resume/${each.key}/${local.resume_name}.pdf"
+  key          = each.value["key"]
+  source       = each.value["source"]
   content_type = "application/pdf"
+
+  etag = filemd5(each.value["source"])
 }

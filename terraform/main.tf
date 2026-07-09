@@ -73,17 +73,17 @@ resource "digitalocean_app" "website" {
 
       env {
         key   = "PUBLIC_DEV_RESUME"
-        value = local.resume_urls.dev
+        value = local.resumes.dev.url
       }
 
       env {
         key   = "PUBLIC_DEVOPS_RESUME"
-        value = local.resume_urls.devops
+        value = local.resumes.devops.url
       }
 
       env {
         key   = "PUBLIC_SECURITY_RESUME"
-        value = local.resume_urls.security
+        value = local.resumes.security.url
       }
 
       env {
