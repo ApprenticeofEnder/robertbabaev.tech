@@ -1,7 +1,7 @@
 <script lang="ts">
-	import FileText from 'lucide-svelte/icons/file-text';
-	import IdCard from 'lucide-svelte/icons/id-card';
-	import User from 'lucide-svelte/icons/user';
+	import FileText from '@lucide/svelte/icons/file-text';
+	import IdCard from '@lucide/svelte/icons/id-card';
+	import User from '@lucide/svelte/icons/user';
 
 	import type { Link } from '$lib/types';
 

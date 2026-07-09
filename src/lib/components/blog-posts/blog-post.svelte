@@ -4,7 +4,7 @@
 	import type { RssFeedItem } from '$lib/types';
 
 	let { title, description, link, pubDate: pubDateRaw }: RssFeedItem = $props();
-	const pubDate = new Date(pubDateRaw).toDateString();
+	const pubDate = $derived(new Date(pubDateRaw).toDateString());
 </script>
 
 <Card.Root class="flex w-full flex-col justify-between gap-4 md:basis-1/2 lg:basis-1/3">

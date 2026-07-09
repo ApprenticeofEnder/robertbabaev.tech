@@ -8,9 +8,7 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	const {
-		resumeData: { experience, education, projects, hackathons, volunteering }
-	} = data;
+	const { experience, projects, hackathons, volunteering } = $derived(data.resumeData);
 
 	let readyToScroll = $state(false);
 

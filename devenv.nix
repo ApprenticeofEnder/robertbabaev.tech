@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   config,
@@ -11,6 +12,8 @@
   resumeName = "Robert_Babaev_resume";
   domain = "robertbabaev.tech";
   secretsFile = ".secrets";
+
+  nixpkgs-prettier = import inputs.nixpkgs-prettier {system = pkgs.stdenv.system;};
 in {
   # https://devenv.sh/basics/
   name = "robertbabaev.tech";
@@ -186,6 +189,7 @@ in {
     keep-sorted.enable = true;
     prettier = {
       enable = true;
+      package = nixpkgs-prettier.prettier;
       settings.configPath = "${config.devenv.root}/.prettierrc";
     };
     ripsecrets.enable = true;

@@ -5,14 +5,13 @@
 	import { FeaturedProjects } from '$lib/components/featured-projects';
 	import { HomeOptions } from '$lib/components/home-options';
 	import Scramble from '$lib/components/scramble.svelte';
-	import Button from '$lib/components/ui/button/button.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	const { featuredProjects, homepageConfig, blogPosts } = data;
+	const { featuredProjects, homepageConfig, blogPosts } = $derived(data);
 </script>
 
 {#snippet homepageField(name: string, content: string | string[], testId: string)}

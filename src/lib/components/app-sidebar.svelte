@@ -1,13 +1,15 @@
 <script lang="ts">
-	import Boxes from 'lucide-svelte/icons/boxes';
-	import BriefcaseBusiness from 'lucide-svelte/icons/briefcase-business';
-	import FileText from 'lucide-svelte/icons/file-text';
-	import Github from 'lucide-svelte/icons/github';
-	import HelpingHand from 'lucide-svelte/icons/hand-helping';
-	import House from 'lucide-svelte/icons/house';
-	import IdCard from 'lucide-svelte/icons/id-card';
-	import Trophy from 'lucide-svelte/icons/trophy';
-	import User from 'lucide-svelte/icons/user';
+	import type { IconProps } from '@lucide/svelte';
+	import Boxes from '@lucide/svelte/icons/boxes';
+	import BriefcaseBusiness from '@lucide/svelte/icons/briefcase-business';
+	import FileText from '@lucide/svelte/icons/file-text';
+	import Github from '@lucide/svelte/icons/github';
+	import HelpingHand from '@lucide/svelte/icons/hand-helping';
+	import House from '@lucide/svelte/icons/house';
+	import IdCard from '@lucide/svelte/icons/id-card';
+	import Trophy from '@lucide/svelte/icons/trophy';
+	import User from '@lucide/svelte/icons/user';
+	import type { Component } from 'svelte';
 
 	import { goto } from '$app/navigation';
 	import * as Collapsible from '$lib/components/ui/collapsible';
@@ -17,12 +19,12 @@
 	interface MenuItem {
 		title: string;
 		url: string;
-		icon: ConstructorOfATypedSvelteComponent;
+		icon: Component<IconProps>;
 		subItems?: MenuItem[];
 	}
 
 	// Menu items.
-	const items = [
+	const items: Array<MenuItem> = [
 		{
 			title: 'Home',
 			url: '/',

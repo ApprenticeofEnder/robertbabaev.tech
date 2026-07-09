@@ -50,7 +50,7 @@ importers:
         version: 0.5.20(tailwindcss@3.4.19(tsx@4.23.0)(yaml@2.9.0))
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
-        version: 5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
+        version: 5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
       '@types/jsdom':
         specifier: ^21.1.7
         version: 21.1.7
@@ -97,14 +97,14 @@ importers:
         specifier: ^16.4.2
         version: 16.4.2
       prettier:
-        specifier: ^3.9.4
-        version: 3.9.4
+        specifier: ~3.6.0
+        version: 3.6.2
       prettier-plugin-svelte:
         specifier: ^3.5.2
-        version: 3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
+        version: 3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
       prettier-plugin-tailwindcss:
         specifier: ^0.6.14
-        version: 0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4)
+        version: 0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2)
       svelte:
         specifier: ^5.56.4
         version: 5.56.4(@typescript-eslint/types@8.63.0)
@@ -1970,8 +1970,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.9.4:
-    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2952,7 +2952,7 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.19(tsx@4.23.0)(yaml@2.9.0)
 
-  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0))':
+  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0))':
     dependencies:
       '@babel/generator': 7.29.7
       '@babel/parser': 7.29.7
@@ -2960,9 +2960,9 @@ snapshots:
       '@babel/types': 7.29.7
       javascript-natural-sort: 0.7.1
       lodash: 4.18.1
-      prettier: 3.9.4
+      prettier: 3.6.2
     optionalDependencies:
-      prettier-plugin-svelte: 3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
+      prettier-plugin-svelte: 3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
       svelte: 5.56.4(@typescript-eslint/types@8.63.0)
     transitivePeerDependencies:
       - supports-color
@@ -4034,19 +4034,19 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)):
+  prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)):
     dependencies:
-      prettier: 3.9.4
+      prettier: 3.6.2
       svelte: 5.56.4(@typescript-eslint/types@8.63.0)
 
-  prettier-plugin-tailwindcss@0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4):
+  prettier-plugin-tailwindcss@0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2):
     dependencies:
-      prettier: 3.9.4
+      prettier: 3.6.2
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
-      prettier-plugin-svelte: 3.5.2(prettier@3.9.4)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
+      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier-plugin-svelte@3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0)))(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
+      prettier-plugin-svelte: 3.5.2(prettier@3.6.2)(svelte@5.56.4(@typescript-eslint/types@8.63.0))
 
-  prettier@3.9.4: {}
+  prettier@3.6.2: {}
 
   proxy-from-env@2.1.0: {}
 

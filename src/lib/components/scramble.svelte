@@ -10,7 +10,7 @@
 	let { text, delay = 0 }: ScramblerProps = $props();
 
 	let iterations = $state(0);
-	let currentValue = $state(text.split('').map(getRandomLetter).join(''));
+	let currentValue = $derived(text.split('').map(getRandomLetter).join(''));
 
 	function getRandomLetter(letter: string, index: number) {
 		if (index < iterations) {

@@ -4,7 +4,7 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	const { contactLinks } = data;
+	const { contactLinks } = $derived(data);
 </script>
 
 <ContactSection links={contactLinks}></ContactSection>
