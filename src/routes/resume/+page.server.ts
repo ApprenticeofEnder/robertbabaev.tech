@@ -1,10 +1,11 @@
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import toml from 'smol-toml';
+
 import { buildWebData } from '$lib/resume/build-web';
 import { parseWebVariantConfig } from '$lib/resume/merge-config';
 import type { RawResumeData } from '$lib/resume/types';
 import { compileConfig } from '$lib/server/config';
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-import toml from 'smol-toml';
 
 export const load = async () => {
 	const rawResumeData = await compileConfig<RawResumeData>('config/resume_data.toml');

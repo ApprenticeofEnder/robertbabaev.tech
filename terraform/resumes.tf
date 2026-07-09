@@ -10,7 +10,7 @@ locals {
     variant => {
       key    = "resumes/${variant}/${local.resume_name}.pdf"
       source = "${path.module}/../resume/${variant}/${local.resume_name}.pdf"
-      url    = "${local.local.resume_url_base}/${variant}/${local.resume_name}.pdf"
+      url    = "${local.resume_url_base}/${variant}/${local.resume_name}.pdf"
     }
   }
 }

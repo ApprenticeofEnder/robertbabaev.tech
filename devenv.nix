@@ -112,6 +112,15 @@ in {
       '';
       description = "\tCheck the installation directories of the fonts installed";
     };
+    tofu-validate = {
+      exec = ''
+        set -euxo pipefail
+
+        cd terraform
+        tofu init -backend=false
+        tofu validate
+      '';
+    };
     deploy = {
       exec = ''
         set -euo pipefail
@@ -182,6 +191,12 @@ in {
     ripsecrets.enable = true;
     shellcheck.enable = true;
     taplo.enable = true;
+    tofu-validate = {
+      enable = false;
+      name = "Validate OpenTofu";
+      entry = "tofu-validate";
+      files = "\\.(tf|hcl)$";
+    };
     # zizmor.enable = true;
   };
 
