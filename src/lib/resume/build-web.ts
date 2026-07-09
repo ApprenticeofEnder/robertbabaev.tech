@@ -16,8 +16,9 @@ function toResumeEntry(
 	webEntry: VariantEntry | undefined,
 	context: string
 ): ResumeEntry {
-	const { bullets: _bullets, timeframe: _timeframe, body: _body, ...rest } = entry;
-	const result: ResumeEntry = { ...rest };
+	const { bullets: _bullets, timeframe: _timeframe, body: _body, tech, ...rest } = entry;
+
+	const result: ResumeEntry = { tech: tech?.sort(), ...rest };
 
 	if (webEntry?.bullets?.length) {
 		result.bulletPoints = resolveBulletsForEntry(entry, 'default', webEntry.bullets, context);
