@@ -192,7 +192,7 @@ in {
     shellcheck.enable = true;
     taplo.enable = true;
     tofu-validate = {
-      enable = false;
+      enable = true;
       name = "Validate OpenTofu";
       entry = "tofu-validate";
       files = "\\.(tf|hcl)$";
