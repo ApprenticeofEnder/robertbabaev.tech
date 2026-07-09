@@ -29,6 +29,28 @@ intermediate = ["Rust (3yrs)", "Java (3yrs)"]
 beginner = ["Ruby (1yr)", "Go (3mos)"]
 
 [experience]
+[experience.acre-security-devops]
+title = "Junior DevOps Developer"
+description = "Acre Security"
+date = "01/2025 - Present"
+location = "Ottawa, ON"
+bulletPoints = [
+  "Designed and coordinated a release strategy through updated *GitHub Actions* workflows, alleviating manual cherry-picked releases.",
+  "Migrated 7 existing AWS environments to IaC (Infrastructure as Code) using composable *Terraform* modules, achieving 80% prod conversion.",
+  "Consolidated 3 blue-green deployment scripts from *Bash* to *Python* using *Claude Code*, allowing log ingestion via SEQ & DataDog.",
+]
+
+[experience.acre-security-dev]
+title = "Junior Software Developer"
+description = "Acre Security"
+date = "10/2025 - 01/2026"
+location = "Ottawa, ON"
+bulletPoints = [
+  "Fixed an AWS ECS (Elastic Container Service) rollback issue using Bash scripts and AWS documentation, resolving a 3 month old bug.",
+  "Deployed a Windows EC2 development machine using *Terraform*, avoiding unnecessary AWS Console overhead to make changes.",
+  "Added linting rules to a Flutter project via GitHub Actions, proactively resolving issues that otherwise stalled code review for 3+ weeks.",
+]
+
 [experience.deepcode-sec-swe]
 title = "Security Software Engineer"
 description = "DeepCode"
@@ -49,28 +71,6 @@ bulletPoints = [
   "Designed and implemented a CSV log export system on Windows using *C\\#*, Blazor, and ASP.NET, saving the IT team up to 30 minutes per incident.",
   "Presented selected *AWS* AI services to 5 members of regional leadership, leading to the integration of a new security camera model.",
   "Diagnosed the cause of a failing health check using *Azure Linux* virtual machines and *Docker* tooling, resolving 168 false positive alerts.",
-]
-
-[experience.software-secured-appsec-eng]
-title = "Penetration Tester (Co-Op)"
-description = "SoftwareSecured"
-date = "05/2022 - 08/2022"
-location = "Ottawa, ON"
-bulletPoints = [
-  "Identified a hard-coded secret key in a *Ruby on Rails* microservice API using Semgrep, preventing potential account takeover.",
-  "Implemented a *Python* script to check open source vulnerability databases for security issues, saving 8 hours of work over 4 engagements.",
-  "Deployed an *AWS* compute instance, confirming an SSRF vulnerability potentially leading to privilege escalation via AWS Lambda.",
-]
-
-[experience.software-secured-swe]
-title = "Software Engineer (Co-Op)"
-description = "SoftwareSecured"
-date = "05/2021 - 12/2024"
-location = "Ottawa, ON"
-bulletPoints = [
-  "Implemented an authentication system with SSO and OAuth2 in a *SvelteKit* application using *TypeScript*, mitigating credential breaches.",
-  "Managed deployments on *Linux* virtual machines using *Docker Compose*, avoiding environment-based errors that took hours to debug.",
-  "Built a CVSS calculator integration for a reporting tool using *Django* and *Angular*, saving up to 3 hours per penetration test across 15 clients.",
 ]
 
 [projects]
