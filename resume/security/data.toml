@@ -29,7 +29,6 @@ comfortable = ["Python (7yrs)", "TypeScript (4yrs)"]
 intermediate = ["Rust (3yrs)", "Java (3yrs)"]
 beginner = ["Ruby (1yr)", "Go (3mos)"]
 
-[experience]
 [experience.deepcode-sec-swe]
 title = "Security Software Engineer"
 description = "DeepCode"
@@ -88,7 +87,6 @@ bulletPoints = [
   "Managed deployments on *Linux* virtual machines using *Docker Compose*, avoiding environment-based errors that took hours to debug.",
 ]
 
-[projects]
 [projects.ai-tinkerers-2025]
 title = "AI Software Engineer"
 description = "FastCTX - AI Tinkerers 2025"
@@ -125,7 +123,6 @@ bulletPoints = [
 ]
 link = "https://dorahacks.io/buidl/21611"
 
-[activities]
 [activities.ai-tinkerers-2025]
 title = "AI Tinkerers 2025"
 timeframe = "07/2025 (1 Day)"

@@ -28,7 +28,6 @@ comfortable = ["Python (7yrs)", "TypeScript (4yrs)"]
 intermediate = ["Rust (3yrs)", "Java (3yrs)"]
 beginner = ["Ruby (1yr)", "Go (3mos)"]
 
-[experience]
 [experience.acre-security-devops]
 title = "Junior DevOps Developer"
 description = "Acre Security"
@@ -73,7 +72,6 @@ bulletPoints = [
   "Diagnosed the cause of a failing health check using *Azure Linux* virtual machines and *Docker* tooling, resolving 168 false positive alerts.",
 ]
 
-[projects]
 [projects.ai-tinkerers-2025]
 title = "AI Software Engineer"
 description = "FastCTX - AI Tinkerers 2025"
@@ -110,7 +108,6 @@ bulletPoints = [
 ]
 link = "https://dorahacks.io/buidl/21611"
 
-[activities]
 [activities.ai-tinkerers-2025]
 title = "AI Tinkerers 2025"
 timeframe = "07/2025 (1 Day)"
