@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	import { goto } from '$app/navigation';
 	import * as Card from '$lib/components/ui/card';
 	import type { Link } from '$lib/types';
 
