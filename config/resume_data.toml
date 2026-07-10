@@ -205,6 +205,25 @@ devops = "Maintained deployment consistency across client environments by standa
 
 [projects]
 
+[projects.homelab]
+title = "System Administrator"
+subtitle = "Homelab"
+location = "github.com/ApprenticeofEnder/homelab"
+start = "10/2025"
+end = "Present"
+link = "https://github.com/ApprenticeofEnder/homelab"
+tech = ["Kubernetes", "Terraform", "Ansible", "Bash", "DigitalOcean", "Helm"]
+
+[projects.homelab.bullets.observability]
+default = "Deployed a *Grafana*, *Loki*, and *Prometheus* observability stack using *Helm*, enabling monitoring of 3+ services and searching debug logs."
+
+[projects.homelab.bullets.promtail]
+default = "Installed a Promtail agent by default on all *Kubernetes* pods, enabling automatic log forwarding to Loki."
+
+[projects.homelab.bullets.postgresql]
+default = "Wrote an Ansible playbook and role set to deploy *PostgreSQL* and maintain databases, saving 1 hour of manual work for each new service added."
+
+
 [projects.speedbeaver]
 title = "Software Engineer"
 subtitle = "Speedbeaver"
