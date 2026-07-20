@@ -42,7 +42,7 @@ in {
     gnumake
     playwright
     playwright-test
-    pulumi-esc
+    pulumi-bin
     tree
     # keep-sorted end
 
