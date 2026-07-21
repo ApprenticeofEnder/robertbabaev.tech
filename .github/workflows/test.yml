@@ -3,15 +3,15 @@ name: Run Tests
 on:
   push:
     branches:
-      - 'main'
+      - "main"
   pull_request:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   test-vitest:
     timeout-minutes: 60
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: devenv-ci {0}
@@ -27,6 +27,8 @@ jobs:
           export-environment-variables: CACHIX_AUTH_TOKEN
 
       - uses: ./.github/actions/devenv-setup
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Node.js dependencies
         run: pnpm install --frozen-lockfile
