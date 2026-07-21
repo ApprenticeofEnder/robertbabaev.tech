@@ -40,8 +40,6 @@ in {
     entr
     git
     gnumake
-    playwright
-    playwright-test
     pulumi-bin
     tree
     # keep-sorted end

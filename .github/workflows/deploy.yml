@@ -3,20 +3,20 @@ name: Deploy to DigitalOcean
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     paths:
-      - 'resume/**'
-      - 'config/resume_data.toml'
-      - 'config/resume_variants/**'
-      - 'scripts/generate_resume_data.ts'
-      - 'src/lib/resume/**'
-      - 'terraform/**'
-      - '.github/workflows/deploy.yml'
+      - "resume/**"
+      - "config/resume_data.toml"
+      - "config/resume_variants/**"
+      - "scripts/generate_resume_data.ts"
+      - "src/lib/resume/**"
+      - "terraform/**"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: devenv-ci {0}
@@ -31,6 +31,8 @@ jobs:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
       - uses: ./.github/actions/devenv-setup
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
