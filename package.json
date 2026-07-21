@@ -13,15 +13,13 @@
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
     "generate-resume-data": "tsx scripts/generate_resume_data.ts && taplo fmt resume/*/data.toml",
-    "test": "vitest run",
-    "e2e": "playwright test --trace on"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
     "@eslint/js": "^9.39.4",
     "@iarna/toml": "^2.2.5",
     "@lucide/svelte": "^0.482.0",
-    "@playwright/test": "^1.61.1",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.69.2",
     "@sveltejs/vite-plugin-svelte": "^5.1.1",
