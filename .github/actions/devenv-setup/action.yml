@@ -1,11 +1,16 @@
 name: Setup devenv
 description: Install Nix, Cachix, and devenv
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub's GITHUB_TOKEN secret."
+    required: true
+
 runs:
   using: composite
   steps:
     - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3 # v31.10.6
       with:
-        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+        github_access_token: ${{ inputs.GITHUB_TOKEN }}
         extra_nix_config: |
           keep-env-derivations = true
           keep-outputs = true
