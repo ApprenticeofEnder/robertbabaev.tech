@@ -19,7 +19,6 @@ in {
   name = "robertbabaev.tech";
 
   env = {
-    GREET = "devenv";
     DO_SPACES_REGION = bucketRegion;
     DO_SPACES_BUCKET = bucketName;
     PUBLIC_DEV_RESUME = "${bucketBaseUrl}/resumes/dev/${resumeName}.pdf";
@@ -33,23 +32,28 @@ in {
   ];
 
   # https://devenv.sh/packages/
-  packages = with pkgs; [
-    # keep-sorted start
-    act
-    doctl
-    entr
-    git
-    gnumake
-    pulumi-bin
-    tree
-    # keep-sorted end
+  packages = with pkgs;
+    [
+      # keep-sorted start
+      entr
+      git
+      gnumake
+      # keep-sorted end
 
-    # fonts
-    roboto
-    source-sans
-    source-sans-pro
-    font-awesome_6
-  ];
+      # fonts
+      roboto
+      source-sans
+      source-sans-pro
+      font-awesome_6
+    ]
+    ++ lib.optionals (builtins.getEnv "CI" != "true") [
+      # keep-sorted start
+      act
+      doctl
+      pulumi-bin
+      tree
+      # keep-sorted end
+    ];
 
   # https://devenv.sh/languages/
   languages = {

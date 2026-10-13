@@ -10,7 +10,7 @@ inputs:
       ESC variables to export. Use true for all, false for none, or a comma-separated
       list (optionally ENV=SECRET mappings). See pulumi/esc-action docs.
     required: false
-    default: 'true'
+    default: "true"
 runs:
   using: composite
   steps:
@@ -25,7 +25,7 @@ runs:
         fi
 
     - name: Load ESC environment
-      uses: pulumi/esc-action@f3cfbabf37488463817366338165b92b5f99117e # v2.0.0
+      uses: pulumi/esc-action@32dda43ffe7a2ab21e6bce11c781b44a3e5623cf # v3.2.0
       env:
         PULUMI_ACCESS_TOKEN: ${{ env.PULUMI_ACCESS_TOKEN }}
       with:
