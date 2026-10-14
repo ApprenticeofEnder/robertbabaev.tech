@@ -1,0 +1,19 @@
+header = ["DevOps Engineer", "Platform Engineer", "Site Reliability Engineer"]
+
+[skills]
+software = [
+  "AWS",
+  "Azure",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "Packer",
+  "Ansible",
+  "DataDog",
+  "GitHub Actions",
+  "Linux",
+  "PostgreSQL",
+  "MongoDB",
+  "Bash",
+  "Git",
+]

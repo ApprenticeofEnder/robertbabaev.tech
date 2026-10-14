@@ -1,0 +1,24 @@
+header = [
+  "Security Software Engineer",
+  "Full Stack Software Engineer",
+  "Backend Software Engineer",
+]
+
+[skills]
+software = [
+  "AWS",
+  "Azure",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "Ansible",
+  "Linux",
+  "FastAPI",
+  "React",
+  "Next.js",
+  "PostgreSQL",
+  "Bash",
+  "Git",
+]
+
+# TODO: Add more variant specific translations

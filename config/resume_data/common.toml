@@ -1,0 +1,72 @@
+[education]
+title = "Carleton University"
+subtitle = "Bachelor of Computer Science, Honours (4.0 GPA)"
+location = "Ottawa, ON"
+start = "09/2019"
+end = "01/2025"
+
+[skills.programming]
+comfortable = ["Python (7yrs)", "TypeScript (4yrs)"]
+intermediate = ["Rust (3yrs)", "Java (3yrs)"]
+beginner = ["Ruby (1yr)", "Go (3mos)"]
+
+[experience.acre-security-devops]
+title = "Junior DevOps Developer"
+subtitle = "Acre Security"
+location = "Ottawa, ON"
+start = "01/2025"
+end = "Present"
+tech = ["C#", "AWS", "GitHub Actions", "Bash", "Terraform", "Python", "MongoDB"]
+
+[experience.acre-security-devops.bullets]
+release-strategy = "Designed and coordinated a release strategy through updated *GitHub Actions* workflows, alleviating manual cherry-picked releases."
+iac = "Migrated 7 existing AWS environments to IaC (Infrastructure as Code) using composable *Terraform* modules, achieving 80% prod conversion."
+blue-green = "Consolidated 3 blue-green deployment scripts from *Bash* to *Python* using *Claude Code*, allowing log ingestion via SEQ & DataDog."
+inventory-management = "Investigating and coordinating across multiple teams to resolve repeated 5+ week blockers in hardware management."
+
+[experience.acre-security-dev]
+title = "Junior Software Developer"
+subtitle = "Acre Security"
+location = "Ottawa, ON"
+start = "10/2025"
+end = "01/2026"
+tech = [
+  "Flutter",
+  "C#",
+  "AWS",
+  "GitHub Actions",
+  "MongoDB",
+  "Bash",
+  "Terraform",
+]
+
+[experience.acre-security-dev.bullets]
+ecs-rollback = "Fixed an AWS ECS (Elastic Container Service) rollback issue using Bash scripts and AWS documentation, resolving a 3 month old bug."
+windows-ec2 = "Deployed a Windows EC2 development machine using *Terraform*, avoiding unnecessary AWS Console overhead to make changes."
+linting = "Added linting rules to a Flutter project via GitHub Actions, proactively resolving issues that otherwise stalled code review for 3+ weeks."
+
+[projects.homelab]
+title = "System Administrator"
+subtitle = "Homelab"
+location = "github.com/ApprenticeofEnder/homelab"
+start = "10/2025"
+end = "Present"
+link = "https://github.com/ApprenticeofEnder/homelab"
+tech = ["Kubernetes", "Terraform", "Ansible", "Bash", "DigitalOcean", "Helm"]
+
+[projects.homelab.bullets]
+observability = "Deployed a *Grafana*, *Loki*, and *Prometheus* observability stack using *Helm*, enabling monitoring of 3+ services and searching debug logs."
+promtail = "Installed a Promtail agent by default on all *Kubernetes* pods, enabling automatic log forwarding to Loki."
+postgresql = "Wrote an Ansible playbook and role set to deploy *PostgreSQL* and maintain databases, saving 1 hour of manual work for each new service added."
+
+[hackathons.ai-tinkerers-2025]
+title = "AI Software Engineer"
+subtitle = "FastCTX"
+location = "AI Tinkerers 2025"
+start = "07/2025 (1 Day)"
+tech = ["Python", "FastAPI", "Neo4J", "LangChain", "MCP", "Docker"]
+
+[hackathons.ai-tinkerers-2025.bullets]
+neo4j-backend = "Built a back-end server for a codebase visualization tool using *Neo4J* and *LangChain*, allowing developers to see their codebase as a graph."
+mcp-integration = "Added MCP functionality to a *FastAPI* server written in *Python*, allowing integrations with tools like Windsurf and Cursor."
+docker-compose = "Wrote a *Docker Compose* configuration, including healthchecks and volume specifications to ensure smooth deployments and collaboration."

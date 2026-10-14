@@ -1,0 +1,23 @@
+header = [
+  "Security Software Engineer",
+  "Application Security Engineer",
+  "Security Engineer",
+]
+
+[skills]
+software = [
+  "AWS",
+  "Azure",
+  "Docker",
+  "Terraform",
+  "Linux",
+  "Python",
+  "Burp Suite",
+  "Semgrep",
+  "Crowdstrike Falcon",
+  "Microsoft Sentinel",
+  "Microsoft Defender",
+  "PowerShell",
+  "KQL",
+  "Git",
+]
