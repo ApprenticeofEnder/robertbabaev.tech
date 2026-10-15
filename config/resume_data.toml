@@ -15,6 +15,9 @@ start = "01/2025"
 end = "Present"
 tech = ["C#", "AWS", "GitHub Actions", "Bash", "Terraform", "Python", "MongoDB"]
 
+[experience.acre-security-devops.bullets.oac-pipeline]
+default = "Deployed an app using Github Actions and Terraform, leveraging OIDC deployment roles to bootstrap a self-provisioned deployment environment."
+
 [experience.acre-security-devops.bullets.release-strategy]
 default = "Designed and coordinated a release strategy through updated *GitHub Actions* workflows, alleviating manual cherry-picked releases."
 
