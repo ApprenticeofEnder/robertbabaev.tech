@@ -1,4 +1,4 @@
-import { compileConfig } from './config';
-import { fetchRssFeed } from './rss';
+import { compileConfig, loadConfig } from "./config";
+import { fetchRssFeed } from "./rss";
 
-export { fetchRssFeed, compileConfig };
+export { fetchRssFeed, compileConfig, loadConfig };
