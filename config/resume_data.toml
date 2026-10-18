@@ -117,7 +117,7 @@ default = "Centralized the team's SIEM rule management using *Azure* DevOps and 
 default = "Identified 50 users with unauthorized software installed by cross-referencing 4 sources of data in Microsoft Defender for Endpoint, as well as a PowerShell script to map users to devices."
 
 [experience.barracuda-swe]
-title = "Co-op Software Engineer (Co-Op)"
+title = "Software Engineer (Co-Op)"
 subtitle = "Barracuda Networks"
 location = "Ottawa, ON"
 start = "01/2023"
