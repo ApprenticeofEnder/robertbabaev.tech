@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { ContactSection } from '$lib/components/contact-section';
+  import { ContactSection } from "$lib/components/contact-section";
 
-	import type { PageProps } from './$types';
+  import type { PageProps } from "./$types";
 
-	let { data }: PageProps = $props();
-	const { contactLinks } = $derived(data);
+  let { data }: PageProps = $props();
+  const { contactLinks } = $derived(data);
 </script>
 
 <ContactSection links={contactLinks}></ContactSection>
