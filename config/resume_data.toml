@@ -16,7 +16,7 @@ end = "Present"
 tech = ["C#", "AWS", "GitHub Actions", "Bash", "Terraform", "Python", "MongoDB"]
 
 [experience.acre-security-devops.bullets.oac-pipeline]
-default = "Deployed an app using Github Actions and Terraform, leveraging OIDC deployment roles to bootstrap a self-provisioned deployment environment."
+default = "Deployed an app using GitHub Actions and Terraform, leveraging OIDC deployment roles to bootstrap a self-provisioned deployment environment."
 
 [experience.acre-security-devops.bullets.release-strategy]
 default = "Designed and coordinated a release strategy through updated *GitHub Actions* workflows, alleviating manual cherry-picked releases."
@@ -29,6 +29,12 @@ default = "Consolidated 3 blue-green deployment scripts from *Bash* to *Python* 
 
 [experience.acre-security-devops.bullets.inventory-management]
 default = "Investigating and coordinating across multiple teams to resolve repeated 5+ week blockers in hardware management."
+
+[experience.acre-security-devops.bullets.pipeline-security]
+default = "Resolved security issues in various GitHub Actions pipelines using Zizmor, preventing cache poisoning and injection attacks."
+
+[experience.acre-security-devops.bullets.aws-sg]
+default = "Overhauled AWS security groups to consolidate shared rules between services using Terraform, reducing 40 groups to 8."
 
 [experience.acre-security-dev]
 title = "Junior Software Developer"
