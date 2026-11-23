@@ -18,7 +18,7 @@ const config = {
       },
       reportOnly: {
         "script-src": ["self"],
-        "report-uri": "/"
+        "report-uri": ["/"]
       }
     }
   },
