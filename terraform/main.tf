@@ -79,16 +79,6 @@ resource "digitalocean_app" "website" {
       }
 
       env {
-        key   = "PUBLIC_DEVOPS_RESUME"
-        value = local.resumes.devops.url
-      }
-
-      env {
-        key   = "PUBLIC_SECURITY_RESUME"
-        value = local.resumes.security.url
-      }
-
-      env {
         key   = "PUBLIC_URL_ORIGIN"
         value = "https://${var.domain}"
       }

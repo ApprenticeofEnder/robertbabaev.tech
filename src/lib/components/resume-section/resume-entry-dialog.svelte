@@ -4,6 +4,8 @@
   import { type ResumeEntry } from "$lib/types";
 
   const { title, subtitle, location, start, end, link, bulletPoints }: ResumeEntry = $props();
+
+  const bulletPointEntries = $derived(Object.entries(bulletPoints ?? {}));
 </script>
 
 <AlertDialog.Root>
@@ -25,8 +27,8 @@
       <AlertDialog.Description>
         {#if bulletPoints}
           <ul class="list-inside list-disc">
-            {#each bulletPoints as bulletPoint}
-              <li class="py-2 text-justify">{@html bulletPoint}</li>
+            {#each bulletPointEntries as [key, bulletPoint]}
+              <li class="py-2 text-justify" id="${title} - ${key}">{@html bulletPoint}</li>
             {/each}
           </ul>
         {/if}
