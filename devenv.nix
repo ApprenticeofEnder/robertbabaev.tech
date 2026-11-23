@@ -23,7 +23,6 @@ in {
     DO_SPACES_BUCKET = bucketName;
     PUBLIC_DEV_RESUME = "${bucketBaseUrl}/resumes/dev/${resumeName}.pdf";
     PUBLIC_DEVOPS_RESUME = "${bucketBaseUrl}/resumes/devops/${resumeName}.pdf";
-    PUBLIC_SECURITY_RESUME = "${bucketBaseUrl}/resumes/security/${resumeName}.pdf";
     PUBLIC_URL_ORIGIN = "https://${domain}";
   };
 
@@ -35,7 +34,6 @@ in {
   packages = with pkgs;
     [
       # keep-sorted start
-      entr
       git
       gnumake
       # keep-sorted end
@@ -87,25 +85,14 @@ in {
   # services.postgres.enable = true;
 
   scripts = {
-    generate-resume-data = {
-      exec = ''
-        cd ${config.git.root}
-        ${lib.getExe pkgs.pnpm} generate-resume-data
-      '';
-      description = "\tGenerate Typst resume data from config/resume_data.toml";
-    };
     compile-resume = {
       exec = ''
         set -euxo pipefail
 
-        cd ${config.git.root}
-        ${lib.getExe pkgs.pnpm} generate-resume-data
-
         cd ${resumeRoot}
 
-        while IFS= read -r variant; do
-          ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/$variant/${resumeName}.typ
-        done < <(${config.git.root}/scripts/list_resume_variants.sh)
+        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/dev/${resumeName}.typ
+        ${lib.getExe pkgs.typst} compile --root . ${resumeRoot}/devops/${resumeName}.typ
       '';
       description = "\tCompile resume files";
     };

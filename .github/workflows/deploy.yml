@@ -7,9 +7,6 @@ on:
     paths:
       - "resume/**"
       - "config/resume_data.toml"
-      - "config/resume_variants/**"
-      - "scripts/generate_resume_data.ts"
-      - "src/lib/resume/**"
       - "terraform/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
@@ -36,11 +33,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Verify generated resume data
-        run: |
-          pnpm generate-resume-data
-          git diff --exit-code resume/
 
       - name: Deploy
         timeout-minutes: 5
